@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     return render_template ("index.html")
+    
 @app.route("/sgpa")
 def services():
     return render_template("Sgpa.html")
@@ -19,4 +20,6 @@ def contact():
 def about():
     return render_template("Resources.html")
 
-app.run(debug = True)
+
+if __name__ == "__main__":
+    app.run(debug = True)
