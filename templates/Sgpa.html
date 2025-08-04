@@ -30,7 +30,7 @@
 
 <body class="min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 font-poppins">
 
-  <header class="bg-white shadow mb-4">
+<header class="fixed shadow mb-4 fixed w-[100vw] z-50 bg-white">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-xl font-semibold">🎓 B.Tech Hub</h1>
       <nav class="space-x-6">
@@ -40,10 +40,14 @@
         <a href="/resources" class="text-gray-600 hover:text-blue-600">Resources</a>
       </nav>
     </div>
-  </header>
+</header>
 
+<div class="logo_container flex items-center justify-center w-full top-[30%]">
+    <img src="{{ url_for('static', filename='Images/clipart1471121.png') }}" alt="" srcset="" class="w-[60vw] h-[120vh] absolute top-[20%] z-9 opacity-25">
+ 
   <!-- Calculator Container -->
-  <div class="w-full max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-2xl">
+<div class="absolute top-[20%] z-10 backdrop-blur-lg ">
+  <div class="w-[60vw] max-w-4xl mx-auto  p-8 rounded-2xl shadow-2xl ">
     <!-- Heading -->
     <div class="text-center mb-8">
       <h1 class="text-4xl font-bold text-gray-800 mb-2">
@@ -105,8 +109,8 @@
     </div>
 
     <!-- Marks Table -->
-    <div class="overflow-x-auto">
-      <table class="w-full border-collapse bg-white rounded-lg shadow-lg">
+    <div class="overflow-x-auto ">
+      <table class="w-full border-collapse backdrop-blur-lg rounded-lg shadow-lg">
         <thead>
         <tr
             class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
@@ -435,7 +439,8 @@
       </button>
     </div>
   </div>
-
+</div>
+</div>
   <script src="{{ url_for('static', filename='js/sgpa.js') }}"></script>
 </body>
 </html>
