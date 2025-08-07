@@ -71,6 +71,7 @@ const subjects = [
       "Programming for Problem Solving (BCS201)": 3,
       "Environment and Ecology (BAS204)": 3,
     },
+    
     Labs : {
         "Engineering Physics Lab (BAS151)": 1,
         "Basic Electrical Engineering Lab (BEE151)": 1,
