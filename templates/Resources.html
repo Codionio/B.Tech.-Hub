@@ -1,25 +1,2107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources.io</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-semibold">🎓 B.Tech Hub</h1>
-      <nav class="space-x-6">
-        <a href="/" class="text-gray-600 hover:text-blue-600">Home</a>
-        <a href="/Syllabus" class="text-gray-600 hover:text-blue-600">Syllabus</a>
-        <a href="/sgpa" class="text-gray-600 hover:text-blue-600">University</a>
-        <a href="/resources" class="text-gray-600 hover:text-blue-600">Resources</a>
-      </nav>
+{% extends "base.html" %}
+
+{% block title %}Resources | B.Tech Hub{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 font-poppins pt-20">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">🛠️ Resources Hub</h1>
+            <p class="text-gray-600 font-medium mb-8">Access notes, lectures, e-books, and more</p>
+
+            <!-- Branch Selection -->
+            <div class="flex justify-center mb-10">
+                <div>
+                    <label for="branch-select" class="block mb-2 font-semibold text-gray-700">Select Branch</label>
+                    <select id="branch-select" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                        <option value="">-- Select Branch --</option>
+                        <option value="cse">Computer Science & Engineering</option>
+                        <option value="cseds">Data Science</option>
+                        <option value="aiml">AI & ML</option>
+                        <option value="it">Information Technology</option>
+                        <option value="ee">Electrical Engineering</option>
+                        <option value="me">Mechanical Engineering</option>
+                        <option value="ece">Electronics & Communication</option>
+                        <option value="eee">Electrical & Electronics Engg. </option>
+                        <option value="ce">Civil Engineering</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Semester Selection (hidden initially) -->
+            <div id="semester-container" class="flex justify-center mb-10 hidden">
+                <div>
+                    <label for="semester-select" class="block mb-2 font-semibold text-gray-700">Select Semester</label>
+                    <select id="semester-select" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                        <option value="">-- Select Semester --</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Resource Blocks -->
+            <div id="resource-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Computer Science - Semester 1 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - I </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computer Science & Engineering - Semester 2 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - II </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Computer Science & Engineering - Semester 3 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="3">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 3</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - III</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Energy Science and Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="3">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 3</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Data Structures</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Computer Orgainization and Architechture</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="3">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 3</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Discrete Structure and Theory of Logics </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Universal Human Value </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="3">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 3</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Technical Communication </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Electronics Engg. (Dept. Elective) </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="3">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 3</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Cyber Security </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Python Programming </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computer Science & Engineering - Semester 4 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="4">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 4</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - IV</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Energy Science and Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="4">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 4</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Theory of Automata and Formal Language</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Operating System</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="4">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 4</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 OOPs with Java </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Universal Human Value </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="4">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 4</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Technical Communication </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Electronics Engg. (Dept. Elective) </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cse" data-semester="4">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Computer Science & Engineering - Semester 4</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Cyber Security </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Python Programming </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Data Science - Semester 1 -->
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cseds" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Data Science - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cseds" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Data Science - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cseds" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Data Science - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cseds" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Data Science - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cseds" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Data Science - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - I </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Science - Semester 2 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cseds" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Data Science - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cseds" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Data Science - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cseds" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Data Science - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cseds" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Data Science - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="cseds" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Data Science - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - II </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                 <!-- AIML - Semester 1 -->
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="aiml" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">AI & ML - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="aiml" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">AI & ML - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="aiml" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">AI & ML - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="aiml" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">AI & ML - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="aiml" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">AI & ML - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - I </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AIML - Semester 2 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="aiml" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">AI & ML - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="aiml" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">AI & ML - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="aiml" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">AI & ML - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="aiml" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">AI & ML - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="aiml" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">AI & ML - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - II </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Electronics & Communication Engg. - Semester 1 -->
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ece" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electronics & Communication Engg. - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ece" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electronics & Communication Engg. - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ece" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electronics & Communication Engg. - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ece" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electronics & Communication Engg. - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ece" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electronics & Communication Engg. - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - I </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electronics and communication - Semester 2 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ece" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electronics & Communication Engg. - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ece" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electronics & Communication Engg. - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ece" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electronics & Communication Engg. - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ece" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electronics & Communication Engg. - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ece" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electronics & Communication Engg. - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - II </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Electrical & Electronics Engg. - Semester 1 -->
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="eee" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical & Electronics Engg. - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="eee" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical & Electronics Engg. - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="eee" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical & Electronics Engg. - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="eee" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical & Electronics Engg. - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="eee" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical & Electronics Engg. - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - I </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electrical & Electronics Engg. - Semester 2 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="eee" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical & Electronics Engg. - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="eee" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical & Electronics Engg. - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="eee" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical & Electronics Engg. - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="eee" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical & Electronics Engg. - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="eee" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical & Electronics Engg. - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - II </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+
+
+
+                <!-- Mechanical Engineering - Semester 1 -->
+               <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="me" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Mechanical Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="me" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Mechanical Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="me" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Mechanical Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="me" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Mechanical Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="me" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Mechanical Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - I </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mechanical Engg. - Semester 2 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="me" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Mechanical Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="me" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Mechanical Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="me" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Mechanical Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="me" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Mechanical Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="me" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Mechanical Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - II </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electrical Engineering - Semester 1 -->
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ee" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ee" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ee" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ee" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ee" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - I </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mechanical Engg. - Semester 2 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ee" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ee" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ee" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ee" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ee" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Electrical Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - II </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+               
+               
+                <!-- Civil Engineering - Semester 1 -->
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ce" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Civil Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ce" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Civil Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ce" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Civil Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ce" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Civil Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ce" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Civil Engineering - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - I </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mechanical Engg. - Semester 2 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ce" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Civil Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ce" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Civil Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ce" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Civil Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ce" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Civil Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="ce" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Civil Engineering - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - II </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Information Technology - Semester 1 -->
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="it" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Information Technology - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="it" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Information Technology - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="it" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Information Technology - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="it" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Information Technology - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="it" data-semester="1">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Information Technology - Semester 1</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - I </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Information Technology - Semester 2 -->
+
+
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="it" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Information Technology - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Chemistry</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Physics</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="it" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Information Technology - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Fundamental of Electronics Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Electrical Engg.</h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="it" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Information Technology - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Programming for Problem Solving </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Fundamental of Mechanical Engg. </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="it" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Information Technology - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Environment and Ecology </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">💻 Soft Skills </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_prog_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_prog_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block bg-white p-6 rounded-lg shadow-lg hidden" data-branch="it" data-semester="2">
+                    <h3 class="text-xl font-bold mb-2 text-green-600">Information Technology - Semester 2</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">📚 Engg. Mathematics - II </h4>
+                            <ul class="text-sm text-gray-600 mt-1">
+                                <li><a href="/static/resources/cse_sem1_math_notes.pdf" class="text-blue-600 hover:underline" target="_blank">Notes PDF</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_videos.mp4" class="text-blue-600 hover:underline" target="_blank">Video Lectures</a></li>
+                                <li><a href="/static/resources/cse_sem1_math_ebook.pdf" class="text-blue-600 hover:underline" target="_blank">E-Book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Add more resource blocks for other branches and semesters as needed -->
+            </div>
+        </div>
     </div>
-  </header>
+</div>
 
+{% endblock %}
 
-  <script src="{{ url_for('static', filename='js/resources.js') }}"></script>
-</body>
-</html>
+{% block extra_scripts %}
+    <script src="{{ url_for('static', filename='js/resources.js') }}"></script>
+{% endblock %}
