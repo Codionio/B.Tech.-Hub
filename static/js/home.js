@@ -9,3 +9,16 @@ let beta = document.querySelector(".resources");
 beta.addEventListener("click", () => {
     window.location.href = "/resources";
 });
+
+let gamma = document.querySelector(".syllabus");
+
+gamma.addEventListener("click", () => {
+    window.location.href = "/Syllabus";
+});
+
+
+let delta = document.querySelector(".links");
+
+delta.addEventListener("click", () => {
+    window.location.href = "/links";
+});

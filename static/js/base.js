@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
+    
     // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
@@ -29,3 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+let alpha = document.querySelector(".nav_logo");
+
+        alpha.addEventListener("click", () => {
+         window.location.href = "/";
+        });

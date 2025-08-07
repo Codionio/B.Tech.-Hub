@@ -13,7 +13,9 @@
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <h1 class="text-xl font-semibold">🎓 B.Tech Hub</h1>
+                <div class="nav_logo">
+                    <h1 class="text-xl font-semibold cursor-pointer">🎓 B.Tech Hub</h1>
+                </div>
                 
                 <!-- Mobile menu button -->
                 <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
@@ -51,8 +53,9 @@
 
     
     {% block extra_scripts %}{% endblock %}
-    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
-
+    <!-- <script src="{{ url_for('static', filename='js/home.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    
     <!-- Footer -->
     <footer class="bg-gray-100 text-gray-700 mt-12">
         <div class="max-w-7xl mx-auto px-6 py-10">
@@ -60,11 +63,14 @@
                 <!-- Logo and tagline -->
                 <div class="md:w-1/4">
                     <div class="flex items-center space-x-2 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <!-- {{ url_for('static', filename='static\Images\logo.png')}} -->
+                        <div class="w-[1.5vw] h-[1.5vw]">
+                            <img class = "w-[100%] h-[100%]" src="static\Images\logo.png" alt="none">
+                        </div>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 20l9-5-9-5-9 5 9 5z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 12l9-5-9-5-9 5 9 5z" />
                         </svg>
-                        <span class="font-bold text-lg">StudySync</span>
+                        <span class="font-bold text-lg">Codion.io</span>
                     </div>
                     <p class="text-sm mb-4">Seamless Learning for Brighter Futures</p>
                     <div class="flex space-x-4 text-gray-500">
@@ -83,7 +89,7 @@
                         <a href="#" aria-label="LinkedIn" class="hover:text-indigo-600 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M4.98 3.5a2.5 2.5 0 11.02 5 2.5 2.5 0 01-.02-5zM3 8.75h4v12H3v-12zm7.5 0h3.75v1.64h.05a4.12 4.12 0 013.7-2.03c3.96 0 4.69 2.6 4.69 5.98v6.41h-4v-5.68c0-1.36-.03-3.11-1.9-3.11-1.9 0-2.19 1.48-2.19 3v5.79h-4v-12z"/>
-                            </svg>
+                        </svg>
                         </a>
                         <a href="#" aria-label="GitHub" class="hover:text-indigo-600 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -136,8 +142,8 @@
 
             <!-- Bottom copyright and social -->
             <div class="mt-10 border-t border-gray-300 pt-6 text-center text-sm text-gray-600 space-y-2">
-                <p>© 2024 - Presents StudySync. All rights reserved</p>
-                <p>Created By: <a href="https://github.com/sahilsharma" target="_blank" class="hover:text-indigo-600">@Sahil Sharma</a></p>
+                <p>© 2024 - Presents B.Tech Hub. All rights reserved</p>
+                <p>Created By: <a href="https://github.com/sahilsharma" target="_blank" class="hover:text-indigo-600">@Team Codion</a></p>
                 <div class="flex justify-center space-x-6 text-gray-500">
                     <a href="#" aria-label="Instagram" class="hover:text-indigo-600 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
