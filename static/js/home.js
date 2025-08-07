@@ -3,7 +3,6 @@ let alpha = document.querySelector(".Sgpa_calculator");
 alpha.addEventListener("click", () => {
   window.location.href = "/sgpa";
 });
-
 let beta = document.querySelector(".resources");
 
 beta.addEventListener("click", () => {
@@ -15,7 +14,6 @@ let gamma = document.querySelector(".syllabus");
 gamma.addEventListener("click", () => {
     window.location.href = "/Syllabus";
 });
-
 
 let delta = document.querySelector(".links");
 
