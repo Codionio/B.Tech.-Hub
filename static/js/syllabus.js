@@ -1,10 +1,11 @@
-// Syllabus page JavaScript functionality
+// Updated Syllabus page JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const yearContainer = document.getElementById('year-container');
-    const yearCards = document.getElementById('year-cards');
-    const syllabusContainer = document.getElementById('syllabus-container');
-    const syllabusTitle = document.getElementById('syllabus-title');
-    const syllabusPdf = document.getElementById('syllabus-pdf');
+    const branchSelection = document.getElementById('branchSelection');
+    const yearSelection = document.getElementById('yearSelection');
+    const semesterSelection = document.getElementById('semesterSelection');
+    const syllabusDisplay = document.getElementById('syllabusDisplay');
+    const syllabusTitle = document.getElementById('syllabusTitle');
+    const subjectsGrid = document.getElementById('subjectsGrid');
 
     const syllabusData = {
         cse: {
@@ -57,30 +58,63 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    function showYears(branchCode) {
-        syllabusContainer.classList.add('hidden');
-        syllabusPdf.src = '';
-        syllabusTitle.textContent = '';
+    let currentBranch = null;
 
-        yearCards.innerHTML = '';
-        yearContainer.classList.remove('hidden');
-
-        const years = [1, 2, 3, 4];
-        years.forEach(year => {
-            const card = document.createElement('div');
-            card.className = 'cursor-pointer rounded-lg shadow-lg p-6 bg-gray-200 text-center hover:bg-gray-300';
-            card.textContent = `Year ${year}`;
-            card.onclick = () => showSyllabus(branchCode, year);
-            yearCards.appendChild(card);
-        });
-    }
-
-    function showSyllabus(branchCode, year) {
-        const pdfPath = syllabusData[branchCode][year];
-        if (pdfPath) {
-            syllabusTitle.textContent = `Syllabus - ${branchCode.toUpperCase()} Year ${year}`;
-            syllabusPdf.src = `/${pdfPath}`;
-            syllabusContainer.classList.remove('hidden');
+    // Make selectBranch function global
+    window.selectBranch = function(branchCode) {
+        currentBranch = branchCode;
+        
+        // Hide branch selection
+        branchSelection.classList.add('hidden');
+        
+        // Show year selection in same grid format
+        yearSelection.classList.remove('hidden');
+        
+        // Update year selection title
+        const yearTitle = yearSelection.querySelector('h2');
+        if (yearTitle) {
+            yearTitle.textContent = `Select Year - ${branchCode.toUpperCase()}`;
         }
-    }
+    };
+
+    // Make selectYear function global
+    window.selectYear = function(year) {
+        // Hide year selection
+        yearSelection.classList.add('hidden');
+        
+        // Show syllabus PDF directly
+        const pdfPath = syllabusData[currentBranch][year];
+        if (pdfPath) {
+            // Create and show PDF viewer
+            syllabusTitle.textContent = `Syllabus - ${currentBranch.toUpperCase()} Year ${year}`;
+            
+            // Clear subjects grid
+            subjectsGrid.innerHTML = '';
+            
+            // Create PDF viewer iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = `/${pdfPath}`;
+            iframe.className = 'w-full h-screen border-0';
+            iframe.style.height = '80vh';
+            
+            subjectsGrid.appendChild(iframe);
+            
+            // Show syllabus display
+            syllabusDisplay.classList.remove('hidden');
+        }
+    };
+
+    // Make goBack function global
+    window.goBack = function(from) {
+        if (from === 'year') {
+            // Go back to branch selection
+            yearSelection.classList.add('hidden');
+            branchSelection.classList.remove('hidden');
+            currentBranch = null;
+        } else if (from === 'semester') {
+            // Go back to year selection
+            syllabusDisplay.classList.add('hidden');
+            yearSelection.classList.remove('hidden');
+        }
+    };
 });

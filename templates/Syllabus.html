@@ -3,133 +3,132 @@
 {% block title %}Syllabus | B.Tech Hub{% endblock %}
 
 {% block content %}
-<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 font-poppins pt-20">
-    <div class="max-w-7xl mx-auto px-4 py-8">
+<div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Header -->
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">📚 Syllabus Hub</h1>
-            <p class="text-gray-600 font-medium mb-8">Explore syllabus by branch and year</p>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">📚 B.Tech Resources Hub</h1>
+            <p class="text-xl text-gray-600">Your complete guide to engineering resources</p>
         </div>
 
-        <!-- Branch Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
-            {% set branches = [
-                {'code': 'cse', 'name': 'Computer Science & Engg.', 'color': 'bg-gray-400'},
-                {'code': 'cseds', 'name': 'Data Science', 'color': 'bg-gray-400'},
-                {'code': 'aiml', 'name': 'AI & ML', 'color': 'bg-gray-400'},
-                {'code': 'ece', 'name': 'Electronics & Communication', 'color': 'bg-gray-400'},
-                {'code': 'me', 'name': 'Mechanical Engineering', 'color': 'bg-gray-400'},
-                {'code': 'ce', 'name': 'Civil Engineering', 'color': 'bg-gray-400'},
-                {'code': 'ee', 'name': 'Electrical Engineering', 'color': 'bg-gray-400'},
-                {'code': 'it', 'name': 'Information Technology', 'color': 'bg-gray-400'}
-            ] %}
-            {% for branch in branches %}
-            <div class="cursor-pointer rounded-lg shadow-lg p-6 {{ branch.color }} text-white" onclick="showYears('{{ branch.code }}')">
-                <h2 class="text-2xl font-bold">{{ branch.name }}</h2>
+        <!-- Branch Selection -->
+        <div id="branchSelection" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" 
+                 onclick="selectBranch('cse')">
+                <div class="text-4xl mb-3">💻</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Computer Science</h3>
+                <p class="text-sm text-gray-600">CSE & Data Science</p>
             </div>
-            {% endfor %}
+            <div class="bg-white rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" 
+                 onclick="selectBranch('aiml')">
+                <div class="text-4xl mb-3">🤖</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">AI & ML</h3>
+                <p class="text-sm text-gray-600">Artificial Intelligence</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" 
+                 onclick="selectBranch('it')">
+                <div class="text-4xl mb-3">🌐</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Information Technology</h3>
+                <p class="text-sm text-gray-600">IT Engineering</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" 
+                 onclick="selectBranch('ece')">
+                <div class="text-4xl mb-3">📡</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Electronics & Comm.</h3>
+                <p class="text-sm text-gray-600">ECE Engineering</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" 
+                 onclick="selectBranch('eee')">
+                <div class="text-4xl mb-3">⚡</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Electrical & Electronics</h3>
+                <p class="text-sm text-gray-600">EEE Engineering</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" 
+                 onclick="selectBranch('ee')">
+                <div class="text-4xl mb-3">🔌</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Electrical Engineering</h3>
+                <p class="text-sm text-gray-600">EE Engineering</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" 
+                 onclick="selectBranch('me')">
+                <div class="text-4xl mb-3">⚙️</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Mechanical Engineering</h3>
+                <p class="text-sm text-gray-600">ME Engineering</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" 
+                 onclick="selectBranch('ce')">
+                <div class="text-4xl mb-3">🏗️</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Civil Engineering</h3>
+                <p class="text-sm text-gray-600">CE Engineering</p>
+            </div>
         </div>
 
-        <!-- Year Cards (hidden initially) -->
-        <div id="year-container" class="hidden max-w-7xl mx-auto px-4 py-8">
-            <h2 class="text-3xl font-semibold mb-6 text-center">Select Year</h2>
-            <div id="year-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"></div>
+        <!-- Year Selection -->
+        <div id="yearSelection" class="hidden text-center mb-12">
+            <button onclick="goBack('branch')" 
+                    class="bg-gray-500 text-white px-4 py-2 rounded-md mb-6 hover:bg-gray-600 transition-colors">
+                ← Back to Branches
+            </button>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Select Year</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow" 
+                     onclick="selectYear(1)">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">1st Year</h3>
+                    <p class="text-sm text-gray-600">Semesters 1 & 2</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow" 
+                     onclick="selectYear(2)">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">2nd Year</h3>
+                    <p class="text-sm text-gray-600">Semesters 3 & 4</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow" 
+                     onclick="selectYear(3)">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">3rd Year</h3>
+                    <p class="text-sm text-gray-600">Semesters 5 & 6</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow" 
+                     onclick="selectYear(4)">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">4th Year</h3>
+                    <p class="text-sm text-gray-600">Semesters 7 & 8</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Syllabus PDF Display -->
-        <div id="syllabus-container" class="hidden max-w-7xl mx-auto px-4 py-8">
-            <h2 id="syllabus-title" class="text-3xl font-semibold mb-6 text-center"></h2>
-            <iframe id="syllabus-pdf" src="" class="w-full h-[600px] rounded-lg shadow-lg" frameborder="0"></iframe>
+        <!-- Semester Selection -->
+        <div id="semesterSelection" class="hidden text-center mb-12">
+            <button onclick="window.goBack('branch')" 
+                    class="bg-gray-500 text-white px-4 py-2 rounded-md mb-6 hover:bg-gray-600 transition-colors">
+                ← Back to Branches
+            </button>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Select Semester</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto">
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow" 
+                     onclick="selectSemester(1)">
+                    <h3 class="text-lg font-semibold text-gray-800">Semester 1</h3>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow" 
+                     onclick="selectSemester(2)">
+                    <h3 class="text-lg font-semibold text-gray-800">Semester 2</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Syllabus Display -->
+        <div id="syllabusDisplay" class="hidden bg-white rounded-lg shadow-md p-8">
+            <button onclick="goBack('semester')" 
+                    class="bg-gray-500 text-white px-4 py-2 rounded-md mb-6 hover:bg-gray-600 transition-colors">
+                ← Back to Semesters
+            </button>
+            <div class="text-center mb-8">
+                <h2 id="syllabusTitle" class="text-3xl font-bold text-gray-800 mb-4">Syllabus</h2>
+            </div>
+            <div id="subjectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Subjects will be populated dynamically -->
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    const yearContainer = document.getElementById('year-container');
-    const yearCards = document.getElementById('year-cards');
-    const syllabusContainer = document.getElementById('syllabus-container');
-    const syllabusTitle = document.getElementById('syllabus-title');
-    const syllabusPdf = document.getElementById('syllabus-pdf');
-
-    const syllabusData = {
-        cse: {
-            1: 'static/syllabus/cse_year1.pdf',
-            2: 'static/syllabus/cse_year2.pdf',
-            3: 'static/syllabus/cse_year3.pdf',
-            4: 'static/syllabus/cse_year4.pdf'
-        },
-        cseds: {
-            1: 'static/syllabus/cse_year1.pdf',
-            2: 'static/syllabus/cse_year2.pdf',
-            3: 'static/syllabus/cse_year3.pdf',
-            4: 'static/syllabus/cse_year4.pdf'
-        },
-        aiml: {
-            1: 'static/syllabus/cse_year1.pdf',
-            2: 'static/syllabus/cse_year2.pdf',
-            3: 'static/syllabus/cse_year3.pdf',
-            4: 'static/syllabus/cse_year4.pdf'
-        },
-        ece: {
-            1: 'static/syllabus/ece_year1.pdf',
-            2: 'static/syllabus/ece_year2.pdf',
-            3: 'static/syllabus/ece_year3.pdf',
-            4: 'static/syllabus/ece_year4.pdf'
-        },
-        me: {
-            1: 'static/syllabus/me_year1.pdf',
-            2: 'static/syllabus/me_year2.pdf',
-            3: 'static/syllabus/me_year3.pdf',
-            4: 'static/syllabus/me_year4.pdf'
-        },
-        ce: {
-            1: 'static/syllabus/ce_year1.pdf',
-            2: 'static/syllabus/ce_year2.pdf',
-            3: 'static/syllabus/ce_year3.pdf',
-            4: 'static/syllabus/ce_year4.pdf'
-        },
-        ee: {
-            1: 'static/syllabus/ee_year1.pdf',
-            2: 'static/syllabus/ee_year2.pdf',
-            3: 'static/syllabus/ee_year3.pdf',
-            4: 'static/syllabus/ee_year4.pdf'
-        },
-        it: {
-            1: 'static/syllabus/it_year1.pdf',
-            2: 'static/syllabus/it_year2.pdf',
-            3: 'static/syllabus/it_year3.pdf',
-            4: 'static/syllabus/it_year4.pdf'
-        }
-    };
-
-    function showYears(branchCode) {
-        syllabusContainer.classList.add('hidden');
-        syllabusPdf.src = '';
-        syllabusTitle.textContent = '';
-
-        yearCards.innerHTML = '';
-        yearContainer.classList.remove('hidden');
-
-        const years = [1, 2, 3, 4];
-        years.forEach(year => {
-            const card = document.createElement('div');
-            card.className = 'cursor-pointer rounded-lg shadow-lg p-6 bg-gray-200 text-center hover:bg-gray-300';
-            card.textContent = `Year ${year}`;
-            card.onclick = () => showSyllabus(branchCode, year);
-            yearCards.appendChild(card);
-        });
-    }
-
-    function showSyllabus(branchCode, year) {
-        const pdfPath = syllabusData[branchCode][year];
-        if (pdfPath) {
-            syllabusTitle.textContent = `Syllabus - ${branchCode.toUpperCase()} Year ${year}`;
-            syllabusPdf.src = `/${pdfPath}`;
-            syllabusContainer.classList.remove('hidden');
-        }
-    }
-</script>
 {% endblock %}
 
-<!-- {% block extra_scripts %}
+{% block extra_scripts %}
     <script src="{{ url_for('static', filename='js/syllabus.js') }}"></script>
-{% endblock %} -->
+{% endblock %}
