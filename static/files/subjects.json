@@ -48,174 +48,117 @@
   "Second Year": {
     "Computer Science & Engineering": {
       "Semester 3": {
-        "Science Based Open Elective/Mathematics IV (BOE3**/BAS303)": 4,
-        "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
         "Data Structure (BCS301)": 4,
         "Computer Organization and Architecture (BCS302)": 4,
         "Discrete Structures & Theory of Logic (BCS303)": 3,
         "Data Structure Lab (BCS351)": 1,
-        "Computer Organization and Architecture Lab (BCS352)": 1,
-        "Web Designing Workshop (BCS353)": 1,
-        "Cyber Security/Python Programming (BCC301/BCC302)": 2,
-        "Internship Assessment/Mini Project (BCC351)": 2
+        "Computer Organization Lab (BCS352)": 1,
+        "Web Designing Workshop (BCS353)": 1
       },
       "Semester 4": {
-        "Mathematics IV/Science Based Open Elective (BAS403/BOE4**)": 4,
-        "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
         "Operating System (BCS401)": 4,
         "Theory of Automata and Formal Languages (BCS402)": 4,
         "Object Oriented Programming with Java (BCS403)": 3,
         "Operating System Lab (BCS451)": 1,
-        "Object Oriented Programming with Java Lab (BCS452)": 1,
-        "Cyber Security Workshop (BCS453)": 1,
-        "Python Programming/Cyber Security (BCC402/BCC401)": 2,
-        "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
+        "Java Lab (BCS452)": 1,
+        "Cyber Security Workshop (BCS453)": 1
       }
     },
     "Information Technology": {
       "Semester 3": {
-        "Mathematics-IV (KAS302)": 4,
         "Data Structure (KCS301)": 4,
-        "Computer Organization and Architecture (KCS302)": 4,
-        "Discrete Structures & Theory of Logic (KCS303)": 4,
-        "Universal Human Values and Professional Ethics (KVE301)": 3,
+        "Computer Organization (KCS302)": 4,
+        "Discrete Structures (KCS303)": 4,
         "Data Structures Lab (KCS351)": 1,
-        "Computer Organization Lab (KCS352)": 1,
-        "Discrete Structure & Logic Lab (KCS353)": 1,
-        "Computer System Security / Python Programming (KNC301/KNC302)": 0
+        "Computer Organization Lab (KCS352)": 1
       },
       "Semester 4": {
         "Operating Systems (KCS401)": 3,
         "Design and Analysis of Algorithm (KCS402)": 4,
         "Microprocessor (KCS403)": 4,
-        "Technical Communication (KAS401)": 3,
-        "Open Elective-I (KOE04X)": 3,
         "Operating Systems Lab (KCS451)": 1,
-        "Algorithm Lab (KCS452)": 1,
-        "Microprocessor Lab (KCS453)": 1,
-        "Computer System Security / Python Programming (KNC401/KNC402)": 0
+        "Algorithm Lab (KCS452)": 1
       }
     },
     "Mechanical Engineering": {
-      "Semester 3": {
-        "Engg. Mathematics-III/ Open Elective (AAS0301B/AOE03XX)": 4,
-        "Technical Communication / UHV (AASL0301/KVE301)": 3,
-        "Engineering Mechanics (AME0303)": 4,
-        "Basic Thermodynamics (AME0304)": 3,
-        "Materials Science and Engineering (AME0302)": 3,
-        "Design thinking-1 (ACSE0303)": 3,
-        "Engineering Mechanics Lab (AME0353)": 1,
-        "Material Science Lab (AME0352)": 1,
-        "Manufacturing Technology-1 Lab (AME0351)": 1
-      },
-      "Semester 4": {
-        "Engg. Mathematics-III/ Open Elective (AAS0401B/AOE04XX)": 4,
-        "Technical Communication (AASL0401)": 3,
-        "Fluid Mechanics & Fluid Machines (AME0402)": 4,
-        "Applied Thermodynamics (AME0404)": 3,
-        "Strength of Materials (AME0403)": 3,
-        "Manufacturing Technology-II (AME0401)": 3,
-        "Fluid Mechanics Lab (AME0452)": 1,
-        "Applied Thermodynamics Lab (AME0454)": 1,
-        "Manufacturing Tech-II Lab (AME0451)": 1,
-        "Machine Drawing-II Lab (AME0453/ME494)": 1
-      }
+        "Semester 3": {"Engineering Mechanics (AME0303)": 4, "Basic Thermodynamics (AME0304)": 3, "Materials Science (AME0302)": 3, "Mechanics Lab (AME0353)": 1},
+        "Semester 4": {"Fluid Mechanics (AME0402)": 4, "Applied Thermodynamics (AME0404)": 3, "Strength of Materials (AME0403)": 3, "Fluid Mechanics Lab (AME0452)": 1}
     },
     "Electrical Engineering": {
-      "Semester 3": {
-        "Maths III (IAS303)": 4,
-        "Universal Human Values (IVE301)": 3,
-        "Electromagnetic Field Theory (IEE301)": 4,
-        "Electrical Measurements & Instrumentation (IEE302)": 4,
-        "Basic Signals & Systems (IEE303)": 4,
-        "Basic Signals & Systems Lab (IEE351)": 1,
-        "Electrical Measurements & Instrumentation Lab (IEE352)": 1,
-        "Electrical Workshop (IEE353)": 1,
-        "Computer System Security (INC301)": 0
-      },
-      "Semester 4": {
-        "Maths IV (IAS403)": 4,
-        "Technical Communication (IAS401)": 3,
-        "Analog & Digital Electronics (IEE401)": 4,
-        "Electrical Machine - I (IEE402)": 4,
-        "Network Analysis & Synthesis (IEE403)": 4,
-        "Analog & Digital Electronics Lab (IEE451)": 1,
-        "Electrical Machine -I Lab (IEE452)": 1,
-        "Network Lab (IEE453)": 1,
-        "Python Programming (INC402)": 0
-      }
+        "Semester 3": {"Electromagnetic Field Theory (IEE301)": 4, "Electrical Measurements (IEE302)": 4, "Basic Signals & Systems (IEE303)": 4, "Measurements Lab (IEE352)": 1},
+        "Semester 4": {"Analog & Digital Electronics (IEE401)": 4, "Electrical Machine - I (IEE402)": 4, "Network Analysis (IEE403)": 4, "Machine Lab (IEE452)": 1}
     },
     "Civil Engineering": {
-      "Semester 3": {
-        "Science Based Open Elective/Mathematics III (BOE3**/BAS302)": 4,
-        "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
-        "Engineering Mechanics (BCE301)": 4,
-        "Surveying and Geomatics (BCE302)": 4,
-        "Fluid Mechanics (BCE303)": 3,
-        "Building Planning & Drawing Lab (BCE351)": 1,
-        "Surveying and Geomatics Lab (BCE352)": 1,
-        "Fluid Mechanics Lab (BCE353)": 1
-      },
-      "Semester 4": {
-        "Mathematics III/Science Based Open Elective (BAS402/BOE4**)": 4,
-        "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
-        "Materials, Testing & Construction Practices (BCE401)": 4,
-        "Introduction to Solid Mechanics (BCE402)": 4,
-        "Hydraulic Engineering and Machines (BCE403)": 3,
-        "Material Testing Lab (BCE451)": 1,
-        "Solid Mechanics Lab (BCE452)": 1,
-        "Hydraulics & Hydraulic Machine Lab (BCE453)": 1,
-        "Python Programming/Cyber Security (BCC402/BCC401)": 2,
-        "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
-      }
+        "Semester 3": {"Engineering Mechanics (BCE301)": 4, "Surveying and Geomatics (BCE302)": 4, "Fluid Mechanics (BCE303)": 3, "Surveying Lab (BCE352)": 1},
+        "Semester 4": {"Materials & Testing (BCE401)": 4, "Solid Mechanics (BCE402)": 4, "Hydraulic Engineering (BCE403)": 3, "Material Testing Lab (BCE451)": 1}
     },
     "Electronics & Communication Engineering": {
-      "Semester 3": {
-        "Science Based Open Elective/Mathematics IV (BOE3**/BAS303)": 4,
-        "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
-        "Electronic Devices (BEC301)": 4,
-        "Digital System Design (BEC302)": 4,
-        "Network Analysis and Synthesis (BEC303)": 3,
-        "Electronic Devices Lab (BEC351)": 1,
-        "Digital System Design Lab (BEC352)": 1,
-        "Network Analysis and Synthesis Lab (BEC353)": 1
-      },
-      "Semester 4": {
-        "Mathematics IV/Science Based Open Elective (BAS403/BOE4**)": 4,
-        "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
-        "Communication Engineering (BEC401)": 4,
-        "Analog Circuits (BEC402)": 4,
-        "Signal System (BEC403)": 3,
-        "Communication Engineering Lab (BEC451)": 1,
-        "Analog Circuits Lab (BEC452)": 1,
-        "Signal System Lab (BEC453)": 1,
-        "Python Programming/Cyber Security (BCC402/BCC401)": 2,
-        "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
-      }
+        "Semester 3": {"Electronic Devices (BEC301)": 4, "Digital System Design (BEC302)": 4, "Network Analysis (BEC303)": 3, "Digital Design Lab (BEC352)": 1},
+        "Semester 4": {"Communication Engineering (BEC401)": 4, "Analog Circuits (BEC402)": 4, "Signal System (BEC403)": 3, "Analog Circuits Lab (BEC452)": 1}
     },
     "Biotechnology": {
-      "Semester 3": {
-        "Science Based Open Elective/Mathematics V (BOE3**/BAS304)": 4,
-        "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
-        "Techniques in Biotechnology (BBT301)": 4,
-        "Microbiology and Immunology (BBT302)": 4,
-        "Biochemistry (BBT303)": 3,
-        "Techniques in Biotechnology lab (BBT351)": 1,
-        "Microbiology and Immunology lab (BBT352)": 1,
-        "Biochemistry lab (BBT353)": 1
-      },
-      "Semester 4": {
-        "Mathematics V/Science Based Open Elective (BAS404/BOE4**)": 4,
-        "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
-        "Bioprocess Engineering (BBT401)": 4,
-        "Genetics and Molecular Biology (BBT402)": 4,
-        "Enzyme Engineering (BBT403)": 3,
-        "Bioprocess Engineering lab (BBT451)": 1,
-        "Genetics and Molecular Biology lab (BBT452)": 1,
-        "Enzyme Engineering lab (BBT453)": 1,
-        "Python Programming/Cyber Security (BCC402/BCC401)": 2,
-        "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
-      }
+        "Semester 3": {"Techniques in Biotechnology (BBT301)": 4, "Microbiology and Immunology (BBT302)": 4, "Biochemistry (BBT303)": 3, "Microbiology Lab (BBT352)": 1},
+        "Semester 4": {"Bioprocess Engineering (BBT401)": 4, "Genetics and Molecular Biology (BBT402)": 4, "Enzyme Engineering (BBT403)": 3, "Genetics Lab (BBT452)": 1}
+    }
+  },
+  "Third Year": {
+    "Computer Science & Engineering": {
+      "Semester 5": {"Database Management System (KCS501)": 3, "Compiler Design (KCS502)": 4, "Web Technology (KCS503)": 3, "DBMS Lab (KCS551)": 2},
+      "Semester 6": {"Computer Networks (KCS601)": 3, "Software Engineering (KCS602)": 4, "Artificial Intelligence (KCS603)": 3, "Networks Lab (KCS651)": 2}
+    },
+    "Information Technology": {
+      "Semester 5": {"Database Management System (KIT501)": 3, "Compiler Design (KIT502)": 4, "Web Development (KIT503)": 3, "DBMS Lab (KIT551)": 2},
+      "Semester 6": {"Computer Networks (KIT601)": 3, "Software Engineering (KIT602)": 4, "Data Analytics (KIT603)": 3, "Networks Lab (KIT651)": 2}
+    },
+    "Mechanical Engineering": {
+      "Semester 5": {"Machine Design-I (AME0501)": 4, "Heat and Mass Transfer (AME0502)": 4, "Manufacturing Science-I (AME0503)": 3, "Heat Transfer Lab (AME0552)": 1},
+      "Semester 6": {"Machine Design-II (AME0601)": 4, "Refrigeration & Air Conditioning (AME0602)": 4, "Dynamics of Machinery (AME0603)": 3, "RAC Lab (AME0652)": 1}
+    },
+    "Electrical Engineering": {
+      "Semester 5": {"Power Systems-I (IEE501)": 4, "Control Systems (IEE502)": 4, "Microprocessors (IEE503)": 3, "Control Systems Lab (IEE552)": 1},
+      "Semester 6": {"Power Systems-II (IEE601)": 4, "Power Electronics (IEE602)": 4, "Electric Drives (IEE603)": 3, "Power Electronics Lab (IEE652)": 1}
+    },
+    "Civil Engineering": {
+      "Semester 5": {"Structural Analysis-I (BCE501)": 4, "Geotechnical Engineering (BCE502)": 4, "Transportation Engineering-I (BCE503)": 3, "Geotechnical Lab (BCE552)": 1},
+      "Semester 6": {"Structural Analysis-II (BCE601)": 4, "Foundation Engineering (BCE602)": 4, "Transportation Engineering-II (BCE603)": 3, "Foundation Lab (BCE652)": 1}
+    },
+    "Electronics & Communication Engineering": {
+      "Semester 5": {"Digital Communication (BEC501)": 4, "Electromagnetic Waves (BEC502)": 4, "VLSI Technology (BEC503)": 3, "Digital Comm Lab (BEC551)": 1},
+      "Semester 6": {"Microwave Engineering (BEC601)": 4, "Optical Communication (BEC602)": 4, "Data Communication Networks (BEC603)": 3, "Microwave Lab (BEC651)": 1}
+    },
+    "Biotechnology": {
+      "Semester 5": {"Immunology (BBT501)": 4, "Bioinformatics (BBT502)": 4, "Food Biotechnology (BBT503)": 3, "Immunology Lab (BBT551)": 1},
+      "Semester 6": {"Genetic Engineering (BBT601)": 4, "Plant Biotechnology (BBT602)": 4, "Animal Biotechnology (BBT603)": 3, "Genetic Eng Lab (BBT651)": 1}
+    }
+  },
+  "Fourth Year": {
+    "Computer Science & Engineering": {
+      "Semester 7": {"Distributed Systems (KCS701)": 4, "Cloud Computing (KCS071)": 3, "Data Mining (KCS072)": 3, "Project-I (KCS751)": 5},
+      "Semester 8": {"AI For Engineering (KCS801)": 4, "Blockchain Architecture (KCS081)": 3, "Project-II (KCS851)": 10}
+    },
+    "Information Technology": {
+      "Semester 7": {"Cryptography & Network Security (KIT701)": 4, "Cloud Computing (KIT071)": 3, "Mobile Computing (KIT072)": 3, "Project-I (KIT751)": 5},
+      "Semester 8": {"IoT (KIT801)": 4, "Blockchain Technology (KIT081)": 3, "Project-II (KIT851)": 10}
+    },
+    "Mechanical Engineering": {
+      "Semester 7": {"Automobile Engineering (AME071)": 3, "CAD/CAM (AME072)": 3, "Finite Element Methods (AME073)": 3, "Project-I (AME751)": 5},
+      "Semester 8": {"Robotics (AME081)": 3, "Operations Research (AME082)": 3, "Project-II (AME851)": 10}
+    },
+    "Electrical Engineering": {
+      "Semester 7": {"HVDC Transmission (IEE071)": 3, "Smart Grid (IEE072)": 3, "Special Electrical Machines (IEE073)": 3, "Project-I (IEE751)": 5},
+      "Semester 8": {"Electrical and Hybrid Vehicles (IEE081)": 3, "Power Quality (IEE082)": 3, "Project-II (IEE851)": 10}
+    },
+    "Civil Engineering": {
+      "Semester 7": {"Earthquake Engineering (BCE071)": 3, "Project Management (BCE072)": 3, "Advanced Concrete Design (BCE073)": 3, "Project-I (BCE751)": 5},
+      "Semester 8": {"Structural Dynamics (BCE081)": 3, "GIS & Remote Sensing (BCE082)": 3, "Project-II (BCE851)": 10}
+    },
+    "Electronics & Communication Engineering": {
+      "Semester 7": {"Wireless Communication (BEC071)": 3, "Embedded Systems (BEC072)": 3, "Satellite Communication (BEC073)": 3, "Project-I (BEC751)": 5},
+      "Semester 8": {"5G Technology (BEC081)": 3, "Machine Learning (BEC082)": 3, "Project-II (BEC851)": 10}
+    },
+    "Biotechnology": {
+      "Semester 7": {"Cancer Biology (BBT071)": 3, "Bioreactor Design (BBT072)": 3, "Stem Cells (BBT073)": 3, "Project-I (BBT751)": 5},
+      "Semester 8": {"Genomics & Proteomics (BBT081)": 3, "Drug Design (BBT082)": 3, "Project-II (BBT851)": 10}
     }
   }
 }
