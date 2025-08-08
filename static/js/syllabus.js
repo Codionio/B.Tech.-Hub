@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Make goBack function global
     window.goBack = function(from) {
-        if (from === 'year') {
+        if (from === 'branch') {
             // Go back to branch selection
             yearSelection.classList.add('hidden');
             branchSelection.classList.remove('hidden');
