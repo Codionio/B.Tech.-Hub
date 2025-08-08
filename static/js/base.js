@@ -81,5 +81,6 @@ const Loading_animation = function(){
     });
 }
 
+/* Commented out Loading_animation to avoid conflict with home.js animation */
 // Loading_animation();
 Handel_responsive();
