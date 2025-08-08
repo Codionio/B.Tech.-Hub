@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
             1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
             2: 'https://drive.google.com/file/d/1JvTVE89hLEUUYEn49IaD8LmZ54mZn9Cx/preview',
             3: 'https://drive.google.com/file/d/11VrEjzWbe5_yw9_NdL1-J_Hzen0E-2Z7/preview',
-            4: 'static/syllabus/ece_year4.pdf'
+            4: 'https://drive.google.com/file/d/1qd8DKNj5LWT3EceebEpl_wm9HSaqI108/preview'
         },
         me: {
             1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
-            2: 'static/syllabus/me_year2.pdf',
+            2: 'https://drive.google.com/file/d/1bLt5ssaNJHXEBBoov34wUkKWfPkuuuHk/preview',
             3: 'https://drive.google.com/file/d/1qjrDn-nHV-b6up0m8tlD08imbxQLma00/preview',
             4: 'static/syllabus/me_year4.pdf'
         },
@@ -54,14 +54,14 @@ document.addEventListener('DOMContentLoaded', function() {
             1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
             2: 'https://drive.google.com/file/d/1JnUgc5r_uQFh54oAteRhREKAEdhKRy8h/preview',
             3: 'https://drive.google.com/file/d/1y7liroLz6TN-foAC6iUe2O17y6qKFQ7l/preview',
+            4: 'https://drive.google.com/file/d/14xYS5K3Vbh_xGhtYzvfdGLkUBKNn6dkl/preview'
+        },
+        eee: {
+            1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
+            2: 'https://drive.google.com/file/d/1iR_aCBWvaDBFsun3jltZg-IiYEuX7Vpj/preview',
+            3: 'https://drive.google.com/file/d/14_bO3xMr4SZ8BN7N8pyyrjnqJzMdnYOr/preview',
             4: 'static/syllabus/it_year4.pdf'
         }
-        // eee: {
-        //     1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
-        //     2: 'static/syllabus/it_year2.pdf',
-        //     3: 'static/syllabus/it_year3.pdf',
-        //     4: 'static/syllabus/it_year4.pdf'
-        // }
     };
 
     let currentBranch = null;
