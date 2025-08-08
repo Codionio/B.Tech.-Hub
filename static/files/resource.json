@@ -1,0 +1,227 @@
+{
+    "First Year": {
+        "Common Subjects Semester 1": {
+            "Engineering Physics (BAS101)/Engineering Chemistry (BAS102)": 4,
+            "Engineering Mathematics-I (BAS103)": 4,
+            "Fundamentals of Electrical Engineering (BEE101)/Fundamentals of Electronics Engineering (BEC101)": 3,
+            "Programming for Problem Solving (BCS101)/Fundamentals of Mechanical Engineering (BME101)": 3,
+            "Environment and Ecology (BAS104)/Soft Skills (BAS105)": 3,
+            "Engineering Physics Lab (BAS151)/Engineering Chemistry Lab (BAS152)": 1,
+            "Basic Electrical Engineering Lab (BEE151)/Basic Electronics Engineering Lab (BEC151)": 1,
+            "Programming for Problem Solving Lab (BCS151)/English Language Lab (BAS155)": 1,
+            "Engineering Graphics & Design Lab (BCE151)/Workshop Practice Lab (BWS151)": 2
+        },
+        "Common Subjects Semester 2": {
+            "Engineering Chemistry (BAS202)/Engineering Physics (BAS201)": 4,
+            "Engineering Mathematics-II (BAS203)": 4,
+            "Fundamentals of Electronics Engineering (BEC201)/Fundamentals of Electrical Engineering (BEE201)": 3,
+            "Fundamentals of Mechanical Engineering (BME201)/Programming for Problem Solving (BCS201)": 3,
+            "Soft Skills (BAS205)/Environment and Ecology (BAS204)": 3,
+            "Engineering Chemistry Lab (BAS252)/Engineering Physics Lab (BAS251)": 1,
+            "Basic Electronics Engineering Lab (BEC251)/Basic Electrical Engineering Lab (BEE251)": 1,
+            "English Language Lab (BAS255)/Programming for Problem Solving Lab (BCS251)": 1,
+            "Workshop Practice Lab (BWS251)/Engineering Graphics & Design Lab (BCE251)": 2
+        }
+    },
+    "Second Year": {
+        "Computer Science & Engineering": {
+            "Semester 3": {
+                "Science Based Open Elective/Mathematics IV (BOE3**/BAS303)": 4,
+                "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
+                "Data Structure (BCS301)": 4,
+                "Computer Organization and Architecture (BCS302)": 4,
+                "Discrete Structures & Theory of Logic (BCS303)": 3,
+                "Data Structure Lab (BCS351)": 1,
+                "Computer Organization and Architecture Lab (BCS352)": 1,
+                "Web Designing Workshop (BCS353)": 1,
+                "Cyber Security/Python Programming (BCC301/BCC302)": 2,
+                "Internship Assessment/Mini Project (BCC351)": 2
+            },
+            "Semester 4": {
+                "Mathematics IV/Science Based Open Elective (BAS403/BOE4**)": 4,
+                "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
+                "Operating System (BCS401)": 4,
+                "Theory of Automata and Formal Languages (BCS402)": 4,
+                "Object Oriented Programming with Java (BCS403)": 3,
+                "Operating System Lab (BCS451)": 1,
+                "Object Oriented Programming with Java Lab (BCS452)": 1,
+                "Cyber Security Workshop (BCS453)": 1,
+                "Python Programming/Cyber Security (BCC402/BCC401)": 2,
+                "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
+            },
+            "Semester 5": {
+                "Database Management System (BCS501)": 4,
+                "Web Technology (BCS502)": 4,
+                "Design and Analysis of Algorithms (BCS503)": 4,
+                "Dept. Elective - I": 3,
+                "Dept. Elective - II": 3,
+                "Database Management System Lab (BCS551)": 1,
+                "Web Technology Lab (BCS552)": 1,
+                "Design and Analysis of Algorithms Lab (BCS553)": 1,
+                "Mini Project or Internship Assessment* (BCS)": 2,
+                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
+            },
+            "Semester 6": {
+                "Software Engineering (BCS601)": 4,
+                "Compiler Design (BCS602)": 4,
+                "Computer Networks (BCS603)": 4,
+                "Dept. Elective - III": 3,
+                "Open Elective - I": 3,
+                "Software Engineering Lab (BCS651)": 1,
+                "Compiler Design Lab (BCS652)": 1,
+                "Computer Networks Lab (BCS653)": 1,
+                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
+            }
+        },
+        "CSE (AIML)": {
+            "Semester 3": {
+                "Science Based Open Elective/Mathematics IV (BOE3**/BAS303)": 4,
+                "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
+                "Data Structure (BCS301)": 4,
+                "Computer Organization and Architecture (BCS302)": 4,
+                "Discrete Structures & Theory of Logic (BCS303)": 3,
+                "Data Structure Lab (BCS351)": 1,
+                "Computer Organization and Architecture Lab (BCS352)": 1,
+                "Web Designing Workshop (BCS353)": 1,
+                "Cyber Security/Python Programming (BCC301/BCC302)": 2,
+                "Internship Assessment/Mini Project (BCC351)": 2
+            },
+            "Semester 4": {
+                "Mathematics IV/Science Based Open Elective (BAS403/BOE4**)": 4,
+                "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
+                "Operating System (BCS401)": 4,
+                "Theory of Automata and Formal Languages (BCS402)": 4,
+                "Object Oriented Programming with Java (BCS403)": 3,
+                "Operating System Lab (BCS451)": 1,
+                "Object Oriented Programming with Java Lab (BCS452)": 1,
+                "Cyber Security Workshop (BCS453)": 1,
+                "Python Programming/Cyber Security (BCC402/BCC401)": 2,
+                "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
+            },
+            "Semester 5": {
+                "Database Management System (BCS501)": 4,
+                "Artificial Intelligence (BCAI501)": 4,
+                "Design and Analysis of Algorithms (BCS503)": 4,
+                "Dept. Elective - I": 3,
+                "Dept. Elective - II": 3,
+                "Database Management System Lab (BCS551)": 1,
+                "Artificial Intelligence Lab (BCAI551)": 1,
+                "Design and Analysis of Algorithms Lab (BCS553)": 1,
+                "Mini Project or Internship Assessment* (BCS)": 2,
+                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
+            },
+            "Semester 6": {
+                "Software Engineering (BCS601)": 4,
+                "Machine Learning Techniques (BCAI601)": 4,
+                "Computer Networks (BCS603)": 4,
+                "Dept. Elective - III": 3,
+                "Open Elective - I": 3,
+                "Software Engineering Lab (BCS651)": 1,
+                "Machine Learning Lab (BCAI651)": 1,
+                "Computer Networks Lab (BCS653)": 1,
+                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
+            }
+        },
+        "CSE (Data Science)": {
+            "Semester 3": {
+                "Science Based Open Elective/Mathematics IV (BOE3**/BAS303)": 4,
+                "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
+                "Data Structure (BCS301)": 4,
+                "Computer Organization and Architecture (BCS302)": 4,
+                "Discrete Structures & Theory of Logic (BCS303)": 3,
+                "Data Structure Lab (BCS351)": 1,
+                "Computer Organization and Architecture Lab (BCS352)": 1,
+                "Web Designing Workshop (BCS353)": 1,
+                "Cyber Security/Python Programming (BCC301/BCC302)": 2,
+                "Internship Assessment/Mini Project (BCC351)": 2
+            },
+            "Semester 4": {
+                "Mathematics IV/Science Based Open Elective (BAS403/BOE4**)": 4,
+                "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
+                "Operating System (BCS401)": 4,
+                "Theory of Automata and Formal Languages (BCS402)": 4,
+                "Object Oriented Programming with Java (BCS403)": 3,
+                "Operating System Lab (BCS451)": 1,
+                "Object Oriented Programming with Java Lab (BCS452)": 1,
+                "Cyber Security Workshop (BCS453)": 1,
+                "Python Programming/Cyber Security (BCC402/BCC401)": 2,
+                "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
+            },
+            "Semester 5": {
+                "Database Management System (BCS501)": 4,
+                "Artificial Intelligence (BCAI501)": 4,
+                "Design and Analysis of Algorithms (BCS503)": 4,
+                "Dept. Elective - I": 3,
+                "Dept. Elective - II": 3,
+                "Database Management System Lab (BCS551)": 1,
+                "Artificial Intelligence Lab (BCAI551)": 1,
+                "Design and Analysis of Algorithms Lab (BCS553)": 1,
+                "Mini Project or Internship Assessment* (BCS)": 2,
+                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
+            },
+            "Semester 6": {
+                "Software Engineering (BCS601)": 4,
+                "Machine Learning Techniques (BCAI601)": 4,
+                "Computer Networks (BCS603)": 4,
+                "Dept. Elective - III": 3,
+                "Open Elective - I": 3,
+                "Software Engineering Lab (BCS651)": 1,
+                "Machine Learning Lab (BCAI651)": 1,
+                "Computer Networks Lab (BCS653)": 1,
+                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
+            }
+        },
+        "Information Technology (IT)": {
+            "Semester 3": {
+                "Science Based Open Elective/Mathematics IV (BOE3**/BAS303)": 4,
+                "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
+                "Data Structure (BCS301)": 4,
+                "Computer Organization and Architecture (BCS302)": 4,
+                "Discrete Structures & Theory of Logic (BCS303)": 3,
+                "Data Structure Lab (BCS351)": 1,
+                "Computer Organization and Architecture Lab (BCS352)": 1,
+                "Web Designing Workshop (BCS353)": 1,
+                "Cyber Security/Python Programming (BCC301/BCC302)": 2,
+                "Internship Assessment/Mini Project (BCC351)": 2
+            },
+            "Semester 4": {
+                "Mathematics IV/Science Based Open Elective (BAS403/BOE4**)": 4,
+                "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
+                "Operating System (BCS401)": 4,
+                "Theory of Automata and Formal Languages (BCS402)": 4,
+                "Object Oriented Programming with Java (BCS403)": 3,
+                "Operating System Lab (BCS451)": 1,
+                "Object Oriented Programming with Java Lab (BCS452)": 1,
+                "Cyber Security Workshop (BCS453)": 1,
+                "Python Programming/Cyber Security (BCC402/BCC401)": 2,
+                "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
+            }
+        },
+        "Mechanical Engineering": {
+            "Semester 3": {
+                "Engg. Mathematics-III/ Open Elective (BOE3**/BAS303)": 4,
+                "Technical Communication / UHV (BVE301/BAS301)": 3,
+                "Thermodynamics (BME301)": 4,
+                "Fluid Mechanics and Fluid Machines (BME302)": 4,
+                "Materials Engineering (BME303)": 3,
+                "Fluid Mechanics Lab (BME351)": 1,
+                "Material Testing Lab (BME352)": 1,
+                "Computer Aided Machine Drawing - I (BME353)": 1,
+                "Cyber Security/Python Programming (BCC301/BCC302)": 2,
+                "Internship Assessment/Mini Project (BCC351)": 2
+            },
+            "Semester 4": {
+                "Engg. Mathematics-IV/ Open Elective (BAS403/BOE4**)": 4,
+                "UHV/Technical Communication(BAS301/BVE301)": 3,
+                "Applied Thermodynamics (BME401)": 4,
+                "Engineering Mechanics and Strength of Materials (BME402)": 4,
+                "Manufacturing Process (BME403)": 3,
+                "Applied Thermodynamics Lab (BME451)": 1,
+                "Manufacturing Process Lab (BME452)": 1,
+                "Computer Aided Machine Drawing-II Lab (BME453)": 1,
+                "Python Programming/Cyber Security (BCC402/BCC401)": 2,
+                "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
+            }
+        }
+    }
+}
