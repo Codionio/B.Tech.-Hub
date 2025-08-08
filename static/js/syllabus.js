@@ -95,7 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const iframe = document.createElement('iframe');
             iframe.src = `/${pdfPath}`;
             iframe.className = 'w-full h-screen border-0';
-            iframe.style.height = '80vh';
+            iframe.style.height = '95vh';
+            // iframe.style.width = '50vw';
             
             subjectsGrid.appendChild(iframe);
             
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Make goBack function global
     window.goBack = function(from) {
-        if (from === 'year') {
+        if (from === 'branch') {
             // Go back to branch selection
             yearSelection.classList.add('hidden');
             branchSelection.classList.remove('hidden');
