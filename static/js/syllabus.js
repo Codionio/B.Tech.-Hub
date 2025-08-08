@@ -9,53 +9,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const syllabusData = {
         cse: {
-            1: 'static/syllabus/cse_year1.pdf',
-            2: 'static/syllabus/cse_year2.pdf',
-            3: 'static/syllabus/cse_year3.pdf',
+            1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
+            2: 'https://drive.google.com/file/d/1JnUgc5r_uQFh54oAteRhREKAEdhKRy8h/preview',
+            3: 'https://drive.google.com/file/d/1d4kTWnGKLv7VA8HJ36YfzOhs0CbD_Lor/preview',
             4: 'static/syllabus/cse_year4.pdf'
         },
         cseds: {
-            1: 'static/syllabus/cse_year1.pdf',
-            2: 'static/syllabus/cse_year2.pdf',
-            3: 'static/syllabus/cse_year3.pdf',
+            1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
+            2: 'https://drive.google.com/file/d/1JnUgc5r_uQFh54oAteRhREKAEdhKRy8h/preview',
+            3: 'https://drive.google.com/file/d/1doJi4t_ZxKzQ1bx0AKf4UslEAXIHNUaF/preview',
             4: 'static/syllabus/cse_year4.pdf'
         },
         aiml: {
-            1: 'static/syllabus/cse_year1.pdf',
-            2: 'static/syllabus/cse_year2.pdf',
-            3: 'static/syllabus/cse_year3.pdf',
+            1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
+            2: 'https://drive.google.com/file/d/1JnUgc5r_uQFh54oAteRhREKAEdhKRy8h/preview',
+            3: 'https://drive.google.com/file/d/1WRJfxFnbOugj_UY3m1jo0-8zzutWxT71/preview',
             4: 'static/syllabus/cse_year4.pdf'
         },
         ece: {
-            1: 'static/syllabus/ece_year1.pdf',
-            2: 'static/syllabus/ece_year2.pdf',
-            3: 'static/syllabus/ece_year3.pdf',
+            1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
+            2: 'https://drive.google.com/file/d/1JvTVE89hLEUUYEn49IaD8LmZ54mZn9Cx/preview',
+            3: 'https://drive.google.com/file/d/11VrEjzWbe5_yw9_NdL1-J_Hzen0E-2Z7/preview',
             4: 'static/syllabus/ece_year4.pdf'
         },
         me: {
-            1: 'static/syllabus/me_year1.pdf',
+            1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
             2: 'static/syllabus/me_year2.pdf',
-            3: 'static/syllabus/me_year3.pdf',
+            3: 'https://drive.google.com/file/d/1qjrDn-nHV-b6up0m8tlD08imbxQLma00/preview',
             4: 'static/syllabus/me_year4.pdf'
         },
         ce: {
-            1: 'static/syllabus/ce_year1.pdf',
-            2: 'static/syllabus/ce_year2.pdf',
-            3: 'static/syllabus/ce_year3.pdf',
+            1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
+            2: 'https://drive.google.com/file/d/1Z9kikfnQXu5cD-Vi6Uu6ktpekGL1DSEy/preview',
+            3: 'https://drive.google.com/file/d/1Ke6OdXp_mZxpOzk_U44DUAnZUMHJzJba/preview',
             4: 'static/syllabus/ce_year4.pdf'
         },
         ee: {
-            1: 'static/syllabus/ee_year1.pdf',
-            2: 'static/syllabus/ee_year2.pdf',
-            3: 'static/syllabus/ee_year3.pdf',
+            1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
+            2: 'https://drive.google.com/file/d/1aGre3rqJnzWxRj_ozz88HzsebLoaf9mI/preview',
+            3: 'https://drive.google.com/file/d/1zyhn_v_3GosQLwE7NQkCBa4111H1hk1Y/preview',
             4: 'static/syllabus/ee_year4.pdf'
         },
         it: {
-            1: 'static/syllabus/it_year1.pdf',
-            2: 'static/syllabus/it_year2.pdf',
-            3: 'static/syllabus/it_year3.pdf',
+            1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
+            2: 'https://drive.google.com/file/d/1JnUgc5r_uQFh54oAteRhREKAEdhKRy8h/preview',
+            3: 'https://drive.google.com/file/d/1y7liroLz6TN-foAC6iUe2O17y6qKFQ7l/preview',
             4: 'static/syllabus/it_year4.pdf'
         }
+        // eee: {
+        //     1: 'https://drive.google.com/file/d/1ihtj9_ZfqivmF-4343LZP1lBhUc8kW_6/preview',
+        //     2: 'static/syllabus/it_year2.pdf',
+        //     3: 'static/syllabus/it_year3.pdf',
+        //     4: 'static/syllabus/it_year4.pdf'
+        // }
     };
 
     let currentBranch = null;
@@ -93,9 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Create PDF viewer iframe
             const iframe = document.createElement('iframe');
-            iframe.src = `/${pdfPath}`;
+            iframe.src = pdfPath;
             iframe.className = 'w-full h-screen border-0';
-            iframe.style.height = '80vh';
+            iframe.style.height = '95vh';
+            // iframe.style.width = '50vw';
             
             subjectsGrid.appendChild(iframe);
             

@@ -4,14 +4,15 @@
 
 {% block content %}
 <div class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Header -->
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4">📚 B.Tech Syllabus Hub</h1>
-            <p class="text-xl text-gray-600">Your complete guide to engineering syllabus</p>
-        </div>
 
         <!-- Branch Selection -->
-        <div id="branchSelection" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+    <div id="branchSelection" class="flex flex-col items-center justify-center m-[2vw] ">
+            <div class="header text-center mb-8">
+                <h1 class="text-2xl font-bold text-gray-800 mb-4">📚 Syllabus Hub</h1>
+                <p class="text-sm text-gray-600">Your complete guide to engineering resources</p>
+            </div>
+            <div class="content_branch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                
             <div class="bg-white rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-lg transition-shadow" 
                  onclick="selectBranch('cse')">
                 <div class="text-4xl mb-3">💻</div>
@@ -60,13 +61,18 @@
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Civil Engineering</h3>
                 <p class="text-sm text-gray-600">CE Engineering</p>
             </div>
-        </div>
-
+            </div>
+    </div>
         <!-- Year Selection -->
-        <div id="yearSelection" class="hidden text-center mb-12">
-            <button onclick="goBack('branch')" 
-                    class="bg-gray-500 text-white px-4 py-2 rounded-md mb-6 hover:bg-gray-600 transition-colors">
-                ← Back to Branches
+    <div id="yearSelection" class="hidden flex flex-col items-center justify-center gap-12    m-[2vw] h-[60vh]">
+            <div class="header text-center mb-15">
+                <h1 class="text-2xl font-bold text-gray-800 mb-4">📚 Syllabus Hub</h1>
+                <p class="text-sm text-gray-600">Your complete guide to engineering resources</p>
+            </div>
+            <div class="content_year text-center mb-12">
+                <button onclick="goBack('branch')" 
+                    class="bg-gray-200 text-black px-4 py-2 rounded-md mb-6 hover:bg-gray-600 hover:text-white  transition-colors absolute left-[1vw] top-[6vw]">
+                ← Back
             </button>
             <h2 class="text-2xl font-bold text-gray-800 mb-6">Select Year</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -91,40 +97,32 @@
                     <p class="text-sm text-gray-600">Semesters 7 & 8</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Semester Selection -->
-        <div id="semesterSelection" class="hidden text-center mb-12">
-            <button onclick="window.goBack('branch')" 
-                    class="bg-gray-500 text-white px-4 py-2 rounded-md mb-6 hover:bg-gray-600 transition-colors">
-                ← Back to Branches
-            </button>
-            <h2 class="text-2xl font-bold text-gray-800 mb-6">Select Semester</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto">
-                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow" 
-                     onclick="selectSemester(1)">
-                    <h3 class="text-lg font-semibold text-gray-800">Semester 1</h3>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow" 
-                     onclick="selectSemester(2)">
-                    <h3 class="text-lg font-semibold text-gray-800">Semester 2</h3>
-                </div>
             </div>
-        </div>
+            
+    </div>
 
         <!-- Syllabus Display -->
-        <div id="syllabusDisplay" class="hidden bg-white rounded-lg shadow-md p-8">
-            <button onclick="goBack('semester')" 
-                    class="bg-gray-500 text-white px-4 py-2 rounded-md mb-6 hover:bg-gray-600 transition-colors">
-                ← Back to Semesters
-            </button>
-            <div class="text-center mb-8">
-                <h2 id="syllabusTitle" class="text-3xl font-bold text-gray-800 mb-4">Syllabus</h2>
+    <div id="syllabusDisplay" class="hidden flex flex-col items-center justify-center gap-12">
+
+            <div class="button absolute top-[6vw] left-[1vw] ">
+                <button onclick="goBack('semester')" 
+                    class="bg-gray-200 text-black px-4 py-2 rounded-md mb-6 hover:bg-gray-600 hover:text-white  transition-colors">
+                ← Back
+                </button>
             </div>
-            <div id="subjectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="content_syllabus  bg-white rounded-lg shadow-md p-8 w-[60vw] h-[120vh] mx-auto">
+            <div class="box_content flex-row flex-wrap justify-center items-center">
+                <div class="text-center mb-2">
+                    <h2 id="syllabusTitle" class="text-3xl font-bold text-gray-800 mb-4">Syllabus</h2>
+                </div>
+            </div>
+            <div id="subjectsGrid" class="flex justify-center items-center h-[100vh]">
                 <!-- Subjects will be populated dynamically -->
             </div>
-        </div>
+            </div>
+            
+           
     </div>
 
 {% endblock %}
