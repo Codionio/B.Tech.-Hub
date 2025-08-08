@@ -14,13 +14,13 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
             {% set branches = [
                 {'code': 'cse', 'name': 'Computer Science & Engg.', 'color': 'bg-gray-400'},
-                {'code': 'cseds', 'name': 'Data Science', 'color': 'bg-red-500'},
-                {'code': 'aiml', 'name': 'AI & ML', 'color': 'bg-purple-500'},
-                {'code': 'ece', 'name': 'Electronics & Communication', 'color': 'bg-blue-500'},
-                {'code': 'me', 'name': 'Mechanical Engineering', 'color': 'bg-orange-500'},
-                {'code': 'ce', 'name': 'Civil Engineering', 'color': 'bg-yellow-500'},
-                {'code': 'ee', 'name': 'Electrical Engineering', 'color': 'bg-red-500'},
-                {'code': 'it', 'name': 'Information Technology', 'color': 'bg-purple-500'}
+                {'code': 'cseds', 'name': 'Data Science', 'color': 'bg-gray-400'},
+                {'code': 'aiml', 'name': 'AI & ML', 'color': 'bg-gray-400'},
+                {'code': 'ece', 'name': 'Electronics & Communication', 'color': 'bg-gray-400'},
+                {'code': 'me', 'name': 'Mechanical Engineering', 'color': 'bg-gray-400'},
+                {'code': 'ce', 'name': 'Civil Engineering', 'color': 'bg-gray-400'},
+                {'code': 'ee', 'name': 'Electrical Engineering', 'color': 'bg-gray-400'},
+                {'code': 'it', 'name': 'Information Technology', 'color': 'bg-gray-400'}
             ] %}
             {% for branch in branches %}
             <div class="cursor-pointer rounded-lg shadow-lg p-6 {{ branch.color }} text-white" onclick="showYears('{{ branch.code }}')">
