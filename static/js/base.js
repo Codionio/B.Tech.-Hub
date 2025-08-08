@@ -1,6 +1,6 @@
-// Base JavaScript functionality for navigation and general features
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle functionality
+const Handel_responsive = function(){
+
+    document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.add('hidden');
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -28,10 +26,60 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    
+    const alpha = document.querySelector(".nav_logo");
+    if(alpha) {
+        alpha.addEventListener("click", () => {
+            window.location.href = "/";
+        });
+    }
 });
 
-let alpha = document.querySelector(".nav_logo");
+}
+const Loading_animation = function(){
+    window.addEventListener('load', () => {
+        const loader = document.querySelector('.loader');
+        const logo = document.querySelector('.logo');
+        
+        if (loader && logo) {
+            // Create a timeline for smoother animation sequence
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    // Hide loader after animation completes
+                    gsap.to(loader, {
+                        duration: 0.5,
+                        opacity: 0,
+                        onComplete: () => {
+                            loader.style.display = 'none';
+                            document.body.style.overflow = 'visible';
+                        }
+                    });
+                }
+            });
 
-        alpha.addEventListener("click", () => {
-         window.location.href = "/";
-        });
+            // Add animations to timeline
+            tl.from(logo, {
+                duration: 0.8,
+                scale: 0.5,
+                opacity: 0,
+                ease: "back.out(1.7)"
+            })
+            .to(logo, {
+                duration: 0.8,
+                scale: 1.2,
+                opacity: 1,
+                ease: "power2.inOut"
+            })
+            .to(logo, {
+                duration: 0.6,
+                scale: 1.5,
+                opacity: 0,
+                ease: "power2.in"
+            });
+        }
+    });
+}
+
+// Loading_animation();
+Handel_responsive();

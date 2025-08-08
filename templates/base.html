@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <script>
-      // Example of adding custom font to Tailwind via CDN
-      tailwind.config = {
+        // Example of adding custom font to Tailwind via CDN
+        tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
@@ -18,28 +18,27 @@
             }
           }
         }
-      }
+    }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
     {% block extra_head %}{% endblock %}
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
-    <div class="loader bg-white w-[100vw] h-[100vh] flex absolute top-[0%] left-[0%]">
-        <div class="loder_con">
-
+    <div class="loader flex absolute top-[0%] left-[0%] w-[100vw] h-[100vh] flex-col justify-center items-center hidden">
+        <div class="logo class w-[6vw]">
+            <img src="static\Images\logo.png" alt="NO image" class="w-[100%] h-[100%]">
         </div>
-        <div class="logo">
-            <img src="static\Images\logo.png" alt="NO image">
-        </div>
-        <div class="logo_text  w-[4vw]">
-            <img src="static\Images\text_logo_01-removebg-preview.png" alt="No image">
+        <div class="logo_text  w-[8vw]">
+            <img src="static\Images\text_logo_01-removebg-preview.png" alt="No image" class="w-[100%] h-[100%]">
         </div>
 
     </div>
 
-    <div class="page">
+<div class="page">
 
-    <header class="bg-white shadow">
+    <header class="bg-white shadow" >
         <div class="max-w-7xl mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <div class="nav_logo">
@@ -194,9 +193,7 @@
         </div>
     </footer>
     
-    </div>
-
+</div>
     {% block extra_scripts %}{% endblock %}
-    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
 </body>
 </html>
