@@ -1,6 +1,6 @@
 {
     "First Year": {
-        "Semester I": {
+        "Semester 1": {
             "Engineering Physics (BAS101) / Engineering Chemistry (BAS102)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
@@ -272,7 +272,7 @@
                 }
             }
         },
-        "Semester II": {
+        "Semester 2": {
             "Engineering Chemistry (BAS202) / Engineering Physics (BAS201)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
@@ -577,7 +577,7 @@
     },
     "Second Year": {
         "CSE": {
-            "Semester III": {
+            "Semester 3": {
                 "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": {
                     "notes": {
                         "unit_1": "https://example.com/demo-link",
@@ -879,7 +879,7 @@
                     }
                 }
             },
-            "Semester IV": {
+            "Semester 4": {
                 "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": {
                     "notes": {
                         "unit_1": "https://example.com/demo-link",
@@ -1155,7 +1155,7 @@
     },
     "Third Year": {
         "CSE": {
-            "Semester V": {
+            "Semester 5": {
                 "Database Management System (BCS501)": {
                     "notes": {
                         "unit_1": "https://example.com/demo-link",
@@ -1427,7 +1427,7 @@
                     }
                 }
             },
-            "Semester VI": {
+            "Semester 6": {
                 "Software Engineering (BCS601)": {
                     "notes": {
                         "unit_1": "https://example.com/demo-link",
