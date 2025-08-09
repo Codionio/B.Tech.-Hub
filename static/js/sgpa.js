@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Third Year': ['V', 'VI'], 'Fourth Year': ['VII', 'VIII']
     };
     const branchMap = {
-        'Computer Science & Engineering': 'CSE', 'CSE (Data Science)': 'CSEDS', 'CSE (AI & ML)': 'AIML',
+        'Computer Science & Engineering': 'CSE', 'CSE (Data Science)': 'CSEDS', 'CSE (AI & ML)': 'CSEAIML',
         'Information Technology': 'IT', 'Electronics & Communication Engineering': 'ECE', 'Electrical Engineering': 'EE',
         'Electrical & Electronics Engineering': 'EEE', 'Mechanical Engineering': 'ME', 'Civil Engineering': 'CE'
     };
@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="text-2xl font-bold text-gray-200 mb-2">SGPA</div>
                     <div class="relative w-48 h-48">
                          <canvas id="${sgpaGaugeId}"></canvas>
-                         <div id="sgpa-counter" class="absolute inset-0 flex items-center justify-center text-5xl font-bold text-cyan-300" style="margin-top: -20px;">0.00</div>
+                         <div id="sgpa-counter" class="absolute inset-0 flex items-center justify-center text-5xl font-bold text-cyan-300" style="margin-top: 15px;">0.00</div>
                     </div>
                 </div>
 

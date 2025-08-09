@@ -37,50 +37,81 @@ const Handel_responsive = function(){
 });
 
 }
-const Loading_animation = function(){
-    window.addEventListener('load', () => {
-        const loader = document.querySelector('.loader');
-        const logo = document.querySelector('.logo');
-        
-        if (loader && logo) {
-            // Create a timeline for smoother animation sequence
-            const tl = gsap.timeline({
-                onComplete: () => {
-                    // Hide loader after animation completes
-                    gsap.to(loader, {
-                        duration: 0.5,
-                        opacity: 0,
-                        onComplete: () => {
-                            loader.style.display = 'none';
-                            document.body.style.overflow = 'visible';
-                        }
+
+const typing_animation = function(){   
+     document.addEventListener('DOMContentLoaded', function () {
+            // Register the GSAP TextPlugin
+            gsap.registerPlugin(TextPlugin);
+
+            // --- SELECTORS AND CONFIG ---
+            const phrases = ["🎓 B.Tech Hub", "By Team Codion.", "All Problem One Solution."];
+            const animationWindow = document.querySelector("#animation-window");
+            const textContainer = document.querySelector("#text-container");
+            const textElement = "#typing-text";
+            const cursorElement = ".cursor";
+
+            // --- ANIMATIONS ---
+
+            // Initial fade-in for the whole component
+            gsap.from(animationWindow, { duration: 0.8, opacity: 0, y: 20, ease: "power2.out"});
+
+            // Intelligent cursor blinking timeline
+            const cursorTimeline = gsap.timeline({ repeat: -1 });
+            cursorTimeline
+                .to(cursorElement, { opacity: 0, duration: 0, delay: 0.5 })
+                .to(cursorElement, { opacity: 1, duration: 0, delay: 0.5 });
+
+            // Main timeline for typing, deleting, and sliding
+            const mainTimeline = gsap.timeline({ repeat: -1 });
+
+            // This function handles the sliding logic
+            const checkOverflowAndSlide = () => {
+                const windowWidth = animationWindow.offsetWidth;
+                const textWidth = textContainer.offsetWidth;
+                const overflow = textWidth - windowWidth;
+
+                if (overflow > 0) {
+                    gsap.to(textContainer, { 
+                        x: -overflow, 
+                        duration: 0.2, 
+                        ease: "power2.inOut" 
                     });
+                } else {
+                    gsap.to(textContainer, { x: 0, duration: 0.2, ease: "power2.inOut" });
                 }
-            });
+            };
+            
+            phrases.forEach(phrase => {
+                // FASTER typing duration
+                const typingDuration = phrase.length * 0.06;
 
-            // Add animations to timeline
-            tl.from(logo, {
-                duration: 0.8,
-                scale: 0.5,
-                opacity: 0,
-                ease: "back.out(1.7)"
-            })
-            .to(logo, {
-                duration: 0.8,
-                scale: 1.2,
-                opacity: 1,
-                ease: "power2.inOut"
-            })
-            .to(logo, {
-                duration: 0.6,
-                scale: 1.5,
-                opacity: 0,
-                ease: "power2.in"
+                mainTimeline
+                    .call(() => cursorTimeline.pause())
+                    .set(cursorElement, { opacity: 1 })
+                    .to(textElement, {
+                        duration: typingDuration,
+                        text: phrase,
+                        ease: "none",
+                        onUpdate: checkOverflowAndSlide 
+                    })
+                    .call(() => cursorTimeline.play())
+                    // FASTER pause after typing
+                    .to({}, { duration: 1.5 }) 
+                    .call(() => cursorTimeline.pause())
+                    .to(textElement, {
+                        duration: typingDuration * 0.7, // FASTER deletion
+                        text: "",
+                        ease: "none",
+                        onUpdate: checkOverflowAndSlide
+                    })
+                    .set(textContainer, { x: 0 })
+                    .call(() => cursorTimeline.play())
+                    // FASTER pause before next phrase
+                    .to({}, { duration: 0.5 });
             });
-        }
-    });
-}
+        });
+ }
 
-/* Commented out Loading_animation to avoid conflict with home.js animation */
-// Loading_animation();
+
+typing_animation ();
 Handel_responsive();
