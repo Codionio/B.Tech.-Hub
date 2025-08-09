@@ -1,8 +1,8 @@
 /**
- * SGPA Calculator - Corrected Implementation
+ * SGPA Calculator - Final Corrected Version
  *
- * This version fixes the critical "emptyMessage is not defined" reference error,
- * allowing the subject table to render correctly for all selections.
+ * This version has the complete and correct logic for fetching data,
+ * populating the subject lists for all years, and calculating the SGPA.
  */
 document.addEventListener('DOMContentLoaded', () => {
     // --- UI Elements ---
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             handleYearChange();
         } catch (error) {
             console.error("CRITICAL ERROR:", error);
-            showError('Could not load subject data. Please check file path and run on a server.');
+            showError('Could not load subject data. Check file path and run on a server.');
         }
     }
 
@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const semesters = semestersByYear[year] || [];
         semesters.forEach(sem => {
             const option = document.createElement('option');
-            // The value should match the key in the JSON, e.g., "Semester I"
             option.value = `Semester ${sem}`;
             option.textContent = `Semester ${sem}`;
             ui.semesterSelect.appendChild(option);
@@ -149,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderSubjectsTable(subjects, emptyMessage);
     }
     
-    // **FIXED FUNCTION SIGNATURE**
     function renderSubjectsTable(subjects, emptyMessage) {
         if (Object.keys(subjects).length === 0) {
             ui.tableBody.innerHTML = `<tr><td colspan="3" class="text-center py-4 text-gray-500">${emptyMessage}</td></tr>`;
@@ -164,39 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td class="px-4 py-3 font-semibold text-gray-700">${subjectName}</td>
                 <td class="px-4 py-3 text-center font-bold text-gray-800">${credits}</td>
                 <td class="px-4 py-3 text-center">
-                    <div class="flex items-center justify-center gap-2">
-                        <input type="number" class="marks-input w-24 px-2 py-1 border rounded text-center" min="0" max="100" placeholder="Marks" data-credit="${credits}" data-name="${subjectName}">
-                        <span class="grade-display w-10 text-center font-bold">-</span>
-                    </div>
+                    <input type="number" class="marks-input w-24 px-2 py-1 border rounded text-center" min="0" max="100" placeholder="Marks" data-credit="${credits}" data-name="${subjectName}">
                 </td>
             `;
             ui.tableBody.appendChild(row);
         });
-
-        ui.tableBody.querySelectorAll('.marks-input').forEach(input => {
-            input.addEventListener('input', handleMarksInput);
-        });
     }
 
     // --- Calculation Logic ---
-
-    function handleMarksInput(event) {
-        const input = event.target;
-        const marks = parseInt(input.value);
-        const gradeDisplay = input.closest('tr').querySelector('.grade-display');
-        
-        if (isNaN(marks) || marks < 0 || marks > 100) {
-            gradeDisplay.textContent = '-';
-            gradeDisplay.classList.remove('text-green-600');
-            gradeDisplay.classList.add('text-red-600');
-            return;
-        }
-
-        const grade = getGrade(marks);
-        gradeDisplay.textContent = grade;
-        gradeDisplay.classList.remove('text-red-600');
-        gradeDisplay.classList.add(grade === 'F' ? 'text-red-600' : 'text-green-600');
-    }
 
     function getGrade(marks) {
         if (marks >= 91) return 'O'; if (marks >= 81) return 'A+'; if (marks >= 71) return 'A';
@@ -212,16 +185,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let totalGradePoints = 0, totalCredits = 0, allInputsValid = true;
+        const subjectsForReport = [];
         
         marksInputs.forEach(input => {
             const marks = parseInt(input.value);
             const credits = parseInt(input.dataset.credit);
+            const name = input.dataset.name;
+
             if (isNaN(marks) || marks < 0 || marks > 100) {
                 allInputsValid = false;
             } else {
+                const grade = getGrade(marks);
+                const gradePoint = gradePoints[grade];
+                
+                subjectsForReport.push({ name, marks, grade, credit: credits, gradePoints: gradePoint });
+                
                 if (credits > 0) {
                     totalCredits += credits;
-                    totalGradePoints += gradePoints[getGrade(marks)] * credits;
+                    totalGradePoints += gradePoint * credits;
                 }
             }
         });
@@ -236,8 +217,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const sgpa = (totalGradePoints / totalCredits).toFixed(2);
-        ui.resultContainer.innerHTML = `<p class="text-2xl font-bold text-green-600">Your Final SGPA is: ${sgpa}</p>`;
+        renderResult(subjectsForReport, sgpa);
     }
+    
+    function renderResult(subjects, sgpa) {
+        ui.resultContainer.style.display = 'block';
+        const breakdownHTML = subjects.map(s => `
+            <tr class="border-b border-white border-opacity-20">
+                <td class="py-2 text-left">${s.name}</td>
+                <td class="text-center py-2">${s.marks}</td>
+                <td class="text-center py-2">${s.grade}</td>
+                <td class="text-center py-2">${s.credit}</td>
+                <td class="text-center py-2">${s.gradePoints}</td>
+            </tr>
+        `).join('');
+
+        ui.resultContainer.innerHTML = `
+            <div class="p-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg text-white shadow-lg">
+                <h3 class="text-2xl font-bold mb-4 text-center">SGPA Result</h3>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-4 overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b"><th class="text-left py-2">Subject</th><th class="text-center py-2">Marks</th><th class="text-center py-2">Grade</th><th class="text-center py-2">Credit</th><th class="text-center py-2">Grade Points</th></tr>
+                        </thead>
+                        <tbody>${breakdownHTML}</tbody>
+                    </table>
+                </div>
+                <div class="text-center mt-4">
+                    <p class="text-3xl font-bold">Your SGPA is: <span class="text-yellow-300">${sgpa}</span></p>
+                </div>
+            </div>`;
+    }
+
 
     // --- Helper Functions ---
     function clearAll() {
