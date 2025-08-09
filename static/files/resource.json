@@ -1,226 +1,1673 @@
 {
     "First Year": {
-        "Common Subjects Semester 1": {
-            "Engineering Physics (BAS101)/Engineering Chemistry (BAS102)": 4,
-            "Engineering Mathematics-I (BAS103)": 4,
-            "Fundamentals of Electrical Engineering (BEE101)/Fundamentals of Electronics Engineering (BEC101)": 3,
-            "Programming for Problem Solving (BCS101)/Fundamentals of Mechanical Engineering (BME101)": 3,
-            "Environment and Ecology (BAS104)/Soft Skills (BAS105)": 3,
-            "Engineering Physics Lab (BAS151)/Engineering Chemistry Lab (BAS152)": 1,
-            "Basic Electrical Engineering Lab (BEE151)/Basic Electronics Engineering Lab (BEC151)": 1,
-            "Programming for Problem Solving Lab (BCS151)/English Language Lab (BAS155)": 1,
-            "Engineering Graphics & Design Lab (BCE151)/Workshop Practice Lab (BWS151)": 2
+        "Semester I": {
+            "Engineering Physics (BAS101) / Engineering Chemistry (BAS102)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Engineering Mathematics-I (BAS103)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Fundamentals of Electrical Engineering (BEE101) / Fundamentals of Electronics Engineering (BEC101)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Programming for Problem Solving (BCS101) / Fundamentals of Mechanical Engineering (BME101)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Environment and Ecology (BAS104) / Soft Skills (BAS105)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Engineering Physics Lab (BAS151) / Engineering Chemistry Lab (BAS152)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Basic Electrical Engineering Lab (BEE151) / Basic Electronics Engineering Lab (BEC151)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Programming for Problem Solving Lab (BCS151) / English Language Lab (BAS155)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Engineering Graphics & Design Lab (BCE151) / Workshop Practice Lab (BWS151)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            }
         },
-        "Common Subjects Semester 2": {
-            "Engineering Chemistry (BAS202)/Engineering Physics (BAS201)": 4,
-            "Engineering Mathematics-II (BAS203)": 4,
-            "Fundamentals of Electronics Engineering (BEC201)/Fundamentals of Electrical Engineering (BEE201)": 3,
-            "Fundamentals of Mechanical Engineering (BME201)/Programming for Problem Solving (BCS201)": 3,
-            "Soft Skills (BAS205)/Environment and Ecology (BAS204)": 3,
-            "Engineering Chemistry Lab (BAS252)/Engineering Physics Lab (BAS251)": 1,
-            "Basic Electronics Engineering Lab (BEC251)/Basic Electrical Engineering Lab (BEE251)": 1,
-            "English Language Lab (BAS255)/Programming for Problem Solving Lab (BCS251)": 1,
-            "Workshop Practice Lab (BWS251)/Engineering Graphics & Design Lab (BCE251)": 2
+        "Semester II": {
+            "Engineering Chemistry (BAS202) / Engineering Physics (BAS201)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Engineering Mathematics-II (BAS203)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Fundamentals of Electronics Engineering (BEC201) / Fundamentals of Electrical Engineering (BEE201)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Fundamentals of Mechanical Engineering (BME201) / Programming for Problem Solving (BCS201)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Soft Skills (BAS205) / Environment and Ecology (BAS204)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Engineering Chemistry Lab (BAS252) / Engineering Physics Lab (BAS251)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Basic Electronics Engineering Lab (BEC251) / Basic Electrical Engineering Lab (BEE251)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "English Language Lab (BAS255) / Programming for Problem Solving Lab (BCS251)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Workshop Practice Lab (BWS251) / Engineering Graphics & Design Lab (BCE251)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Sports and Yoga (BVA251) / NSS (BVA252)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            }
         }
     },
     "Second Year": {
-        "Computer Science & Engineering": {
-            "Semester 3": {
-                "Science Based Open Elective/Mathematics IV (BOE3**/BAS303)": 4,
-                "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
-                "Data Structure (BCS301)": 4,
-                "Computer Organization and Architecture (BCS302)": 4,
-                "Discrete Structures & Theory of Logic (BCS303)": 3,
-                "Data Structure Lab (BCS351)": 1,
-                "Computer Organization and Architecture Lab (BCS352)": 1,
-                "Web Designing Workshop (BCS353)": 1,
-                "Cyber Security/Python Programming (BCC301/BCC302)": 2,
-                "Internship Assessment/Mini Project (BCC351)": 2
+        "CSE": {
+            "Semester III": {
+                "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Universal Human Value and Professional Ethics/ Technical Communication (BVE301/ BAS301)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Data Structure (BCS301)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Computer Organization and Architecture (BCS302)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Discrete Structures & of Logic (BCS303)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Data Structure Lab (BCS351)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Computer Organization and Architecture Lab (BCS352)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Web Designing Workshop (BCS353)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Cyber Security/Python programming (BCC301/ BCC302)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Internship Assessment /Mini Project (BCC351)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                }
             },
-            "Semester 4": {
-                "Mathematics IV/Science Based Open Elective (BAS403/BOE4**)": 4,
-                "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
-                "Operating System (BCS401)": 4,
-                "Theory of Automata and Formal Languages (BCS402)": 4,
-                "Object Oriented Programming with Java (BCS403)": 3,
-                "Operating System Lab (BCS451)": 1,
-                "Object Oriented Programming with Java Lab (BCS452)": 1,
-                "Cyber Security Workshop (BCS453)": 1,
-                "Python Programming/Cyber Security (BCC402/BCC401)": 2,
-                "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
-            },
-            "Semester 5": {
-                "Database Management System (BCS501)": 4,
-                "Web Technology (BCS502)": 4,
-                "Design and Analysis of Algorithms (BCS503)": 4,
-                "Dept. Elective - I": 3,
-                "Dept. Elective - II": 3,
-                "Database Management System Lab (BCS551)": 1,
-                "Web Technology Lab (BCS552)": 1,
-                "Design and Analysis of Algorithms Lab (BCS553)": 1,
-                "Mini Project or Internship Assessment* (BCS)": 2,
-                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
-            },
-            "Semester 6": {
-                "Software Engineering (BCS601)": 4,
-                "Compiler Design (BCS602)": 4,
-                "Computer Networks (BCS603)": 4,
-                "Dept. Elective - III": 3,
-                "Open Elective - I": 3,
-                "Software Engineering Lab (BCS651)": 1,
-                "Compiler Design Lab (BCS652)": 1,
-                "Computer Networks Lab (BCS653)": 1,
-                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
+            "Semester IV": {
+                "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Technical Communication / Universal Human Value and Professional Ethics (BAS401/ BVE401)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Operating System (BCS401)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Theory of Automata and Formal Languages (BCS402)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Object Oriented Programming with Java (BCS403)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Operating System Lab (BCS451)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Object Oriented Programming with Java Lab (BCS452)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Cyber Security Workshop (BCS453)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Python Programming/Cyber Security (BCC402/ BCC401)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                }
             }
-        },
-        "CSE (AIML)": {
-            "Semester 3": {
-                "Science Based Open Elective/Mathematics IV (BOE3**/BAS303)": 4,
-                "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
-                "Data Structure (BCS301)": 4,
-                "Computer Organization and Architecture (BCS302)": 4,
-                "Discrete Structures & Theory of Logic (BCS303)": 3,
-                "Data Structure Lab (BCS351)": 1,
-                "Computer Organization and Architecture Lab (BCS352)": 1,
-                "Web Designing Workshop (BCS353)": 1,
-                "Cyber Security/Python Programming (BCC301/BCC302)": 2,
-                "Internship Assessment/Mini Project (BCC351)": 2
+        }
+    },
+    "Third Year": {
+        "CSE": {
+            "Semester V": {
+                "Database Management System (BCS501)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Web Technology (BCS502)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Design and Analysis of Algorithm (BCS503)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Departmental Elective-I (Deptt- Elective-I)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Departmental Elective-II (Deptt.- Elective-II)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Database Management System Lab (BCS551)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Web Technology Lab (BCS552)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Design and Analysis of Algorithm Lab (BCS553)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Mini Project or Internship Assessment (BCS554)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                }
             },
-            "Semester 4": {
-                "Mathematics IV/Science Based Open Elective (BAS403/BOE4**)": 4,
-                "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
-                "Operating System (BCS401)": 4,
-                "Theory of Automata and Formal Languages (BCS402)": 4,
-                "Object Oriented Programming with Java (BCS403)": 3,
-                "Operating System Lab (BCS451)": 1,
-                "Object Oriented Programming with Java Lab (BCS452)": 1,
-                "Cyber Security Workshop (BCS453)": 1,
-                "Python Programming/Cyber Security (BCC402/BCC401)": 2,
-                "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
-            },
-            "Semester 5": {
-                "Database Management System (BCS501)": 4,
-                "Artificial Intelligence (BCAI501)": 4,
-                "Design and Analysis of Algorithms (BCS503)": 4,
-                "Dept. Elective - I": 3,
-                "Dept. Elective - II": 3,
-                "Database Management System Lab (BCS551)": 1,
-                "Artificial Intelligence Lab (BCAI551)": 1,
-                "Design and Analysis of Algorithms Lab (BCS553)": 1,
-                "Mini Project or Internship Assessment* (BCS)": 2,
-                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
-            },
-            "Semester 6": {
-                "Software Engineering (BCS601)": 4,
-                "Machine Learning Techniques (BCAI601)": 4,
-                "Computer Networks (BCS603)": 4,
-                "Dept. Elective - III": 3,
-                "Open Elective - I": 3,
-                "Software Engineering Lab (BCS651)": 1,
-                "Machine Learning Lab (BCAI651)": 1,
-                "Computer Networks Lab (BCS653)": 1,
-                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
-            }
-        },
-        "CSE (Data Science)": {
-            "Semester 3": {
-                "Science Based Open Elective/Mathematics IV (BOE3**/BAS303)": 4,
-                "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
-                "Data Structure (BCS301)": 4,
-                "Computer Organization and Architecture (BCS302)": 4,
-                "Discrete Structures & Theory of Logic (BCS303)": 3,
-                "Data Structure Lab (BCS351)": 1,
-                "Computer Organization and Architecture Lab (BCS352)": 1,
-                "Web Designing Workshop (BCS353)": 1,
-                "Cyber Security/Python Programming (BCC301/BCC302)": 2,
-                "Internship Assessment/Mini Project (BCC351)": 2
-            },
-            "Semester 4": {
-                "Mathematics IV/Science Based Open Elective (BAS403/BOE4**)": 4,
-                "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
-                "Operating System (BCS401)": 4,
-                "Theory of Automata and Formal Languages (BCS402)": 4,
-                "Object Oriented Programming with Java (BCS403)": 3,
-                "Operating System Lab (BCS451)": 1,
-                "Object Oriented Programming with Java Lab (BCS452)": 1,
-                "Cyber Security Workshop (BCS453)": 1,
-                "Python Programming/Cyber Security (BCC402/BCC401)": 2,
-                "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
-            },
-            "Semester 5": {
-                "Database Management System (BCS501)": 4,
-                "Artificial Intelligence (BCAI501)": 4,
-                "Design and Analysis of Algorithms (BCS503)": 4,
-                "Dept. Elective - I": 3,
-                "Dept. Elective - II": 3,
-                "Database Management System Lab (BCS551)": 1,
-                "Artificial Intelligence Lab (BCAI551)": 1,
-                "Design and Analysis of Algorithms Lab (BCS553)": 1,
-                "Mini Project or Internship Assessment* (BCS)": 2,
-                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
-            },
-            "Semester 6": {
-                "Software Engineering (BCS601)": 4,
-                "Machine Learning Techniques (BCAI601)": 4,
-                "Computer Networks (BCS603)": 4,
-                "Dept. Elective - III": 3,
-                "Open Elective - I": 3,
-                "Software Engineering Lab (BCS651)": 1,
-                "Machine Learning Lab (BCAI651)": 1,
-                "Computer Networks Lab (BCS653)": 1,
-                "Constitution of India/Essence of Indian Traditional Knowledge (BNC501/BNC502)" : 0
-            }
-        },
-        "Information Technology (IT)": {
-            "Semester 3": {
-                "Science Based Open Elective/Mathematics IV (BOE3**/BAS303)": 4,
-                "Universal Human Value/Technical Communication (BVE301/BAS301)": 3,
-                "Data Structure (BCS301)": 4,
-                "Computer Organization and Architecture (BCS302)": 4,
-                "Discrete Structures & Theory of Logic (BCS303)": 3,
-                "Data Structure Lab (BCS351)": 1,
-                "Computer Organization and Architecture Lab (BCS352)": 1,
-                "Web Designing Workshop (BCS353)": 1,
-                "Cyber Security/Python Programming (BCC301/BCC302)": 2,
-                "Internship Assessment/Mini Project (BCC351)": 2
-            },
-            "Semester 4": {
-                "Mathematics IV/Science Based Open Elective (BAS403/BOE4**)": 4,
-                "Technical Communication/Universal Human Value (BAS401/BVE401)": 3,
-                "Operating System (BCS401)": 4,
-                "Theory of Automata and Formal Languages (BCS402)": 4,
-                "Object Oriented Programming with Java (BCS403)": 3,
-                "Operating System Lab (BCS451)": 1,
-                "Object Oriented Programming with Java Lab (BCS452)": 1,
-                "Cyber Security Workshop (BCS453)": 1,
-                "Python Programming/Cyber Security (BCC402/BCC401)": 2,
-                "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
-            }
-        },
-        "Mechanical Engineering": {
-            "Semester 3": {
-                "Engg. Mathematics-III/ Open Elective (BOE3**/BAS303)": 4,
-                "Technical Communication / UHV (BVE301/BAS301)": 3,
-                "Thermodynamics (BME301)": 4,
-                "Fluid Mechanics and Fluid Machines (BME302)": 4,
-                "Materials Engineering (BME303)": 3,
-                "Fluid Mechanics Lab (BME351)": 1,
-                "Material Testing Lab (BME352)": 1,
-                "Computer Aided Machine Drawing - I (BME353)": 1,
-                "Cyber Security/Python Programming (BCC301/BCC302)": 2,
-                "Internship Assessment/Mini Project (BCC351)": 2
-            },
-            "Semester 4": {
-                "Engg. Mathematics-IV/ Open Elective (BAS403/BOE4**)": 4,
-                "UHV/Technical Communication(BAS301/BVE301)": 3,
-                "Applied Thermodynamics (BME401)": 4,
-                "Engineering Mechanics and Strength of Materials (BME402)": 4,
-                "Manufacturing Process (BME403)": 3,
-                "Applied Thermodynamics Lab (BME451)": 1,
-                "Manufacturing Process Lab (BME452)": 1,
-                "Computer Aided Machine Drawing-II Lab (BME453)": 1,
-                "Python Programming/Cyber Security (BCC402/BCC401)": 2,
-                "Sports and Yoga - II / NSS-II (BVE451/BVE452)": 0
+            "Semester VI": {
+                "Software Engineering (BCS601)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Compiler Design (BCS602)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Computer Networks (BCS603)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Departmental Elective-III (Deptt- Elective-III)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Open Elective-I (Open Elective-I)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Software Engineering Lab (BCS651)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Compiler Design Lab (BCS652)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                },
+                "Computer Networks Lab (BCS653)": {
+                    "notes": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "pyq": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "lectures": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    },
+                    "imp_questions": {
+                        "unit_1": "https://example.com/demo-link",
+                        "unit_2": "https://example.com/demo-link",
+                        "unit_3": "https://example.com/demo-link",
+                        "unit_4": "https://example.com/demo-link",
+                        "unit_5": "https://example.com/demo-link"
+                    }
+                }
             }
         }
     }
