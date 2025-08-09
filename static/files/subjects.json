@@ -100,6 +100,31 @@
                 "Python Programming/Cyber Security (BCC402/ BCC401)": 2
             }
         },
+        "IT" : {
+            "Semester III": {
+                "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
+                "Universal Human Value and Professional Ethics/ Technical Communication (BVE301/ BAS301)": 3,
+                "Data Structure (BCS301)": 4,
+                "Computer Organization and Architecture (BCS302)": 4,
+                "Discrete Structures & of Logic (BCS303)": 3,
+                "Data Structure Lab (BCS351)": 1,
+                "Computer Organization and Architecture Lab (BCS352)": 1,
+                "Web Designing Workshop (BCS353)": 1,
+                "Cyber Security/Python programming (BCC301/ BCC302)": 2,
+                "Internship Assessment /Mini Project (BCC351)": 2
+            },
+            "Semester IV": {
+                "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": 4,
+                "Technical Communication / Universal Human Value and Professional Ethics (BAS401/ BVE401)": 3,
+                "Operating System (BCS401)": 4,
+                "Theory of Automata and Formal Languages (BCS402)": 4,
+                "Object Oriented Programming with Java (BCS403)": 3,
+                "Operating System Lab (BCS451)": 1,
+                "Object Oriented Programming with Java Lab (BCS452)": 1,
+                "Cyber Security Workshop (BCS453)": 1,
+                "Python Programming/Cyber Security (BCC402/ BCC401)": 2
+            }
+        },
         "ECE": {
             "Semester III": {
                 "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": 4,

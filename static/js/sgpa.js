@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Third Year': ['V', 'VI'], 'Fourth Year': ['VII', 'VIII']
     };
     const branchMap = {
-        'Computer Science & Engineering': 'CSE', 'CSE (Data Science)': 'CSEDS', 'CSE (AI & ML)': 'AIML',
+        'Computer Science & Engineering': 'CSE', 'CSE (Data Science)': 'CSEDS', 'CSE (AI & ML)': 'CSEAIML',
         'Information Technology': 'IT', 'Electronics & Communication Engineering': 'ECE', 'Electrical Engineering': 'EE',
         'Electrical & Electronics Engineering': 'EEE', 'Mechanical Engineering': 'ME', 'Civil Engineering': 'CE'
     };
