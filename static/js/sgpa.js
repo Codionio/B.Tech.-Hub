@@ -1,8 +1,8 @@
 /**
- * SGPA Calculator - Final Corrected Version
+ * SGPA Calculator - Grade Viewer Version
  *
- * This version has the complete and correct logic for fetching data,
- * populating the subject lists for all years, and calculating the SGPA.
+ * This version re-enables the real-time grade display next to each marks input
+ * and enhances the final result display with a detailed breakdown table.
  */
 document.addEventListener('DOMContentLoaded', () => {
     // --- UI Elements ---
@@ -27,15 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'Third Year': ['V', 'VI'], 'Fourth Year': ['VII', 'VIII']
     };
     const branchMap = {
-        'Computer Science & Engineering': 'CSE',
-        'CSE (Data Science)': 'CSEDS',
-        'CSE (AI & ML)': 'AIML',
-        'Information Technology': 'IT',
-        'Electronics & Communication Engineering': 'ECE',
-        'Electrical Engineering': 'EE',
-        'Electrical & Electronics Engineering': 'EEE',
-        'Mechanical Engineering': 'ME',
-        'Civil Engineering': 'CE'
+        'Computer Science & Engineering': 'CSE', 'CSE (Data Science)': 'CSEDS', 'CSE (AI & ML)': 'AIML',
+        'Information Technology': 'IT', 'Electronics & Communication Engineering': 'ECE', 'Electrical Engineering': 'EE',
+        'Electrical & Electronics Engineering': 'EEE', 'Mechanical Engineering': 'ME', 'Civil Engineering': 'CE'
     };
     let subjectData = null;
 
@@ -62,6 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ui.groupSelect.addEventListener('change', populateSubjects);
         ui.calculateBtn.addEventListener('click', calculateSGPA);
         ui.clearBtn.addEventListener('click', clearAll);
+        // Add event listener for real-time grade display
+        ui.tableBody.addEventListener('input', handleMarksInput);
     }
 
     // --- Dropdown and UI Logic ---
@@ -162,7 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td class="px-4 py-3 font-semibold text-gray-700">${subjectName}</td>
                 <td class="px-4 py-3 text-center font-bold text-gray-800">${credits}</td>
                 <td class="px-4 py-3 text-center">
-                    <input type="number" class="marks-input w-24 px-2 py-1 border rounded text-center" min="0" max="100" placeholder="Marks" data-credit="${credits}" data-name="${subjectName}">
+                    <div class="flex items-center justify-center gap-2">
+                        <input type="number" class="marks-input w-24 px-2 py-1 border rounded text-center" min="0" max="100" placeholder="Marks" data-credit="${credits}" data-name="${subjectName}">
+                        <span class="grade-display w-10 text-center font-bold">-</span>
+                    </div>
                 </td>
             `;
             ui.tableBody.appendChild(row);
@@ -170,6 +169,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Calculation Logic ---
+
+    function handleMarksInput(event) {
+        const input = event.target;
+        const marks = parseInt(input.value);
+        const gradeDisplay = input.closest('tr').querySelector('.grade-display');
+        
+        if (isNaN(marks) || marks < 0 || marks > 100) {
+            gradeDisplay.textContent = '-';
+            gradeDisplay.className = 'grade-display w-10 text-center font-bold text-gray-500';
+            return;
+        }
+
+        const grade = getGrade(marks);
+        gradeDisplay.textContent = grade;
+        gradeDisplay.className = `grade-display w-10 text-center font-bold ${grade === 'F' ? 'text-red-600' : 'text-green-600'}`;
+    }
 
     function getGrade(marks) {
         if (marks >= 91) return 'O'; if (marks >= 81) return 'A+'; if (marks >= 71) return 'A';
@@ -248,7 +263,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>`;
     }
-
 
     // --- Helper Functions ---
     function clearAll() {
