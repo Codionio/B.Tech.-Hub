@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     let subjectsData = {};
+    let resourceLinksData = {};
 
     // --- DOM Elements ---
     const yearSelect = document.getElementById('year');
@@ -12,17 +13,24 @@ document.addEventListener('DOMContentLoaded', function() {
     getResourceBtn.disabled = true;
 
     // --- Data Loading ---
-    async function loadSubjectsData() {
+    async function loadData() {
         try {
-            // **IMPORTANT**: Make sure your JSON file is located at this path in your project
-            const response = await fetch("static/files/subjects.json");
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            // Load both your JSON files at the same time
+            const [subjectsResponse, resourcesResponse] = await Promise.all([
+                fetch("static/files/subjects.json"),
+                fetch("static/files/resource.json")
+            ]);
+            
+            if (!subjectsResponse.ok || !resourcesResponse.ok) {
+                throw new Error(`HTTP error! Failed to load one or more JSON files.`);
             }
-            subjectsData = await response.json();
+            
+            subjectsData = await subjectsResponse.json();
+            resourceLinksData = await resourcesResponse.json();
+
         } catch (error) {
-            console.error("Failed to load subjects data:", error);
-            resourceGrid.innerHTML = `<p class="text-center p-10 text-red-500 text-lg bg-red-50 border border-dashed border-red-300 rounded-xl">Could not load subject data. Please check the file path in the browser's console (Right-click -> Inspect -> Console) and correct it in resources.js.</p>`;
+            console.error("Failed to load data:", error);
+            resourceGrid.innerHTML = `<p class="text-center p-10 text-red-500 text-lg bg-red-50 border border-dashed border-red-300 rounded-xl">Could not load data. Please check file paths in the browser's console (Right-click -> Inspect -> Console).</p>`;
         }
     }
 
@@ -30,9 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayResources() {
         const year = yearSelect.value;
         const branch = branchSelect.value;
-        const semesterValue = semesterSelect.value;
+        const semesterValue = semesterSelect.value; // e.g., "Semester 3"
 
-        const getSemesterKey = (semVal) => {
+        // Helper to convert dropdown value (e.g., "Semester 3") to the format needed for subjects.json (e.g., "Semester III")
+        const getSemesterKeyRoman = (semVal) => {
             const map = {
                 'Semester 1': 'Semester I', 'Semester 2': 'Semester II', 'Semester 3': 'Semester III',
                 'Semester 4': 'Semester IV', 'Semester 5': 'Semester V', 'Semester 6': 'Semester VI',
@@ -41,17 +50,24 @@ document.addEventListener('DOMContentLoaded', function() {
             return map[semVal] || semVal;
         };
 
-        const semesterKey = getSemesterKey(semesterValue);
-        let subjects;
+        const semesterKeyForSubjects = getSemesterKeyRoman(semesterValue);
+        // resource.json uses Arabic numerals like "Semester 1", so we use the original value
+        const semesterKeyForResources = semesterValue.replace('I', '1').replace('II', '2');
+
+
+        let subjects; // From subjects.json
+        let resources; // From resource.json
 
         if (year === 'First Year') {
-            subjects = subjectsData[year]?.[semesterKey];
+            subjects = subjectsData[year]?.[semesterKeyForSubjects];
+            resources = resourceLinksData[year]?.[semesterKeyForResources];
         } else {
-            subjects = subjectsData[year]?.[branch]?.[semesterKey];
+            subjects = subjectsData[year]?.[branch]?.[semesterKeyForSubjects];
+            resources = resourceLinksData[year]?.[branch]?.[semesterValue];
         }
 
         if (!subjects || Object.keys(subjects).length === 0) {
-            resourceGrid.innerHTML = `<p class="text-center p-10 text-gray-500 text-lg bg-white border border-dashed border-gray-300 rounded-xl">Sorry, no resources found for the selected criteria.</p>`;
+            resourceGrid.innerHTML = `<p class="text-center p-10 text-gray-500 text-lg bg-white border border-dashed border-gray-300 rounded-xl">Sorry, no subjects found for the selected criteria.</p>`;
             return;
         }
         
@@ -71,18 +87,28 @@ document.addEventListener('DOMContentLoaded', function() {
         rowsContainer.className = "lg:divide-y lg:divide-gray-200/70 space-y-6 lg:space-y-0";
         
         subjectEntries.forEach(([key, credit]) => {
+            // Use the exact subject name (key) from subjects.json to find the links in resource.json
+            const resourceLinks = resources ? resources[key] : {};
+
             const match = key.match(/(.*)\s\((.*)\)/);
             let subjectName = key, subjectCode = 'See options';
             if (match) { [ , subjectName, subjectCode] = match; }
 
+            const generateLinks = (linksObject, labelPrefix) => {
+                if (!linksObject || Object.keys(linksObject).length === 0) return '<span class="text-xs text-gray-400">Not Available</span>';
+                return Object.entries(linksObject).map(([unitKey, link]) => {
+                    const unitNumber = unitKey.split('_')[1];
+                    let label = `${labelPrefix} ${unitNumber}`;
+                    if (labelPrefix === 'PYQ') {
+                        const currentYear = new Date().getFullYear();
+                        label = `${currentYear - (parseInt(unitNumber, 10) - 1)}`;
+                    }
+                    return `<a href="${link}" target="_blank" rel="noopener noreferrer" class="${resourceLinkClasses}">${label}</a>`;
+                }).join('');
+            };
+            
             const row = document.createElement('div');
             row.className = "table-row bg-white rounded-xl shadow-lg p-4 lg:p-0 lg:grid lg:grid-cols-[minmax(250px,_2fr)_repeat(4,_1fr)] lg:hover:bg-indigo-50 lg:transition-colors lg:duration-200 lg:rounded-none lg:shadow-none";
-            
-            // Placeholder links, since links are not in this JSON
-            const notesLinks = [...Array(5)].map((_, i) => `<a href="#" class="${resourceLinkClasses}">Unit ${i + 1}</a>`).join('');
-            const pyqsLinks = [...Array(5)].map((_, i) => `<a href="#" class="${resourceLinkClasses}">${new Date().getFullYear() - i}</a>`).join('');
-            const videoLinks = `<a href="#" class="${resourceLinkClasses}">Playlist 1</a>`;
-            const questionLinks = `<a href="#" class="${resourceLinkClasses}">Q-Bank</a>`;
             
             row.innerHTML = `
                 <div class="lg:p-4 font-semibold text-gray-800 border-b lg:border-none pb-3 mb-3">
@@ -92,19 +118,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="grid grid-cols-2 gap-4 lg:contents">
                     <div class="lg:p-4 flex flex-col items-start gap-2">
                         <h4 class="font-bold text-gray-500 lg:hidden">Notes</h4>
-                        <div class="flex flex-wrap gap-2 items-center">${notesLinks}</div>
+                        <div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.notes, 'Unit')}</div>
                     </div>
                     <div class="lg:p-4 flex flex-col items-start gap-2">
                          <h4 class="font-bold text-gray-500 lg:hidden">PYQs</h4>
-                        <div class="flex flex-wrap gap-2 items-center">${pyqsLinks}</div>
+                        <div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.pyq, 'PYQ')}</div>
                     </div>
                     <div class="lg:p-4 flex flex-col items-start gap-2">
                         <h4 class="font-bold text-gray-500 lg:hidden">Video Lectures</h4>
-                        <div class="flex flex-wrap gap-2 items-center">${videoLinks}</div>
+                        <div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.lectures, 'Playlist')}</div>
                     </div>
                     <div class="lg:p-4 flex flex-col items-start gap-2">
                         <h4 class="font-bold text-gray-500 lg:hidden">Important Questions</h4>
-                        <div class="flex flex-wrap gap-2 items-center">${questionLinks}</div>
+                        <div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.imp_questions, 'Q-Bank')}</div>
                     </div>
                 </div>
             `;
@@ -122,12 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const year = yearSelect.value;
         const branch = branchSelect.value;
         const semester = semesterSelect.value;
-
-        if (year === 'First Year') {
-            getResourceBtn.disabled = !(year && semester && branch); // Branch selection is now needed
-        } else {
-            getResourceBtn.disabled = !(year && branch && semester);
-        }
+        // Button is enabled when all three options are selected.
+        getResourceBtn.disabled = !(year && branch && semester);
     }
 
     getResourceBtn.addEventListener('click', displayResources);
@@ -139,9 +161,8 @@ document.addEventListener('DOMContentLoaded', function() {
         semesterSelect.value = '';
 
         if (selectedYear) {
-            semesterSelect.disabled = false;
-            branchSelect.disabled = false; // Branch is ALWAYS enabled
-            
+            branchSelect.disabled = false;
+            semesterSelect.disabled = true; // Enabled after branch selection
             const yearMap = { 'First Year': ['Semester 1', 'Semester 2'], 'Second Year': ['Semester 3', 'Semester 4'], 'Third Year': ['Semester 5', 'Semester 6'], 'Fourth Year': ['Semester 7', 'Semester 8'] };
             (yearMap[selectedYear] || []).forEach(sem => {
                 const option = document.createElement('option');
@@ -150,16 +171,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 semesterSelect.appendChild(option);
             });
         } else {
-            semesterSelect.disabled = true;
             branchSelect.disabled = true;
+            semesterSelect.disabled = true;
         }
         checkSelections();
     });
-
-    [branchSelect, semesterSelect].forEach(el => {
-        el.addEventListener('change', checkSelections);
+    
+    branchSelect.addEventListener('change', () => {
+        semesterSelect.disabled = !branchSelect.value;
+        semesterSelect.value = '';
+        checkSelections();
     });
 
+    semesterSelect.addEventListener('change', checkSelections);
+
     // --- Initial Load ---
-    loadSubjectsData();
+    loadData();
 });
