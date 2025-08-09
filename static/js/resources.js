@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Data Loading ---
     async function loadData() {
         try {
-            // Load both your JSON files at the same time
             const [subjectsResponse, resourcesResponse] = await Promise.all([
                 fetch("static/files/subjects.json"),
                 fetch("static/files/resource.json")
@@ -38,9 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayResources() {
         const year = yearSelect.value;
         const branch = branchSelect.value;
-        const semesterValue = semesterSelect.value; // e.g., "Semester 3"
+        const semesterValue = semesterSelect.value; 
 
-        // Helper to convert dropdown value (e.g., "Semester 3") to the format needed for subjects.json (e.g., "Semester III")
         const getSemesterKeyRoman = (semVal) => {
             const map = {
                 'Semester 1': 'Semester I', 'Semester 2': 'Semester II', 'Semester 3': 'Semester III',
@@ -51,19 +49,18 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         const semesterKeyForSubjects = getSemesterKeyRoman(semesterValue);
-        // resource.json uses Arabic numerals like "Semester 1", so we use the original value
-        const semesterKeyForResources = semesterValue.replace('I', '1').replace('II', '2');
+        // resource.json uses Arabic numerals ("Semester 3"), which is the direct dropdown value.
+        const semesterKeyForResources = semesterValue; 
 
-
-        let subjects; // From subjects.json
-        let resources; // From resource.json
+        let subjects;
+        let resources;
 
         if (year === 'First Year') {
             subjects = subjectsData[year]?.[semesterKeyForSubjects];
             resources = resourceLinksData[year]?.[semesterKeyForResources];
         } else {
             subjects = subjectsData[year]?.[branch]?.[semesterKeyForSubjects];
-            resources = resourceLinksData[year]?.[branch]?.[semesterValue];
+            resources = resourceLinksData[year]?.[branch]?.[semesterKeyForResources];
         }
 
         if (!subjects || Object.keys(subjects).length === 0) {
@@ -87,9 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
         rowsContainer.className = "lg:divide-y lg:divide-gray-200/70 space-y-6 lg:space-y-0";
         
         subjectEntries.forEach(([key, credit]) => {
-            // Use the exact subject name (key) from subjects.json to find the links in resource.json
             const resourceLinks = resources ? resources[key] : {};
-
+            
             const match = key.match(/(.*)\s\((.*)\)/);
             let subjectName = key, subjectCode = 'See options';
             if (match) { [ , subjectName, subjectCode] = match; }
@@ -116,22 +112,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="font-normal text-sm text-gray-500 font-mono mt-1">${subjectCode}</div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 lg:contents">
-                    <div class="lg:p-4 flex flex-col items-start gap-2">
-                        <h4 class="font-bold text-gray-500 lg:hidden">Notes</h4>
-                        <div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.notes, 'Unit')}</div>
-                    </div>
-                    <div class="lg:p-4 flex flex-col items-start gap-2">
-                         <h4 class="font-bold text-gray-500 lg:hidden">PYQs</h4>
-                        <div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.pyq, 'PYQ')}</div>
-                    </div>
-                    <div class="lg:p-4 flex flex-col items-start gap-2">
-                        <h4 class="font-bold text-gray-500 lg:hidden">Video Lectures</h4>
-                        <div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.lectures, 'Playlist')}</div>
-                    </div>
-                    <div class="lg:p-4 flex flex-col items-start gap-2">
-                        <h4 class="font-bold text-gray-500 lg:hidden">Important Questions</h4>
-                        <div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.imp_questions, 'Q-Bank')}</div>
-                    </div>
+                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">Notes</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.notes, 'Unit')}</div></div>
+                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">PYQs</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.pyq, 'PYQ')}</div></div>
+                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">Video Lectures</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.lectures, 'Playlist')}</div></div>
+                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">Important Questions</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.imp_questions, 'Q-Bank')}</div></div>
                 </div>
             `;
             rowsContainer.appendChild(row);
@@ -148,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const year = yearSelect.value;
         const branch = branchSelect.value;
         const semester = semesterSelect.value;
-        // Button is enabled when all three options are selected.
         getResourceBtn.disabled = !(year && branch && semester);
     }
 
@@ -162,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (selectedYear) {
             branchSelect.disabled = false;
-            semesterSelect.disabled = true; // Enabled after branch selection
+            semesterSelect.disabled = true;
             const yearMap = { 'First Year': ['Semester 1', 'Semester 2'], 'Second Year': ['Semester 3', 'Semester 4'], 'Third Year': ['Semester 5', 'Semester 6'], 'Fourth Year': ['Semester 7', 'Semester 8'] };
             (yearMap[selectedYear] || []).forEach(sem => {
                 const option = document.createElement('option');
