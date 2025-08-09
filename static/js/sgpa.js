@@ -236,35 +236,167 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function renderResult(subjects, sgpa) {
-        ui.resultContainer.style.display = 'block';
-        const breakdownHTML = subjects.map(s => `
-            <tr class="border-b border-white border-opacity-20">
-                <td class="py-2 text-left">${s.name}</td>
-                <td class="text-center py-2">${s.marks}</td>
-                <td class="text-center py-2">${s.grade}</td>
-                <td class="text-center py-2">${s.credit}</td>
-                <td class="text-center py-2">${s.gradePoints}</td>
-            </tr>
-        `).join('');
+    ui.resultContainer.style.display = 'block';
 
-        ui.resultContainer.innerHTML = `
-            <div class="p-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg text-white shadow-lg">
-                <h3 class="text-2xl font-bold mb-4 text-center">SGPA Result</h3>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-4 overflow-x-auto">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="border-b"><th class="text-left py-2">Subject</th><th class="text-center py-2">Marks</th><th class="text-center py-2">Grade</th><th class="text-center py-2">Credit</th><th class="text-center py-2">Grade Points</th></tr>
-                        </thead>
-                        <tbody>${breakdownHTML}</tbody>
-                    </table>
+    // --- Helper function to animate the SGPA counter ---
+    const animateCounter = (element, finalValue) => {
+        const duration = 3000; // Animation duration in milliseconds (3 seconds)
+        const frameRate = 60; // Updates per second
+        const interval = 1000 / frameRate;
+        const totalSteps = Math.ceil(duration / interval);
+        const increment = finalValue / totalSteps;
+        let current = 0;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= finalValue) {
+                clearInterval(timer);
+                element.textContent = parseFloat(finalValue).toFixed(2);
+            } else {
+                element.textContent = current.toFixed(2);
+            }
+        }, interval);
+    };
+
+    // --- Prepare data for stats and charts ---
+    const totalCredits = subjects.reduce((acc, s) => acc + s.credit, 0);
+    const bestPerformingSubject = subjects.reduce((best, current) => (current.marks > best.marks ? current : best), { name: 'N/A', marks: 0 });
+    const sgpaGaugeId = 'sgpaGaugeChart';
+    const subjectBarChartId = 'subjectBarChart';
+
+    // --- Create the modern result card HTML ---
+    ui.resultContainer.innerHTML = `
+        <div class="p-6 md:p-8 rounded-2xl text-white aurora-background shadow-2xl">
+            <h3 class="text-3xl font-bold mb-8 text-center tracking-wider">Semester Performance Dashboard</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="flex flex-col gap-6">
+                    <div class="clay-card p-6 flex items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-purple-300 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-9-5.747h18"/></svg>
+                        <div>
+                            <div class="text-lg font-semibold text-gray-300">Total Credits</div>
+                            <div class="text-4xl font-bold text-white">${totalCredits}</div>
+                        </div>
+                    </div>
+                     <div class="clay-card p-6 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-300 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                        <div class="overflow-hidden">
+                            <div class="text-lg font-semibold text-gray-300">Top Subject</div>
+                            <div class="text-xl font-bold text-white truncate" title="${bestPerformingSubject.name}">${bestPerformingSubject.name}</div>
+                            <p class="text-gray-200">${bestPerformingSubject.marks} Marks</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center mt-4">
-                    <p class="text-3xl font-bold">Your SGPA is: <span class="text-yellow-300">${sgpa}</span></p>
+
+                <div class="clay-card p-6 flex flex-col justify-center items-center h-full order-first lg:order-none">
+                    <div class="text-2xl font-bold text-gray-200 mb-2">SGPA</div>
+                    <div class="relative w-48 h-48">
+                         <canvas id="${sgpaGaugeId}"></canvas>
+                         <div id="sgpa-counter" class="absolute inset-0 flex items-center justify-center text-5xl font-bold text-cyan-300" style="margin-top: -20px;">0.00</div>
+                    </div>
                 </div>
-            </div>`;
+
+                <div class="clay-card p-4 h-80">
+                    <canvas id="${subjectBarChartId}"></canvas>
+                </div>
+            </div>
+
+             <div class="mt-8">
+                 <h4 class="text-xl font-semibold mb-4 text-center text-gray-200">Detailed Report</h4>
+                <div class="overflow-hidden rounded-xl clay-card p-2">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-white border-opacity-20">
+                                    <th class="text-left p-3">Subject</th>
+                                    <th class="text-center p-3">Marks</th>
+                                    <th class="text-center p-3">Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${subjects.map(s => `
+                                    <tr class="border-b border-white border-opacity-10 last:border-none">
+                                        <td class="p-3 text-left">${s.name}</td>
+                                        <td class="p-3 text-center">${s.marks}</td>
+                                        <td class="p-3 text-center font-bold text-lg">${s.grade}</td>
+                                    </tr>`).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // --- Animate the SGPA counter after rendering the element ---
+    const sgpaCounterElement = document.getElementById('sgpa-counter');
+    if (sgpaCounterElement) {
+        animateCounter(sgpaCounterElement, sgpa);
+    }
+    
+    // --- Initialize SGPA Gauge Chart ---
+    const gaugeCtx = document.getElementById(sgpaGaugeId)?.getContext('2d');
+    if (gaugeCtx) {
+        const gaugeColor = sgpa >= 8.5 ? '#2dd4bf' : sgpa >= 7 ? '#60a5fa' : '#facc15';
+        new Chart(gaugeCtx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [sgpa, 10 - sgpa],
+                    backgroundColor: [gaugeColor, 'rgba(255, 255, 255, 0.1)'],
+                    borderColor: 'transparent',
+                    borderWidth: 0,
+                    borderRadius: 20,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '80%',
+                circumference: 180,
+                rotation: -90,
+                plugins: { tooltip: { enabled: false } },
+            }
+        });
     }
 
-    // --- Helper Functions ---
+    // --- Initialize Subject Bar Chart ---
+    const barCtx = document.getElementById(subjectBarChartId)?.getContext('2d');
+    if (barCtx) {
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: subjects.map(s => s.name),
+                datasets: [{
+                    label: 'Grade Points',
+                    data: subjects.map(s => s.gradePoints),
+                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                    borderColor: 'rgba(255, 255, 255, 0.4)',
+                    borderWidth: 1,
+                    borderRadius: 8,
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal bar chart
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: {
+                        beginAtZero: true, max: 10,
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        ticks: { color: 'rgba(255, 255, 255, 0.7)' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: 'rgba(255, 255, 255, 0.7)' }
+                    }
+                }
+            }
+        });
+    }
+}
+    
     function clearAll() {
         ui.yearSelect.value = '';
         ui.semesterSelect.innerHTML = '<option value="">Select Semester</option>';
