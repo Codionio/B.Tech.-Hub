@@ -1,215 +1,147 @@
-// Resources page JavaScript functionality with hierarchical navigation
 document.addEventListener('DOMContentLoaded', function() {
     let subjectsData = {};
-    let currentBranch = '';
-    let currentYear = '';
-    let currentSemester = '';
-    
-    // Load subjects data from JSON file
+
+    const yearSelect = document.getElementById('year');
+    const branchSelect = document.getElementById('branch');
+    const semesterSelect = document.getElementById('semester');
+    const resourceGrid = document.getElementById('resourceGrid');
+
+    // Fetch subject data from a JSON file
     async function loadSubjectsData() {
         try {
-            const response = await fetch('/static/files/subjects.json');
-            subjectsData = await response.json();
-            console.log('Subjects data loaded:', subjectsData);
+            // In a real application, you would fetch this from your server/API
+            // const response = await fetch('/static/files/subjects.json');
+            // subjectsData = await response.json();
+            
+            // Using mock data for demonstration purposes
+            subjectsData = {
+                "Second Year": {
+                    "cse": {
+                        "Semester 3": {
+                            "Data Structure": "BCS301",
+                            "Computer Organization & Architecture": "BCS302",
+                            "Discrete Structures & Theory of Logic": "BCS303",
+                            "Universal Human Values": "BVE301"
+                        },
+                        "Semester 4": {
+                            "Operating System": "BCS401",
+                            "Theory of Automata & Formal Language": "BCS402",
+                            "Microprocessor": "BCS403",
+                            "Python Programming": "BPL401"
+                        }
+                    }
+                }
+                // Add more data for other years, branches, and semesters here
+            };
+            console.log('Subjects data loaded successfully.');
         } catch (error) {
             console.error('Error loading subjects data:', error);
-            // Fallback data
-            subjectsData = {
-                "First Year": {
-                    "Semester 1": {
-                        "Engineering Physics": "BAS101",
-                        "Engineering Mathematics-I": "BAS103",
-                        "Fundamentals of Electrical Engineering": "BEE101",
-                        "Programming for Problem Solving": "BCS101"
-                    },
-                    "Semester 2": {
-                        "Engineering Chemistry": "BAS202",
-                        "Engineering Mathematics-II": "BAS203",
-                        "Fundamentals of Electronics Engineering": "BEC201",
-                        "Fundamentals of Mechanical Engineering": "BME201"
-                    }
-                },
-                "Second Year": {
-                    "Semester 3": {
-                        "Data Structure": "BCS301",
-                        "Computer Organization and Architecture": "BCS302",
-                        "Discrete Structures & Theory of Logic": "BCS303"
-                    },
-                    "Semester 4": {
-                        "Operating System": "BCS401",
-                        "Theory of Automata and Formal Languages": "BCS402",
-                        "Object Oriented Programming with Java": "BCS403"
-                    }
-                }
-            };
+            resourceGrid.innerHTML = '<p class="placeholder-text col-span-full">Could not load subject data. Please try again later.</p>';
         }
     }
-    
-    // Initialize the page
+
+    // Update the UI based on dropdown selections
+    function updateResources() {
+        const year = yearSelect.value;
+        const branch = branchSelect.value;
+        const semester = semesterSelect.value;
+
+        if (!year || !branch || !semester) {
+            resourceGrid.innerHTML = '<p class="placeholder-text col-span-full">Please make your selections to view resources.</p>';
+            return;
+        }
+
+        const subjects = subjectsData[year]?.[branch]?.[semester];
+        
+        resourceGrid.innerHTML = ''; // Clear previous results
+
+        if (!subjects || Object.keys(subjects).length === 0) {
+            resourceGrid.innerHTML = '<p class="placeholder-text col-span-full">Sorry, no resources found for the selected criteria. We are updating our database.</p>';
+            return;
+        }
+
+        for (const [subjectName, subjectCode] of Object.entries(subjects)) {
+            const card = document.createElement('div');
+            card.className = 'subject-card';
+
+            let notesLinks = '';
+            let pyqLinks = '';
+            let videoLinks = '';
+
+            for (let i = 1; i <= 5; i++) {
+                notesLinks += `<a href="#" class="resource-link">Unit ${i}</a>`;
+                pyqLinks += `<a href="#" class="resource-link">${2024 - i}</a>`;
+                videoLinks += `<a href="#" class="resource-link">Unit ${i} Videos</a>`;
+            }
+
+            card.innerHTML = `
+                <div class="subject-card-header">
+                    <h3 class="subject-title">${subjectName}</h3>
+                    <p class="subject-code">${subjectCode}</p>
+                </div>
+                <div>
+                    <h4 class="resource-section-title">📝 Unit-wise Notes</h4>
+                    <div class="resource-links">${notesLinks}</div>
+                    
+                    <h4 class="resource-section-title">📄 Previous Year Questions (PYQs)</h4>
+                    <div class="resource-links">${pyqLinks}</div>
+                    
+                    <h4 class="resource-section-title">🎥 Video Lectures</h4>
+                    <div class="resource-links">${videoLinks}</div>
+                </div>
+            `;
+            resourceGrid.appendChild(card);
+        }
+    }
+
+    // Event Listeners for dropdowns
+    yearSelect.addEventListener('change', () => {
+        const selectedYear = yearSelect.value;
+        semesterSelect.innerHTML = '<option value="">Select Semester</option>'; // Reset semesters
+        
+        if (selectedYear) {
+            branchSelect.disabled = false;
+            
+            const yearMap = {
+                'First Year': ['Semester 1', 'Semester 2'],
+                'Second Year': ['Semester 3', 'Semester 4'],
+                'Third Year': ['Semester 5', 'Semester 6'],
+                'Fourth Year': ['Semester 7', 'Semester 8']
+            };
+
+            const semesters = yearMap[selectedYear] || [];
+            semesters.forEach(sem => {
+                const option = document.createElement('option');
+                option.value = sem;
+                option.textContent = sem;
+                semesterSelect.appendChild(option);
+            });
+        } else {
+            branchSelect.disabled = true;
+            semesterSelect.disabled = true;
+        }
+        branchSelect.value = '';
+        semesterSelect.value = '';
+        updateResources();
+    });
+
+    branchSelect.addEventListener('change', () => {
+        if (branchSelect.value) {
+            semesterSelect.disabled = false;
+        } else {
+            semesterSelect.disabled = true;
+        }
+        semesterSelect.value = '';
+        updateResources();
+    });
+
+    semesterSelect.addEventListener('change', updateResources);
+
+    // Initial setup
     async function init() {
         await loadSubjectsData();
-        showBranches();
+        // Any initial state setup can go here
     }
-    
-    // Navigation functions
-    window.showBranches = function() {
-        document.getElementById('branchSelection').classList.remove('hidden');
-        document.getElementById('yearSelection').classList.add('hidden');
-        document.getElementById('semesterSelection').classList.add('hidden');
-        document.getElementById('subjectSelection').classList.add('hidden');
-        document.getElementById('breadcrumbBranch').classList.add('hidden');
-        document.getElementById('breadcrumbYear').classList.add('hidden');
-        document.getElementById('breadcrumbSemester').classList.add('hidden');
-        document.querySelector('.back-button').style.display = 'none';
-    };
-    
-    window.selectBranch = function(branch) {
-        currentBranch = branch;
-        document.getElementById('branchSelection').classList.add('hidden');
-        document.getElementById('yearSelection').classList.remove('hidden');
-        document.getElementById('yearTitle').textContent = `📚 ${getBranchName(branch)} - Select Year`;
-        document.getElementById('breadcrumbBranch').classList.remove('hidden');
-        document.getElementById('breadcrumbBranch').querySelector('span').textContent = getBranchName(branch);
-        document.querySelector('.back-button').style.display = 'block';
-        document.querySelector('.back-button').onclick = showBranches;
-    };
-    
-    window.selectYear = function(year) {
-        currentYear = year;
-        document.getElementById('yearSelection').classList.add('hidden');
-        document.getElementById('semesterSelection').classList.remove('hidden');
-        document.getElementById('semesterTitle').textContent = `📚 ${getBranchName(currentBranch)} - ${year}`;
-        document.getElementById('breadcrumbYear').classList.remove('hidden');
-        document.getElementById('breadcrumbYear').querySelector('span').textContent = year;
-        document.querySelector('.back-button').onclick = () => selectBranch(currentBranch);
-        
-        // Update semester cards based on year
-        updateSemesterCards(year);
-    };
-    
-    window.selectSemester = function(semester) {
-        currentSemester = semester;
-        document.getElementById('semesterSelection').classList.add('hidden');
-        document.getElementById('subjectSelection').classList.remove('hidden');
-        document.getElementById('subjectTitle').textContent = `📖 ${getBranchName(currentBranch)} - ${currentYear} - ${semester}`;
-        document.getElementById('breadcrumbSemester').classList.remove('hidden');
-        document.getElementById('breadcrumbSemester').querySelector('span').textContent = semester;
-        document.querySelector('.back-button').onclick = () => selectYear(currentYear);
-        
-        loadSubjects();
-    };
-    
-    function updateSemesterCards(year) {
-        const semesterCards = document.querySelectorAll('.semester-card');
-        const yearMap = {
-            'First Year': [1, 2],
-            'Second Year': [3, 4],
-            'Third Year': [5, 6],
-            'Fourth Year': [7, 8]
-        };
-        
-        const semesters = yearMap[year] || [1, 2, 3, 4, 5, 6, 7, 8];
-        
-        semesterCards.forEach((card, index) => {
-            const semesterNum = index + 1;
-            if (semesters.includes(semesterNum)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-    
-    function loadSubjects() {
-        const subjectGrid = document.getElementById('subjectGrid');
-        subjectGrid.innerHTML = '';
-        
-        // Get subjects from the loaded JSON data
-        const yearData = subjectsData[currentYear];
-        if (!yearData) {
-            subjectGrid.innerHTML = '<p class="text-gray-500">No subjects found for this year.</p>';
-            return;
-        }
-        
-        // Find the correct semester data
-        let semesterData = null;
-        const semesterKey = `Semester ${currentSemester.match(/\d+/)[0]}`;
-        
-        // Check if it's a common structure or branch-specific
-        if (currentYear === 'First Year') {
-            // First year has common subjects
-            semesterData = yearData[semesterKey] || yearData[`Common Subjects (${semesterKey})`];
-        } else {
-            // Other years have branch-specific subjects
-            // For now, show all branches' subjects
-            Object.keys(yearData).forEach(branch => {
-                if (yearData[branch][semesterKey]) {
-                    semesterData = yearData[branch][semesterKey];
-                }
-            });
-        }
-        
-        if (!semesterData) {
-            subjectGrid.innerHTML = '<p class="text-gray-500">No subjects found for this semester.</p>';
-            return;
-        }
-        
-        // Create subject cards
-        Object.entries(semesterData).forEach(([subjectName, credits]) => {
-            const subjectCard = document.createElement('div');
-            subjectCard.className = 'subject-card';
-            
-            // Extract subject code if available
-            const subjectCode = subjectName.match(/\(([^)]+)\)/)?.[1] || '';
-            const cleanSubjectName = subjectName.replace(/\([^)]+\)/, '').trim();
-            
-            subjectCard.innerHTML = `
-                <h3 class="subject-name">${cleanSubjectName}</h3>
-                ${subjectCode ? `<p class="subject-code">${subjectCode}</p>` : ''}
-                ${typeof credits === 'number' ? `<p class="text-sm text-gray-600 mt-2">${credits} Credits</p>` : ''}
-            `;
-            
-            subjectCard.onclick = () => selectSubject(subjectName, subjectCode);
-            subjectGrid.appendChild(subjectCard);
-        });
-    }
-    
-    function getBranchName(branchCode) {
-        const branchNames = {
-            'cse': 'Computer Science & Engineering',
-            'cseds': 'Data Science',
-            'aiml': 'AI & ML',
-            'it': 'Information Technology',
-            'ee': 'Electrical Engineering',
-            'me': 'Mechanical Engineering',
-            'ece': 'Electronics & Communication',
-            'eee': 'Electrical & Electronics',
-            'ce': 'Civil Engineering'
-        };
-        return branchNames[branchCode] || branchCode;
-    }
-    
-    window.selectSubject = function(subjectName, subjectCode) {
-        // Handle subject selection
-        console.log(`Selected: ${subjectName} (${subjectCode}) for ${currentBranch} - ${currentYear} - ${currentSemester}`);
-        
-        // Example: Redirect to subject resources page
-        // window.location.href = `/resources/${currentBranch}/${currentYear}/${currentSemester}/${subjectCode}`;
-        
-        // Or show subject details
-        alert(`Selected: ${subjectName}\nCode: ${subjectCode}\nBranch: ${getBranchName(currentBranch)}\nYear: ${currentYear}\nSemester: ${currentSemester}`);
-    };
-    
-    window.goBack = function() {
-        if (document.getElementById('subjectSelection').classList.contains('hidden') === false) {
-            selectYear(currentYear);
-        } else if (document.getElementById('semesterSelection').classList.contains('hidden') === false) {
-            selectBranch(currentBranch);
-        } else if (document.getElementById('yearSelection').classList.contains('hidden') === false) {
-            showBranches();
-        }
-    };
-    
-    // Initialize the page
+
     init();
 });
