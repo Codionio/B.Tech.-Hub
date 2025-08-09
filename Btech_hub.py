@@ -24,6 +24,5 @@ def resource():
 def link():
     return render_template("links.html")
 
-
 if __name__ == "__main__":
     app.run(debug = True)
