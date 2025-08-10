@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayResources() {
         const year = yearSelect.value;
         const branch = branchSelect.value;
-        const semesterValue = semesterSelect.value; 
+        const semesterValue = semesterSelect.value;
 
         const getSemesterKeyRoman = (semVal) => {
             const map = {
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         const semesterKeyForSubjects = getSemesterKeyRoman(semesterValue);
-        // resource.json uses Arabic numerals ("Semester 3"), which is the direct dropdown value.
         const semesterKeyForResources = semesterValue; 
 
         let subjects;
@@ -132,7 +131,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const year = yearSelect.value;
         const branch = branchSelect.value;
         const semester = semesterSelect.value;
-        getResourceBtn.disabled = !(year && branch && semester);
+
+        // ** CORRECTED LOGIC **
+        if (year === 'First Year') {
+            // For first year, branch is not required
+            getResourceBtn.disabled = !(year && semester);
+        } else {
+            // For other years, all three are required
+            getResourceBtn.disabled = !(year && branch && semester);
+        }
     }
 
     getResourceBtn.addEventListener('click', displayResources);
@@ -144,8 +151,10 @@ document.addEventListener('DOMContentLoaded', function() {
         semesterSelect.value = '';
 
         if (selectedYear) {
-            branchSelect.disabled = false;
-            semesterSelect.disabled = true;
+            semesterSelect.disabled = false;
+            // ** CORRECTED LOGIC: Disable branch for First Year, enable for others **
+            branchSelect.disabled = (selectedYear === 'First Year');
+            
             const yearMap = { 'First Year': ['Semester 1', 'Semester 2'], 'Second Year': ['Semester 3', 'Semester 4'], 'Third Year': ['Semester 5', 'Semester 6'], 'Fourth Year': ['Semester 7', 'Semester 8'] };
             (yearMap[selectedYear] || []).forEach(sem => {
                 const option = document.createElement('option');
@@ -154,8 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 semesterSelect.appendChild(option);
             });
         } else {
-            branchSelect.disabled = true;
             semesterSelect.disabled = true;
+            branchSelect.disabled = true;
         }
         checkSelections();
     });
