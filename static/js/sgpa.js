@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const options = subjectName.split(' / ').map(s => s.trim());
                 // Create a dropdown menu for selection.
                 subjectCellHTML = `
-                    <select class="subject-select w-full p-2 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <select class=" dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg subject-select w-full p-2 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                         ${options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
                     </select>
                 `;
@@ -166,11 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             row.innerHTML = `
-                <td class="px-4 py-3 font-semibold text-gray-700">${subjectCellHTML}</td>
-                <td class="px-4 py-3 text-center font-bold text-gray-800">${credits}</td>
+                <td class="px-4 py-3 font-semibold text-gray-700 dark:text-white">${subjectCellHTML}</td>
+                <td class="px-4 py-3 text-center font-bold text-gray-800 dark:text-white">${credits}</td>
                 <td class="px-4 py-3 text-center">
                     <div class="flex items-center justify-center gap-2">
-                        <input type="number" class="marks-input w-24 px-2 py-1 border rounded text-center dark:text-black" min="0" max="100" placeholder="Marks" data-credit="${credits}">
+                        <input type="number" class="marks-input w-24 px-2 py-1 border rounded text-center dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg" min="0" max="100" placeholder="Marks" data-credit="${credits}">
                         <span class="grade-display w-10 text-center font-bold">-</span>
                     </div>
                 </td>

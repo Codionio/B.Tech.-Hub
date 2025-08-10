@@ -42,22 +42,22 @@
 {% endblock %}
 
 {% block content %}
-<div class="w-full max-w-5xl mx-auto bg-white p-8 rounded-2xl shadow-2xl my-8">
+<div class="w-full max-w-5xl mx-auto bg-white p-8 rounded-2xl shadow-2xl my-8 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 py-[3vw] transition-all duration-300 transform">
     <div class="text-center mb-8">
-        <h1 class="text-4xl font-bold text-gray-800 mb-2">🚀 Advanced AKTU SGPA Calculator 🎓</h1>
-        <p class="text-gray-600 text-xl">Change subjects and see your SGPA update instantly!</p>
+        <h1 class="text-4xl font-bold mb-2 dark:text-white">🚀 Advanced AKTU SGPA Calculator 🎓</h1>
+        <p class="text-gray-600 text-xl dark:text-white">Change subjects and see your SGPA update instantly!</p>
     </div>
 
     <div class="flex flex-wrap gap-6 mb-10 justify-center items-end">
         <div class="flex flex-col">
-            <label for="year" class="block text-sm font-semibold text-gray-700 mb-2 dark:text-black">Year</label>
-            <select id="year" class="w-48 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium dark:text-black">
+            <label for="year" class="block text-sm font-semibold text-gray-700 mb-2 dark:text-white">Year</label>
+            <select id="year" class="w-48 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md  transition-all duration-300 transform">
                 <option value="">Select Year</option>
             </select>
         </div>
         <div class="flex flex-col">
-            <label for="branch" class="block text-sm font-semibold text-gray-700 dark:text-black mb-2">Branch</label>
-            <select id="branch" class="w-64 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium sequential-input dark:text-black" disabled>
+            <label for="branch" class="block text-sm font-semibold text-gray-700 dark:text-white mb-2">Branch</label>
+            <select id="branch" class="w-64 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium sequential-input dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md  transition-all duration-300 transform" disabled>
                 <option value="">Select Branch</option>
                 <option value="Computer Science & Engineering">Computer Science & Engineering</option>
                 <option value="CSE (Data Science)">CSE (Data Science)</option>
@@ -71,8 +71,8 @@
             </select>
         </div>
         <div class="flex flex-col">
-            <label for="semester" class="block text-sm font-semibold text-gray-700 mb-2 dark:text-black">Semester</label>
-            <select id="semester" class="w-48 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium sequential-input dark:text-black" disabled>
+            <label for="semester" class="block text-sm font-semibold text-gray-700 mb-2 dark:text-white">Semester</label>
+            <select id="semester" class="w-48 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium sequential-input dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md  transition-all duration-300 transform" disabled>
                 <option value="">Select Semester</option>
             </select>
         </div>
@@ -87,12 +87,12 @@
     </div>
 
     <div class="overflow-x-auto">
-        <table class="w-full border-collapse bg-white rounded-lg shadow-lg">
+        <table class="w-full border-collapse bg-white rounded-lg shadow-lg dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md  transition-all duration-300 transform">
             <thead>
                 <tr class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-                    <th class="px-4 py-3 font-semibold text-lg border-r border-blue-500 text-center">SUBJECT</th>
-                    <th class="px-4 py-3 font-semibold text-lg border-r border-blue-500 text-center">CREDIT</th>
-                    <th class="px-4 py-3 font-semibold text-lg text-center">MARKS & GRADE</th>
+                    <th class="px-4 py-3 font-semibold text-lg border-r border-blue-500 text-center dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">SUBJECT</th>
+                    <th class="px-4 py-3 font-semibold text-lg border-r border-blue-500 text-center dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">CREDIT</th>
+                    <th class="px-4 py-3 font-semibold text-lg text-center dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">MARKS & GRADE</th>
                 </tr>
             </thead>
             <tbody id="subjectsTableBody">
@@ -104,10 +104,10 @@
     <div id="error-message" class="text-red-500 mt-4 text-center font-semibold h-6"></div>
 
     <div class="text-center mt-2 flex justify-center items-center gap-4">
-        <button id="calculateBtn" class="px-8 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-md">
+        <button id="calculateBtn" class="dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 px-8 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-md">
             Calculate SGPA
         </button>
-        <button id="clearBtn" class="px-8 py-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-700 transition-colors shadow-md">
+        <button id="clearBtn" class="hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 px-8 py-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-700 transition-colors shadow-md">
             Clear All
         </button>
     </div>
