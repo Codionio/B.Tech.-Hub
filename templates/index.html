@@ -9,43 +9,48 @@
   <!-- Hero Section -->
   <section class="text-center my-[2vw] px-4">
     <h2 class="text-3xl font-bold mb-2">Welcome to Your Personalized Dashboard</h2>
-    <p class="text-gray-600">Simplify your B.Tech journey and track your progress with ease.</p>
+    <p class="text-lg">Simplify your B.Tech journey and track your progress with ease.</p>
   </section>
 
   <!-- Feature Grid -->
   <main class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12 px-4 my-[4vw]">
 
     <!-- Syllabus -->
-    <div class="flex flex-col bg-white items-center shadow p-6 py-[3vw] hover:shadow-lg transition syllabus">
-      <h3 class="text-lg font-bold mb-2">📘 Syllabus</h3>
-      <p class="text-sm text-gray-600 mb-4">View curriculum and semester-wise subjects.</p>
-      <a href="#" class="text-blue-500 hover:underline text-sm">Explore</a>
-    </div>
+    <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 py-[3vw] transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 syllabus cursor-pointer">
+  <h3 class="text-lg font-bold mb-2 text-gray-800 dark:text-white">📘 Syllabus</h3>
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">View curriculum and semester-wise subjects.</p>
+  <a href="#" class="text-blue-500 dark:text-blue-400 hover:underline text-sm">Explore</a>
+</div>
 
     <!-- SGPA Calculator -->
-    <div class="flex flex-col bg-white py-[3vw] items-center shadow p-6 hover:shadow-lg transition Sgpa_calculator">
-      <h3 class="text-lg font-bold mb-2">📊 SGPA Calculator</h3>
-      <p class="text-sm text-gray-600 mb-4">Enter grades, compute weighted GPA.</p>
-      <a href="/sgpa" class="text-blue-500 hover:underline text-sm">Start Calculating</a>
+    <div
+      class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 py-[3vw] transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 Sgpa_calculator cursor-pointer">
+      <h3 class="text-lg font-bold mb-2 text-gray-800 dark:text-white">📊 SGPA Calculator</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Enter grades, compute weighted SGPA.</p>
+      <a href="#" class="text-blue-500 dark:text-blue-400 hover:underline text-sm">Calculating</a>
     </div>
 
     <!-- University Info -->
-    <div class="flex flex-col bg-white py-[3vw] items-center shadow p-6 hover:shadow-lg transition links">
-      <h3 class="text-lg font-bold mb-2">🏛️ University Info</h3>
-      <p class="text-sm text-gray-600 mb-4">Get AKTU regulations, ordinances, and credits.</p>
-      <a href="#" class="text-blue-500 hover:underline text-sm">View Info</a>
+    <div
+      class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 py-[3vw] transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 links cursor-pointer">
+      <h3 class="text-lg font-bold mb-2 text-gray-800 dark:text-white">🏛️ University Info</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Get AKTU regulations, ordinances, and credits.</p>
+      <a href="/links" class="text-blue-500 dark:text-blue-400 hover:underline text-sm">View Info</a>
     </div>
 
     <!-- Resources -->
-    <div class="resources flex flex-col py-[3vw] bg-white items-center shadow p-6 hover:shadow-lg transition">
-      <h3 class="text-lg font-bold mb-2">🛠️ Resources</h3>
-      <p class="text-sm text-gray-600 mb-4">Access notes, tools, guides, and more.</p>
-      <a href="/resources" class="text-blue-500 hover:underline text-sm">Open Tools</a>
+    
+    <div
+      class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 py-[3vw] transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 resources cursor-pointer">
+      <h3 class="text-lg font-bold mb-2 text-gray-800 dark:text-white">🛠️ Resources</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Access notes, tools, guides, and more.</p>
+      <a href="#" class="text-blue-500 dark:text-blue-400 hover:underline text-sm">Open Tools</a>
     </div>
+    
 
   </main>
 </div>
 {% endblock %}
 {% block extra_scripts %}
-    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
 {% endblock %}
