@@ -22,8 +22,18 @@
     {% block extra_head %}{% endblock %}
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-300 font-sans transition-colors duration-300">
-    <div class="loader hidden absolute top-0 left-0 w-screen h-screen flex-col justify-center items-center bg-white z-[999]">
+
+    <div
+        class="loader flex absolute top-[0%] left-[0%] w-[100vw] h-[100vh] flex-col justify-center items-center hidden">
+        <div class="logo class w-[6vw]">
+            <img src="static\Images\logo.png" alt="NO image" class="w-[100%] h-[100%]">
         </div>
+        <div class="logo_text  w-[8vw]">
+            <img src="static\Images\text_logo_01-removebg-preview.png" alt="No image" class="w-[100%] h-[100%]">
+        </div>
+
+    </div>
+
     <div class="page">
         <header class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
             <div class="max-w-7xl mx-auto px-4">
