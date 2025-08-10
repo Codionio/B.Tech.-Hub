@@ -4,12 +4,13 @@
 
 {% block extra_head %}
 <style>
-    /* Styling for the active tab indicator */
     .tab-button.active {
         color: #4f46e5; /* indigo-600 */
+        border-color: #4f46e5;
     }
     .dark .tab-button.active {
         color: #a5b4fc; /* indigo-300 */
+        border-color: #a5b4fc;
     }
     .tab-content {
         transition: opacity 0.3s ease-in-out;
@@ -36,11 +37,11 @@
             <button data-tab="ordinances" class="tab-button active shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
                 Ordinances
             </button>
-            <button data-tab="grading" class="tab-button shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
-                Grading System
+            <button data-tab="links" class="tab-button shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                Important Links
             </button>
-            <button data-tab="credit" class="tab-button shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
-                Credit System
+            <button data-tab="updates" class="tab-button shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                News & Updates
             </button>
             <button data-tab="contact" class="tab-button shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
                 Contact Info
@@ -48,68 +49,26 @@
         </nav>
     </div>
 
-
-    <div class="bg-white dark:bg-gray-800 p-6 sm:p-10 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+    <div class="bg-white dark:bg-gray-800 p-6 sm:p-10 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 min-h-[400px]">
+        
         <div id="ordinances" class="tab-content">
-            <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">University Ordinances</h2>
-            <div class="space-y-4 text-gray-700 dark:text-gray-300">
-                <p>The university ordinances for the B.Tech program cover all academic rules and regulations, including course structure, examination patterns, and degree requirements. These are updated periodically by the academic council.</p>
-                <ul class="list-disc list-inside space-y-2 pl-4">
-                    <li>**Attendance:** A minimum of 75% attendance in lectures, tutorials, and practicals is mandatory to be eligible for end-semester examinations.</li>
-                    <li>**Examinations:** The evaluation is based on a mix of internal assessments (sessional exams, quizzes, assignments) and an external end-semester examination.</li>
-                    <li>**Promotion:** A student is promoted to the next year based on a minimum SGPA and a set number of earned credits, as defined in the latest ordinance.</li>
-                </ul>
-                <a href="https://aktu.ac.in/ordinance.html" target="_blank" class="inline-block mt-4 text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">Read Full Ordinances →</a>
-            </div>
+            <div id="ordinances-content"></div>
+            <div id="grading-system-content" class="mt-10"></div>
+            <div id="credit-system-content" class="mt-10"></div>
         </div>
 
-        <div id="grading" class="tab-content hidden">
-            <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">AKTU Grading System</h2>
-            <p class="mb-4 text-gray-700 dark:text-gray-300">AKTU follows a 10-point relative grading system. The letter grade and its corresponding grade point are as follows:</p>
-            <div class="overflow-x-auto">
-                <table class="w-full min-w-full text-left">
-                    <thead class="bg-gray-100 dark:bg-gray-700">
-                        <tr>
-                            <th class="p-4 font-semibold text-gray-800 dark:text-white">Letter Grade</th>
-                            <th class="p-4 font-semibold text-gray-800 dark:text-white">Grade Point</th>
-                            <th class="p-4 font-semibold text-gray-800 dark:text-white">Description</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
-                        <tr><td class="p-4">O</td><td class="p-4">10</td><td class="p-4">Outstanding</td></tr>
-                        <tr><td class="p-4">A+</td><td class="p-4">9</td><td class="p-4">Excellent</td></tr>
-                        <tr><td class="p-4">A</td><td class="p-4">8</td><td class="p-4">Very Good</td></tr>
-                        <tr><td class="p-4">B+</td><td class="p-4">7</td><td class="p-4">Good</td></tr>
-                        <tr><td class="p-4">B</td><td class="p-4">6</td><td class="p-4">Above Average</td></tr>
-                        <tr><td class="p-4">C</td><td class="p-4">5</td><td class="p-4">Average</td></tr>
-                        <tr><td class="p-4">P</td><td class="p-4">4</td><td class="p-4">Pass</td></tr>
-                        <tr><td class="p-4">F</td><td class="p-4">0</td><td class="p-4">Fail</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <div id="links" class="tab-content hidden"></div>
 
-        <div id="credit" class="tab-content hidden">
-            <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Credit System</h2>
-            <div class="space-y-4 text-gray-700 dark:text-gray-300">
-                <p>The total credit requirement for the award of a B.Tech degree is typically around **160 credits**, distributed across eight semesters.</p>
-                <ul class="list-disc list-inside space-y-2 pl-4">
-                    <li>**Theory Courses:** Typically carry 3 or 4 credits.</li>
-                    <li>**Lab Courses:** Usually have 1 or 2 credits.</li>
-                    <li>**Projects & Internships:** Carry a significant number of credits in the final years.</li>
-                    <li>**Non-Credit Courses:** Some courses are mandatory for passing but do not contribute to the SGPA/CGPA calculation.</li>
-                </ul>
-            </div>
-        </div>
+        <div id="updates" class="tab-content hidden"></div>
 
         <div id="contact" class="tab-content hidden">
             <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Contact Information</h2>
             <div class="space-y-4 text-gray-700 dark:text-gray-300">
                 <p>For official inquiries, you can reach out to the university through the following channels:</p>
-                <ul class="list-none space-y-2">
-                    <li><strong>📍 Address:</strong> Sec-11, Jankipuram Vistar, Lucknow, Uttar Pradesh, India - 226031</li>
-                    <li><strong>🌐 Website:</strong> <a href="https://aktu.ac.in" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">aktu.ac.in</a></li>
-                    <li><strong>📧 Email:</strong> registrar@aktu.ac.in</li>
+                <ul class="list-none space-y-3 mt-4">
+                    <li class="flex items-center gap-3"><span class="text-xl">📍</span><span>Sec-11, Jankipuram Vistar, Lucknow, Uttar Pradesh, India - 226031</span></li>
+                    <li class="flex items-center gap-3"><span class="text-xl">🌐</span><a href="https://aktu.ac.in" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">aktu.ac.in</a></li>
+                    <li class="flex items-center gap-3"><span class="text-xl">📧</span><a href="mailto:registrar@aktu.ac.in" class="text-indigo-600 dark:text-indigo-400 hover:underline">registrar@aktu.ac.in</a></li>
                 </ul>
             </div>
         </div>
