@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td class="px-4 py-3 text-center font-bold text-gray-800">${credits}</td>
                 <td class="px-4 py-3 text-center">
                     <div class="flex items-center justify-center gap-2">
-                        <input type="number" class="marks-input w-24 px-2 py-1 border rounded text-center" min="0" max="100" placeholder="Marks" data-credit="${credits}">
+                        <input type="number" class="marks-input w-24 px-2 py-1 border rounded text-center dark:text-black" min="0" max="100" placeholder="Marks" data-credit="${credits}">
                         <span class="grade-display w-10 text-center font-bold">-</span>
                     </div>
                 </td>
