@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- Create the modern result card HTML ---
         ui.resultContainer.innerHTML = `
-            <div class="p-6 md:p-8 rounded-2xl text-white aurora-background shadow-2xl">
+            <div class="p-6 md:p-8 rounded-2xl text-white  aurora-background shadow-2xl">
                 <h3 class="text-3xl font-bold mb-8 text-center tracking-wider">Semester Performance Dashboard</h3>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
