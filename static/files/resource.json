@@ -356,7 +356,37 @@
             
         },
         "Semester II": {
-            "Engineering Chemistry (BAS202) / Engineering Physics (BAS201)": {
+            "Engineering Chemistry (BAS202)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Engineering Physics (BAS201)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -416,7 +446,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Fundamentals of Electronics Engineering (BEC201) / Fundamentals of Electrical Engineering (BEE201)": {
+            "Fundamentals of Electronics Engineering (BEC201)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -446,7 +476,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Fundamentals of Mechanical Engineering (BME201) / Programming for Problem Solving (BCS201)": {
+            "Fundamentals of Electrical Engineering (BEE201)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -476,7 +506,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Soft Skills (BAS205) / Environment and Ecology (BAS204)": {
+            "Fundamentals of Mechanical Engineering (BME201)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -506,7 +536,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Engineering Chemistry Lab (BAS252) / Engineering Physics Lab (BAS251)": {
+            "Programming for Problem Solving (BCS201)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -536,7 +566,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Basic Electronics Engineering Lab (BEC251) / Basic Electrical Engineering Lab (BEE251)": {
+            "Soft Skills (BAS205)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -566,7 +596,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "English Language Lab (BAS255) / Programming for Problem Solving Lab (BCS251)": {
+            "Environment and Ecology (BAS204)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -596,7 +626,217 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Workshop Practice Lab (BWS251) / Engineering Graphics & Design Lab (BCE251)": {
+            "Engineering Chemistry Lab (BAS252)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Engineering Physics Lab (BAS251)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Basic Electronics Engineering Lab (BEC251)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Basic Electrical Engineering Lab (BEE251)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "English Language Lab (BAS255)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Programming for Problem Solving Lab (BCS251)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Workshop Practice Lab (BWS251)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Engineering Graphics & Design Lab (BCE251)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
