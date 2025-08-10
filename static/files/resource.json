@@ -1,7 +1,37 @@
 {
     "First Year": {
         "Semester I": {
-            "Engineering Physics (BAS101) / Engineering Chemistry (BAS102)": {
+            "Engineering Physics (BAS101) ": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "pyq": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "lectures": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                },
+                "imp_questions": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+            },
+            "Engineering Chemistry (BAS102)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -61,7 +91,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Fundamentals of Electrical Engineering (BEE101) / Fundamentals of Electronics Engineering (BEC101)": {
+            "Fundamentals of Electrical Engineering (BEE101)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -91,7 +121,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Programming for Problem Solving (BCS101) / Fundamentals of Mechanical Engineering (BME101)": {
+            "Fundamentals of Electronics Engineering (BEC101)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -121,7 +151,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Environment and Ecology (BAS104) / Soft Skills (BAS105)": {
+            "Programming for Problem Solving (BCS101)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -151,7 +181,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Engineering Physics Lab (BAS151) / Engineering Chemistry Lab (BAS152)": {
+            "Fundamentals of Mechanical Engineering (BME101)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -181,7 +211,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Basic Electrical Engineering Lab (BEE151) / Basic Electronics Engineering Lab (BEC151)": {
+            "Environment and Ecology (BAS104)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -211,7 +241,7 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Programming for Problem Solving Lab (BCS151) / English Language Lab (BAS155)": {
+            "Soft Skills (BAS105)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
@@ -241,36 +271,89 @@
                     "unit_5": "https://example.com/demo-link"
                 }
             },
-            "Engineering Graphics & Design Lab (BCE151) / Workshop Practice Lab (BWS151)": {
+            "Engineering Physics Lab (BAS151)": {
                 "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
                     "unit_3": "https://example.com/demo-link",
                     "unit_4": "https://example.com/demo-link",
                     "unit_5": "https://example.com/demo-link"
-                },
-                "pyq": {
-                    "unit_1": "https://example.com/demo-link",
-                    "unit_2": "https://example.com/demo-link",
-                    "unit_3": "https://example.com/demo-link",
-                    "unit_4": "https://example.com/demo-link",
-                    "unit_5": "https://example.com/demo-link"
-                },
-                "lectures": {
-                    "unit_1": "https://example.com/demo-link",
-                    "unit_2": "https://example.com/demo-link",
-                    "unit_3": "https://example.com/demo-link",
-                    "unit_4": "https://example.com/demo-link",
-                    "unit_5": "https://example.com/demo-link"
-                },
-                "imp_questions": {
+                }
+                
+            },
+            "Engineering Chemistry Lab (BAS152)": {
+                "notes": {
                     "unit_1": "https://example.com/demo-link",
                     "unit_2": "https://example.com/demo-link",
                     "unit_3": "https://example.com/demo-link",
                     "unit_4": "https://example.com/demo-link",
                     "unit_5": "https://example.com/demo-link"
                 }
+                
+            },
+            "Basic Electrical Engineering Lab (BEE151)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+                
+            },
+            "Basic Electronics Engineering Lab (BEC151)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+                
+            },
+            
+            "Programming for Problem Solving Lab (BCS151)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+                
+            },
+            "English Language Lab (BAS155)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+                
+            },
+            
+            "Engineering Graphics & Design Lab (BCE151)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+                
+            },
+            "Workshop Practice Lab (BWS151)": {
+                "notes": {
+                    "unit_1": "https://example.com/demo-link",
+                    "unit_2": "https://example.com/demo-link",
+                    "unit_3": "https://example.com/demo-link",
+                    "unit_4": "https://example.com/demo-link",
+                    "unit_5": "https://example.com/demo-link"
+                }
+                
             }
+            
         },
         "Semester II": {
             "Engineering Chemistry (BAS202) / Engineering Physics (BAS201)": {
