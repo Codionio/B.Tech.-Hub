@@ -1,6 +1,5 @@
-const Handel_responsive = function(){
-
-    document.addEventListener('DOMContentLoaded', function() {
+// Handles the responsive mobile menu
+const handleResponsiveMenu = function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -8,110 +7,91 @@ const Handel_responsive = function(){
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
     }
-    
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+};
+
+// Typing animation for the navbar logo
+const typing_animation = function() {
+    if (!document.getElementById('typing-text')) return;
+    gsap.registerPlugin(TextPlugin);
+    const phrases = ["🎓 B.Tech Hub", "By Team Codion", "All Problems, One Solution."];
+    const textElement = "#typing-text";
+    const cursorElement = ".cursor";
+
+    gsap.timeline({ repeat: -1 })
+        .to(cursorElement, { opacity: 0, duration: 0, delay: 0.5 })
+        .to(cursorElement, { opacity: 1, duration: 0, delay: 0.5 });
+
+    const mainTimeline = gsap.timeline({ repeat: -1 });
+    phrases.forEach(phrase => {
+        mainTimeline
+            .to(textElement, { duration: phrase.length * 0.1, text: phrase, ease: "none" })
+            .to({}, { duration: 2.0 })
+            .to(textElement, { duration: phrase.length * 0.05, text: "", ease: "none" })
+            .to({}, { duration: 0.5 });
     });
+};
 
+// ** NEW: Handles the light/dark theme toggle functionality **
+const handleThemeToggle = function() {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (!themeToggleBtn) return;
+
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
     
-    const alpha = document.querySelector(".nav_logo");
-    if(alpha) {
-        alpha.addEventListener("click", () => {
-            window.location.href = "/";
-        });
+    if (themeToggleBtnMobile) {
+        themeToggleBtnMobile.innerHTML = themeToggleBtn.innerHTML;
     }
-});
 
-}
+    const setTheme = (isDark) => {
+        const root = document.documentElement;
+        const darkIconDesktop = themeToggleBtn.querySelector('#theme-toggle-dark-icon');
+        const lightIconDesktop = themeToggleBtn.querySelector('#theme-toggle-light-icon');
+        const darkIconMobile = themeToggleBtnMobile.querySelector('#theme-toggle-dark-icon');
+        const lightIconMobile = themeToggleBtnMobile.querySelector('#theme-toggle-light-icon');
 
-const typing_animation = function(){   
-     document.addEventListener('DOMContentLoaded', function () {
-            // Register the GSAP TextPlugin
-            gsap.registerPlugin(TextPlugin);
+        if (isDark) {
+            root.classList.add('dark');
+            darkIconDesktop.classList.remove('hidden');
+            lightIconDesktop.classList.add('hidden');
+            if(darkIconMobile) darkIconMobile.classList.remove('hidden');
+            if(lightIconMobile) lightIconMobile.classList.add('hidden');
+        } else {
+            root.classList.remove('dark');
+            darkIconDesktop.classList.add('hidden');
+            lightIconDesktop.classList.remove('hidden');
+            if(darkIconMobile) darkIconMobile.classList.add('hidden');
+            if(lightIconMobile) lightIconMobile.classList.remove('hidden');
+        }
+    };
 
-            // --- SELECTORS AND CONFIG ---
-            const phrases = ["🎓 B.Tech Hub", "By Team Codion.", "All Problem One Solution."];
-            const animationWindow = document.querySelector("#animation-window");
-            const textContainer = document.querySelector("#text-container");
-            const textElement = "#typing-text";
-            const cursorElement = ".cursor";
+    // Defaults to light mode unless 'dark' is explicitly saved
+    const isDarkMode = localStorage.getItem('theme') === 'dark';
+    setTheme(isDarkMode);
 
-            // --- ANIMATIONS ---
-
-            // Initial fade-in for the whole component
-            gsap.from(animationWindow, { duration: 0.8, opacity: 0, y: 20, ease: "power2.out"});
-
-            // Intelligent cursor blinking timeline
-            const cursorTimeline = gsap.timeline({ repeat: -1 });
-            cursorTimeline
-                .to(cursorElement, { opacity: 0, duration: 0, delay: 0.5 })
-                .to(cursorElement, { opacity: 1, duration: 0, delay: 0.5 });
-
-            // Main timeline for typing, deleting, and sliding
-            const mainTimeline = gsap.timeline({ repeat: -1 });
-
-            // This function handles the sliding logic
-            const checkOverflowAndSlide = () => {
-                const windowWidth = animationWindow.offsetWidth;
-                const textWidth = textContainer.offsetWidth;
-                const overflow = textWidth - windowWidth;
-
-                if (overflow > 0) {
-                    gsap.to(textContainer, { 
-                        x: -overflow, 
-                        duration: 0.2, 
-                        ease: "power2.inOut" 
-                    });
-                } else {
-                    gsap.to(textContainer, { x: 0, duration: 0.2, ease: "power2.inOut" });
-                }
-            };
-            
-            phrases.forEach(phrase => {
-                // FASTER typing duration
-                const typingDuration = phrase.length * 0.06;
-
-                mainTimeline
-                    .call(() => cursorTimeline.pause())
-                    .set(cursorElement, { opacity: 1 })
-                    .to(textElement, {
-                        duration: typingDuration,
-                        text: phrase,
-                        ease: "none",
-                        onUpdate: checkOverflowAndSlide 
-                    })
-                    .call(() => cursorTimeline.play())
-                    // FASTER pause after typing
-                    .to({}, { duration: 1.5 }) 
-                    .call(() => cursorTimeline.pause())
-                    .to(textElement, {
-                        duration: typingDuration * 0.7, // FASTER deletion
-                        text: "",
-                        ease: "none",
-                        onUpdate: checkOverflowAndSlide
-                    })
-                    .set(textContainer, { x: 0 })
-                    .call(() => cursorTimeline.play())
-                    // FASTER pause before next phrase
-                    .to({}, { duration: 0.5 });
+    const toggle = (btn) => {
+        if (btn) {
+            btn.addEventListener('click', function() {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                setTheme(isDark);
             });
-        });
- }
+        }
+    };
+    
+    toggle(themeToggleBtn);
+    toggle(themeToggleBtnMobile);
+};
 
 
-typing_animation ();
-Handel_responsive();
+// --- RUN ALL INITIALIZATION SCRIPTS ---
+document.addEventListener('DOMContentLoaded', function() {
+    // Your existing functions are still called
+    handleResponsiveMenu();
+    typing_animation();
+    
+    // The new theme toggle function is added
+    handleThemeToggle();
+});
