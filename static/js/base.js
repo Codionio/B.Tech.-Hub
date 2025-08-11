@@ -1,5 +1,5 @@
 // Handles the responsive mobile menu
-const handleResponsiveMenu = function() {
+const handleResponsiveMenu = function () {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -11,7 +11,7 @@ const handleResponsiveMenu = function() {
 };
 
 // Typing animation for the navbar logo
-const typing_animation = function() {
+const typing_animation = function () {
     if (!document.getElementById('typing-text')) return;
     gsap.registerPlugin(TextPlugin);
     const phrases = ["🎓 B.Tech Hub", "By Team Codion", "All Problems, One Solution."];
@@ -33,14 +33,14 @@ const typing_animation = function() {
 };
 
 // ** NEW: Handles the light/dark theme toggle functionality **
-const handleThemeToggle = function() {
+const handleThemeToggle = function () {
     const themeToggleBtn = document.getElementById('theme-toggle');
     if (!themeToggleBtn) return;
 
     const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
     const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
-    
+
     if (themeToggleBtnMobile) {
         themeToggleBtnMobile.innerHTML = themeToggleBtn.innerHTML;
     }
@@ -56,42 +56,43 @@ const handleThemeToggle = function() {
             root.classList.add('dark');
             darkIconDesktop.classList.remove('hidden');
             lightIconDesktop.classList.add('hidden');
-            if(darkIconMobile) darkIconMobile.classList.remove('hidden');
-            if(lightIconMobile) lightIconMobile.classList.add('hidden');
+            if (darkIconMobile) darkIconMobile.classList.remove('hidden');
+            if (lightIconMobile) lightIconMobile.classList.add('hidden');
         } else {
             root.classList.remove('dark');
             darkIconDesktop.classList.add('hidden');
             lightIconDesktop.classList.remove('hidden');
-            if(darkIconMobile) darkIconMobile.classList.add('hidden');
-            if(lightIconMobile) lightIconMobile.classList.remove('hidden');
+            if (darkIconMobile) darkIconMobile.classList.add('hidden');
+            if (lightIconMobile) lightIconMobile.classList.remove('hidden');
         }
     };
 
     // Defaults to light mode unless 'dark' is explicitly saved
-    const isDarkMode = localStorage.getItem('theme') === 'dark';
+    // Replace it with this line
+    const isDarkMode = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
     setTheme(isDarkMode);
 
     const toggle = (btn) => {
         if (btn) {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 const isDark = document.documentElement.classList.toggle('dark');
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
                 setTheme(isDark);
             });
         }
     };
-    
+
     toggle(themeToggleBtn);
     toggle(themeToggleBtnMobile);
 };
 
 
 // --- RUN ALL INITIALIZATION SCRIPTS ---
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Your existing functions are still called
     handleResponsiveMenu();
     typing_animation();
-    
+
     // The new theme toggle function is added
     handleThemeToggle();
 });
