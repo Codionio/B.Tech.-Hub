@@ -69,13 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
         resourceGrid.innerHTML = '';
         const subjectEntries = Object.entries(subjects);
-        const resourceLinkClasses = "inline-block bg-slate-100 text-slate-700 py-1.5 px-3 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 hover:scale-105";
+        const resourceLinkClasses = "dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700  inline-block bg-slate-100 text-slate-700 py-1.5 px-3 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 hover:scale-105";
 
         const container = document.createElement('div');
-        container.className = "lg:bg-white lg:rounded-2xl lg:shadow-xl lg:overflow-hidden lg:border lg:border-gray-200/50";
+        container.className = " lg:bg-white lg:rounded-2xl lg:shadow-xl lg:overflow-hidden lg:border lg:border-gray-200/50";
 
         const headerHTML = ['Subject', 'Notes', 'PYQs', 'Video Lectures', 'Important Questions']
-            .map(text => `<div class="hidden lg:flex items-center p-4 font-bold text-gray-600 uppercase tracking-wider text-sm">${text}</div>`).join('');
+            .map(text => `<div class="dark:text-white dark:bg-gray-800 hidden lg:flex items-center p-4 font-bold text-gray-600 uppercase tracking-wider text-sm">${text}</div>`).join('');
         const tableHeader = `<div class="hidden lg:grid grid-cols-[minmax(250px,_2fr)_repeat(4,_1fr)] bg-gray-50/70">${headerHTML}</div>`;
         container.innerHTML = tableHeader;
 
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (match) { [ , subjectName, subjectCode] = match; }
 
             const generateLinks = (linksObject, labelPrefix) => {
-                if (!linksObject || Object.keys(linksObject).length === 0) return '<span class="text-xs text-gray-400">Not Available</span>';
+                if (!linksObject || Object.keys(linksObject).length === 0) return '<span class="dark:text-white text-xs text-gray-400">Not Available</span>';
                 return Object.entries(linksObject).map(([unitKey, link]) => {
                     const unitNumber = unitKey.split('_')[1];
                     let label = `${labelPrefix} ${unitNumber}`;
@@ -103,15 +103,15 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             const row = document.createElement('div');
-            row.className = "table-row bg-white rounded-xl shadow-lg p-4 lg:p-0 lg:grid lg:grid-cols-[minmax(250px,_2fr)_repeat(4,_1fr)] lg:hover:bg-indigo-50 lg:transition-colors lg:duration-200 lg:rounded-none lg:shadow-none";
+            row.className = "dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md table-row bg-white rounded-xl shadow-lg p-4 lg:p-0 lg:grid lg:grid-cols-[minmax(250px,_2fr)_repeat(4,_1fr)] ";
             
             row.innerHTML = `
-                <div class="lg:p-4 font-semibold text-gray-800 border-b lg:border-none pb-3 mb-3">
+                <div class="dark:text-white lg:p-4 font-semibold text-gray-800 border-b lg:border-none pb-3 mb-3">
                     ${subjectName}
-                    <div class="font-normal text-sm text-gray-500 font-mono mt-1">${subjectCode}</div>
+                    <div class="dark:text-white font-normal text-sm text-gray-500 font-mono mt-1">${subjectCode}</div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 lg:contents">
-                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">Notes</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.notes, 'Unit')}</div></div>
+                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden ">Notes</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.notes, 'Unit')}</div></div>
                     <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">PYQs</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.pyq, 'PYQ')}</div></div>
                     <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">Video Lectures</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.lectures, 'Playlist')}</div></div>
                     <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">Important Questions</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.imp_questions, 'Q-Bank')}</div></div>

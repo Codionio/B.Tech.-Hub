@@ -5,16 +5,16 @@
 {% block content %}
 <div class="w-full max-w-7xl mx-auto p-4 sm:p-8">
     <div class="text-center mb-10">
-        <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-400 bg-clip-text text-transparent mb-2">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-400 bg-clip-text text-transparent mb-2 dark:text-white">
             B.Tech Resource Hub
         </h1>
-        <p class="text-gray-600 text-xl">Your one-stop destination for academic materials.</p>
+        <p class="text-gray-600 text-xl dark:text-white">Your one-stop destination for academic materials.</p>
     </div>
 
-    <div class="flex flex-wrap gap-y-4 md:gap-x-6 mb-12 justify-center items-end bg-white p-6 rounded-2xl shadow-md border border-gray-200">
+    <div class="flex flex-wrap gap-y-4 md:gap-x-6 mb-12 justify-center items-end bg-white p-6 rounded-2xl shadow-md border border-gray-200 dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md">
         <div class="flex flex-col w-full md:w-auto">
-            <label for="year" class="block text-sm font-semibold text-gray-700 mb-2">Year</label>
-            <select id="year" class="w-full md:w-48 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium transition-colors">
+            <label for="year" class="block text-sm font-semibold text-gray-700 mb-2 dark:text-white">Year</label>
+            <select id="year" class="w-full md:w-48 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium transition-colors dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md">
                 <option value="">Select Year</option>
                 <option value="First Year">First Year</option>
                 <option value="Second Year">Second Year</option>
@@ -23,8 +23,8 @@
             </select>
         </div>
         <div class="flex flex-col w-full md:w-auto">
-            <label for="branch" class="block text-sm font-semibold text-gray-700 mb-2">Branch</label>
-            <select id="branch" class="w-full md:w-64 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium transition-colors disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-gray-100" disabled>
+            <label for="branch" class="block text-sm font-semibold text-gray-700 mb-2 dark:text-white">Branch</label>
+            <select id="branch" class="w-full md:w-64 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium transition-colors disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-gray-100 dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md" disabled>
                 <option value="">Select Branch</option>
                 <option value="CSE">Computer Science & Engineering</option>
                 <option value="CSEDS">CSE (Data Science)</option>
@@ -38,20 +38,20 @@
             </select>
         </div>
         <div class="flex flex-col w-full md:w-auto">
-            <label for="semester" class="block text-sm font-semibold text-gray-700 mb-2">Semester</label>
-            <select id="semester" class="w-full md:w-48 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium transition-colors disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-gray-100" disabled>
+            <label for="semester" class="block text-sm font-semibold text-gray-700 mb-2 dark:text-white">Semester</label>
+            <select id="semester" class="w-full md:w-48 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 font-medium transition-colors disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-gray-100 dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md" disabled>
                 <option value="">Select Semester</option>
             </select>
         </div>
         <div class="flex flex-col w-full md:w-auto">
-            <button id="getResourceBtn" class="w-full md:w-auto px-8 py-2.5 bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100">
+            <button id="getResourceBtn" class="dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 px-8 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-md disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100 ">
                 Get Resources
             </button>
         </div>
     </div>
 
     <div id="resourceGrid">
-        <div class="text-center p-12 text-gray-500 text-lg bg-white/50 backdrop-blur-sm border border-dashed border-gray-300 rounded-2xl">
+        <div class="dark:text-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md text-center p-12 text-gray-500 text-lg bg-white/50 backdrop-blur-sm border border-dashed border-gray-300 rounded-2xl">
             <p>📚 Your academic resources will appear here. 📚</p>
         </div>
     </div>
