@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('/static/files/subjects.json');
             if (!response.ok) throw new Error(`Failed to load subjects.json. Status: ${response.status}`);
             subjectData = await response.json();
-            
+
             populateYearOptions();
             setupEventListeners();
             handleYearChange();
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupEventListeners() {
         ui.yearSelect.addEventListener('change', handleYearChange);
         ui.semesterSelect.addEventListener('change', populateSubjects);
-        ui.branchSelect.addEventListener('change', populateSubjects);
+        ui.branchSelect.addEventListener('change', handleBranchChange);
         ui.groupSelect.addEventListener('change', populateSubjects);
         ui.calculateBtn.addEventListener('click', calculateSGPA);
         ui.clearBtn.addEventListener('click', clearAll);
@@ -75,11 +75,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleYearChange() {
-        const year = ui.yearSelect.value;
-        updateSemesterDropdown(year);
-        updateSelectorsVisibility(year);
-        populateSubjects();
+    const year = ui.yearSelect.value;
+
+    // Reset downstream selections
+    ui.branchSelect.value = '';
+    ui.semesterSelect.innerHTML = '<option value="">Select Semester</option>';
+
+    if (!year) {
+        // If no year is selected, disable both branch and semester
+        ui.branchSelectorDiv.style.display = 'block';
+        ui.branchSelect.disabled = true;
+        ui.semesterSelect.disabled = true;
+    } else if (year === 'First Year') {
+        // If First Year is selected, remove branch and open semester
+        ui.branchSelectorDiv.style.display = 'none'; // Hide branch
+        ui.branchSelect.disabled = true;
+        ui.semesterSelect.disabled = false; // Enable semester
+    } else {
+        // For any other year, show branch and disable semester
+        ui.branchSelectorDiv.style.display = 'block'; // Show branch
+        ui.branchSelect.disabled = false; // Enable branch
+        ui.semesterSelect.disabled = true; // Disable semester until branch is chosen
     }
+
+    updateSemesterDropdown(year);
+    populateSubjects();
+}
+
+
+function handleBranchChange() {
+    // This function is for years other than the first
+    if (ui.branchSelect.value) {
+        ui.semesterSelect.disabled = false; // Enable semester
+    } else {
+        ui.semesterSelect.disabled = true;
+    }
+    ui.semesterSelect.value = ''; // Reset semester on branch change
+    populateSubjects();
+}
 
     function updateSemesterDropdown(year) {
         ui.semesterSelect.innerHTML = '<option value="">Select Semester</option>';
@@ -88,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        ui.semesterSelect.disabled = false;
+        // ui.semesterSelect.disabled = false;
         const semesters = semestersByYear[year] || [];
         semesters.forEach(sem => {
             const option = document.createElement('option');
@@ -103,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide branch selector for first year, show for others.
         ui.branchSelectorDiv.style.display = isFirstYear ? 'none' : 'block';
         // The group selector is now always hidden as its functionality is replaced by in-table dropdowns.
-        ui.groupSelectorDiv.style.display = 'none'; 
+        ui.groupSelectorDiv.style.display = 'none';
         ui.branchSelect.disabled = isFirstYear;
         ui.groupSelect.disabled = true; // Always disable the group selector.
     }
@@ -138,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         renderSubjectsTable(subjects, emptyMessage);
     }
-    
+
     function renderSubjectsTable(subjects, emptyMessage) {
         if (Object.keys(subjects).length === 0) {
             ui.tableBody.innerHTML = `<tr><td colspan="3" class="text-center py-4 text-gray-500">${emptyMessage}</td></tr>`;
@@ -149,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Object.entries(subjects).forEach(([subjectName, credits]) => {
             const row = document.createElement('tr');
             row.className = 'border-b border-gray-200';
-            
+
             let subjectCellHTML;
             // Check if the subject name contains alternatives, indicating a dropdown is needed.
             if (subjectName.includes(' / ')) {
@@ -185,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const input = event.target;
         const marks = parseInt(input.value);
         const gradeDisplay = input.closest('tr').querySelector('.grade-display');
-        
+
         if (isNaN(marks) || marks < 0 || marks > 100) {
             gradeDisplay.textContent = '-';
             gradeDisplay.className = 'grade-display w-10 text-center font-bold text-gray-500';
@@ -212,14 +245,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let totalGradePoints = 0, totalCredits = 0, allInputsValid = true;
         const subjectsForReport = [];
-        
+
         rows.forEach(row => {
             const input = row.querySelector('.marks-input');
             if (!input) return; // Skip header or malformed rows.
 
             const marks = parseInt(input.value);
             const credits = parseInt(input.dataset.credit);
-            
+
             // Determine the subject name from either the dropdown or the text span.
             const subjectSelect = row.querySelector('.subject-select');
             const subjectSpan = row.querySelector('.subject-name');
@@ -230,9 +263,9 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 const grade = getGrade(marks);
                 const gradePoint = gradePoints[grade];
-                
+
                 subjectsForReport.push({ name, marks, grade, credit: credits, gradePoints: gradePoint });
-                
+
                 if (credits > 0) {
                     totalCredits += credits;
                     totalGradePoints += gradePoint * credits;
@@ -252,8 +285,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const sgpa = (totalGradePoints / totalCredits).toFixed(2);
         renderResult(subjectsForReport, sgpa);
 
+        // This is the new code I added
+        setTimeout(() => {
+            ui.resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
     }
-    
+
     function renderResult(subjects, sgpa) {
         ui.resultContainer.style.display = 'block';
 
@@ -352,7 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (sgpaCounterElement) {
             animateCounter(sgpaCounterElement, sgpa);
         }
-        
+
         // --- Initialize SGPA Gauge Chart ---
         const gaugeCtx = document.getElementById(sgpaGaugeId)?.getContext('2d');
         if (gaugeCtx) {
@@ -422,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
     }
-    
+
     function clearAll() {
         ui.yearSelect.value = '';
         ui.semesterSelect.innerHTML = '<option value="">Select Semester</option>';

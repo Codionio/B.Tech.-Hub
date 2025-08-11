@@ -5,138 +5,88 @@
 {% block content %}
 <div class="max-w-7xl mx-auto px-4 py-8">
 
-    <!-- Branch Selection -->
-    <div id="branchSelection" class="flex flex-col items-center justify-center m-[2vw] ">
-        <div class="header text-center mb-8">
-            <h1 class="text-3xl font-bold mb-4">📚 Syllabus Hub</h1>
-            <p class="text-lg">Your complete guide to engineering resources</p>
+    <div id="branchSelection">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-bold text-gray-800 dark:text-white">📚 Syllabus Hub</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400">Select your branch to begin.</p>
         </div>
-        <div class="content_branch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-
-            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                onclick="selectBranch('cse')">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer" onclick="selectBranch('cse', 'CSE')">
                 <div class="text-4xl mb-3">💻</div>
-                <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Computer Science </h3>
-                <p class="text-sm text-gray-600 dark:text-gray-100 mb-4">Computer Science Engineering</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Computer Science Engg.</h3>
             </div>
-
-            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                onclick="selectBranch('aiml')">
-                <div class="text-4xl mb-3">🧠</div>
-                <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">AI & ML </h3>
-                <p class="text-sm text-gray-600 dark:text-gray-100 mb-4">Artificial Intelligence</p>
-            </div>
-
-            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                onclick="selectBranch('cseds')">
+            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer" onclick="selectBranch('aiml', 'AI & ML')">
                 <div class="text-4xl mb-3">🤖</div>
-                <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">CSE-DS </h3>
-                <p class="text-sm text-gray-600 dark:text-gray-100 mb-4">Data Science</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">AI & ML</h3>
             </div>
-
-            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                onclick="selectBranch('it')">
+             <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer" onclick="selectBranch('cseds', 'CSE-DS')">
+                <div class="text-4xl mb-3">📊</div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">CSE (Data Science)</h3>
+            </div>
+            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer" onclick="selectBranch('it', 'IT')">
                 <div class="text-4xl mb-3">🌐</div>
-                <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Information Technology </h3>
-                <p class="text-sm text-gray-600 dark:text-gray-100 mb-4">IT Engineering</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Information Tech.</h3>
             </div>
-
-            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                onclick="selectBranch('ece')">
+            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer" onclick="selectBranch('ece', 'ECE')">
                 <div class="text-4xl mb-3">📡</div>
-                <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Electronics & Comm. </h3>
-                <p class="text-sm text-gray-600 dark:text-gray-100 mb-4">ECE Engineering</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Electronics & Comm.</h3>
             </div>
-
-            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                onclick="selectBranch('eee')">
+            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer" onclick="selectBranch('eee', 'EEE')">
                 <div class="text-4xl mb-3">⚡</div>
-                <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Electrical & Electronics </h3>
-                <p class="text-sm text-gray-600 dark:text-gray-100 mb-4">EEE Engineering</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Electrical & Electronics</h3>
             </div>
-
-            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                onclick="selectBranch('ee')">
+            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer" onclick="selectBranch('me', 'ME')">
                 <div class="text-4xl mb-3">⚡</div>
-                <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Electrical Engineering </h3>
-                <p class="text-sm text-gray-600 dark:text-gray-100 mb-4">EE Engineering</p>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Mechanical Engineering</h3>
             </div>
-
-            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                onclick="selectBranch('me')">
-                <div class="text-4xl mb-3">⚙️</div>
-                <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Mechanical Engineering </h3>
-                <p class="text-sm text-gray-600 dark:text-gray-100 mb-4">ME Engineering</p>
+            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer" onclick="selectBranch('ee', 'EE')">
+                <div class="text-4xl mb-3">⚡</div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Electrical Engineering</h3>
             </div>
-
-            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                onclick="selectBranch('ce')">
-                <div class="text-4xl mb-3">🏗️</div>
-                <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Civil Engineering </h3>
-                <p class="text-sm text-gray-600 dark:text-gray-100 mb-4">CE Engineering</p>
+            <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer" onclick="selectBranch('ce', 'CE')">
+                <div class="text-4xl mb-3">⚡</div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Civil Engineering</h3>
             </div>
         </div>
     </div>
-    <!-- Year Selection -->
-    <div id="yearSelection" class="hidden flex flex-col items-center justify-center gap-12    m-[2vw] h-[60vh]">
-        <div class="header text-center mb-15">
-            <h1 class="text-2xl font-bold mb-4">📚 Syllabus Hub</h1>
-            <p class="text-sm text-gray-100">Your complete guide to engineering resources</p>
+
+    <div id="yearSelection" class="hidden">
+        <button onclick="goBack('branch')" class="mb-6 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+            ← Back
+        </button>
+        <div class="text-center mb-10">
+            <h1 id="yearSelectionTitle" class="text-3xl font-bold text-gray-800 dark:text-white">Select Year</h1>
         </div>
-        <div class="content_year text-center mb-12">
-            <button onclick="goBack('branch')"
-                class="flex flex-col bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700  px-4 py-2 rounded-xl shadow-md p-6 text-center transition-all duration-350 transform hover:shadow-lg hover:-translate-y-1 dark:hover:shadow-indigo-500/20 transition-colors absolute left-[1vw] top-[6vw]">
-                ← Back
-            </button>
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 dark:text-white">Select Year</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-350 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                    onclick="selectYear(1)">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2 dark:text-white">1st Year</h3>
-                    <p class="text-sm text-gray-600 dark:text-white">Semesters 1 & 2</p>
-                </div>
-                <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-350 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                    onclick="selectYear(2)">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2 dark:text-white">2nd Year</h3>
-                    <p class="text-sm text-gray-600 dark:text-white">Semesters 3 & 4</p>
-                </div>
-                <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-350 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                    onclick="selectYear(3)">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2 dark:text-white">3rd Year</h3>
-                    <p class="text-sm text-gray-600 dark:text-white">Semesters 5 & 6</p>
-                </div>
-                <div class="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center transition-all duration-350 transform hover:shadow-xl hover:-translate-y-1 dark:hover:shadow-indigo-500/20 cursor-pointer"
-                    onclick="selectYear(4)">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2 dark:text-white">4th Year</h3>
-                    <p class="text-sm text-gray-600 dark:text-white">Semesters 7 & 8</p>
-                </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-xl dark:hover:shadow-indigo-500/20 transition-all duration-300 transform hover:-translate-y-1" onclick="selectYear(1)">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">1st Year</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Semesters 1 & 2</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-xl dark:hover:shadow-indigo-500/20 transition-all duration-300 transform hover:-translate-y-1" onclick="selectYear(2)">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">2nd Year</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Semesters 3 & 4</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-xl dark:hover:shadow-indigo-500/20 transition-all duration-300 transform hover:-translate-y-1" onclick="selectYear(3)">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">3rd Year</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Semesters 5 & 6</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-xl dark:hover:shadow-indigo-500/20 transition-all duration-300 transform hover:-translate-y-1" onclick="selectYear(4)">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white">4th Year</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Semesters 7 & 8</p>
             </div>
         </div>
-
     </div>
 
-    <!-- Syllabus Display -->
-    <div id="syllabusDisplay" class="hidden flex flex-col items-center justify-center gap-12">
-
-        <div class="button absolute top-[5vw] left-[1vw] ">
-            <button onclick="goBack('semester')"
-                class="flex flex-col bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700  px-4 py-2 rounded-xl shadow-md p-6 text-center transition-all duration-350 transform hover:shadow-lg hover:-translate-y-1 dark:hover:shadow-indigo-500/20 transition-colors absolute left-[1vw] top-[1vw]">
-                ← Back
-            </button>
-        </div>
-
-        <div class="content_syllabus  flex flex-col bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 w-[60vw] h-[120vh] mx-auto">
-            <div class="box_content flex-row flex-wrap justify-center items-center">
-                <div class="text-center mb-2">
-                    <h2 id="syllabusTitle" class="text-3xl font-bold text-gray-800 mb-4 dark:text-white">Syllabus</h2>
-                </div>
-            </div>
-            <div id="subjectsGrid" class="flex justify-center items-center h-[100vh]">
-                <!-- Subjects will be populated dynamically -->
+    <div id="syllabusDisplay" class="hidden">
+        <button onclick="goBack('year')" class="mb-6 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+            ← Back
+        </button>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 p-4 md:p-6">
+            <h2 id="syllabusTitle" class="text-2xl font-bold text-gray-800 dark:text-white mb-4 text-center">Syllabus</h2>
+            <div class="w-full h-[80vh] rounded-md overflow-hidden">
+                <iframe id="syllabusIframe" src="" class="w-full h-full border-0"></iframe>
             </div>
         </div>
-
-
     </div>
 </div>
 {% endblock %}
