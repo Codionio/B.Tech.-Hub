@@ -111,10 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="dark:text-white font-normal text-sm text-gray-500 font-mono mt-1">${subjectCode}</div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 lg:contents">
-                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden ">Notes</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.notes, 'Unit')}</div></div>
+                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden ">Notes</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.notes, 'Unit -')}</div></div>
                     <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">PYQs</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.pyq, 'PYQ')}</div></div>
-                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">Video Lectures</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.lectures, 'Playlist')}</div></div>
-                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">Important Questions</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.imp_questions, 'Q-Bank')}</div></div>
+                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">Video Lectures</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.lectures, 'Unit -')}</div></div>
+                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 lg:hidden">Important Questions</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.imp_questions, 'Unit -')}</div></div>
                 </div>
             `;
             rowsContainer.appendChild(row);
