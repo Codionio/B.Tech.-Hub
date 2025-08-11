@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupEventListeners() {
         ui.yearSelect.addEventListener('change', handleYearChange);
         ui.semesterSelect.addEventListener('change', populateSubjects);
-        ui.branchSelect.addEventListener('change', populateSubjects);
+        ui.branchSelect.addEventListener('change', handleBranchChange);
         ui.groupSelect.addEventListener('change', populateSubjects);
         ui.calculateBtn.addEventListener('click', calculateSGPA);
         ui.clearBtn.addEventListener('click', clearAll);
@@ -75,11 +75,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleYearChange() {
-        const year = ui.yearSelect.value;
-        updateSemesterDropdown(year);
-        updateSelectorsVisibility(year);
-        populateSubjects();
+    const year = ui.yearSelect.value;
+
+    // Reset downstream selections
+    ui.branchSelect.value = '';
+    ui.semesterSelect.innerHTML = '<option value="">Select Semester</option>';
+
+    if (!year) {
+        // If no year is selected, disable both branch and semester
+        ui.branchSelectorDiv.style.display = 'block';
+        ui.branchSelect.disabled = true;
+        ui.semesterSelect.disabled = true;
+    } else if (year === 'First Year') {
+        // If First Year is selected, remove branch and open semester
+        ui.branchSelectorDiv.style.display = 'none'; // Hide branch
+        ui.branchSelect.disabled = true;
+        ui.semesterSelect.disabled = false; // Enable semester
+    } else {
+        // For any other year, show branch and disable semester
+        ui.branchSelectorDiv.style.display = 'block'; // Show branch
+        ui.branchSelect.disabled = false; // Enable branch
+        ui.semesterSelect.disabled = true; // Disable semester until branch is chosen
     }
+
+    updateSemesterDropdown(year);
+    populateSubjects();
+}
+
+
+function handleBranchChange() {
+    // This function is for years other than the first
+    if (ui.branchSelect.value) {
+        ui.semesterSelect.disabled = false; // Enable semester
+    } else {
+        ui.semesterSelect.disabled = true;
+    }
+    ui.semesterSelect.value = ''; // Reset semester on branch change
+    populateSubjects();
+}
 
     function updateSemesterDropdown(year) {
         ui.semesterSelect.innerHTML = '<option value="">Select Semester</option>';
@@ -88,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        ui.semesterSelect.disabled = false;
+        // ui.semesterSelect.disabled = false;
         const semesters = semestersByYear[year] || [];
         semesters.forEach(sem => {
             const option = document.createElement('option');
