@@ -7,10 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const semesterSelect = document.getElementById('semester');
     const getResourceBtn = document.getElementById('getResourceBtn');
     const resourceGrid = document.getElementById('resourceGrid');
-    
-    // Get the parent containers of the dropdowns to hide/show them
-    const branchSelectorDiv = document.getElementById('branch').parentElement;
-    const semesterSelectorDiv = document.getElementById('semester').parentElement;
+    const branchSelectorDiv = branchSelect.parentElement;
+    const semesterSelectorDiv = semesterSelect.parentElement;
 
     getResourceBtn.disabled = true;
 
@@ -20,9 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 fetch("static/files/sub_for_res.json"),
                 fetch("static/files/resource.json")
             ]);
-            if (!subjectsResponse.ok || !resourcesResponse.ok) {
-                throw new Error(`HTTP error!`);
-            }
+            if (!subjectsResponse.ok || !resourcesResponse.ok) throw new Error(`HTTP error!`);
             subjectsData = await subjectsResponse.json();
             resourceLinksData = await resourcesResponse.json();
         } catch (error) {
@@ -52,28 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const semesterValue = semesterSelect.value;
 
         const getSemesterKeyRoman = (semVal) => {
-            const map = {
-                'Semester 1': 'Semester I', 'Semester 2': 'Semester II', 'Semester 3': 'Semester III',
-                'Semester 4': 'Semester IV', 'Semester 5': 'Semester V', 'Semester 6': 'Semester VI',
-                'Semester 7': 'Semester VII', 'Semester 8': 'Semester VIII'
-            };
+            const map = { 'Semester 1': 'Semester I', 'Semester 2': 'Semester II', 'Semester 3': 'Semester III', 'Semester 4': 'Semester IV', 'Semester 5': 'Semester V', 'Semester 6': 'Semester VI', 'Semester 7': 'Semester VII', 'Semester 8': 'Semester VIII' };
             return map[semVal];
         };
 
         let subjects, resources;
 
         if (year === 'First Year') {
-            const sem1Subjects = subjectsData[year]?.['Semester I'];
-            const sem2Subjects = subjectsData[year]?.['Semester II'];
-            subjects = resolveFirstYearSubjects(sem1Subjects, sem2Subjects);
-            
-            const sem1Resources = resourceLinksData[year]?.['Semester 1'];
-            const sem2Resources = resourceLinksData[year]?.['Semester 2'];
-            resources = { ...sem1Resources, ...sem2Resources };
-
+            subjects = resolveFirstYearSubjects(subjectsData[year]?.['Semester I'], subjectsData[year]?.['Semester II']);
+            resources = { ...resourceLinksData[year]?.['Semester 1'], ...resourceLinksData[year]?.['Semester 2'] };
         } else {
-            const semesterKeyForSubjects = getSemesterKeyRoman(semesterValue);
-            subjects = subjectsData[year]?.[branch]?.[semesterKeyForSubjects];
+            subjects = subjectsData[year]?.[branch]?.[getSemesterKeyRoman(semesterValue)];
             resources = resourceLinksData[year]?.[branch]?.[semesterValue];
         }
 
@@ -88,10 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const headerHTML = ['Subject', 'Notes', 'PYQs', 'Video Lectures', 'Important Questions']
             .map(text => `<div class="hidden lg:flex items-center p-4 font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider text-sm">${text}</div>`).join('');
-        container.innerHTML = `<div class="hidden lg:grid grid-cols-[minmax(250px,_2fr)_repeat(4,_1fr)] bg-gray-50/70 dark:bg-gray-900/50">${headerHTML}</div>`;
+        container.innerHTML = `<div class="hidden lg:grid grid-cols-[minmax(250px,_2fr)_repeat(4,_1fr)] bg-gray-50/70 dark:bg-gray-900/50 border-b border-gray-200 dark:border-gray-700">${headerHTML}</div>`;
 
         const rowsContainer = document.createElement('div');
-        rowsContainer.className = "lg:divide-y lg:divide-gray-200/70 dark:lg:divide-gray-700 space-y-6 lg:space-y-0";
+        // ** THE FIX IS HERE: Removed conflicting divide classes, relying only on spacing for mobile **
+        rowsContainer.className = "space-y-6 lg:space-y-0";
         
         Object.entries(subjects).forEach(([key, credit]) => {
             const resourceKey = Object.keys(resources || {}).find(rKey => rKey.includes(key));
@@ -104,15 +90,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const generateLinks = (linksObject, labelPrefix) => {
                 if (!linksObject || Object.keys(linksObject).length === 0) return '<span class="text-xs text-gray-400">Not Available</span>';
                 const resourceLinkClasses = "inline-block bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-slate-300 py-1.5 px-3 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out hover:bg-indigo-100 dark:hover:bg-indigo-600 hover:text-indigo-700 dark:hover:text-white hover:scale-105";
-                return Object.entries(linksObject).map(([unitKey, link]) => {
-                    const unitNumber = unitKey.split('_')[1];
-                    let label = `${labelPrefix} ${unitNumber}`;
-                    return `<a href="${link}" target="_blank" rel="noopener noreferrer" class="${resourceLinkClasses}">${label}</a>`;
-                }).join('');
+                return Object.entries(linksObject).map(([unitKey, link]) => `<a href="${link}" target="_blank" rel="noopener noreferrer" class="${resourceLinkClasses}">${labelPrefix} ${unitKey.split('_')[1]}</a>`).join('');
             };
             
+            // ** THE FIX IS HERE: Added a border between desktop rows but not on mobile cards **
             const row = document.createElement('div');
-            row.className = "table-row bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 lg:p-0 lg:grid lg:grid-cols-[minmax(250px,_2fr)_repeat(4,_1fr)] lg:hover:bg-indigo-50 lg:dark:hover:bg-gray-700/50 lg:transition-colors lg:duration-200 lg:rounded-none lg:shadow-none lg:border-b lg:dark:border-transparent";
+            // REPLACE IT WITH THIS LINE
+            row.className = "bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 lg:p-0 lg:bg-transparent lg:dark:bg-transparent lg:rounded-none lg:shadow-none lg:grid lg:grid-cols-[minmax(250px,_2fr)_repeat(4,_1fr)] lg:hover:bg-indigo-50 lg:dark:hover:bg-gray-700/50 lg:border-b lg:border-gray-200 lg:dark:border-gray-700 transition-colors duration-200";
             
             row.innerHTML = `
                 <div class="lg:p-4 font-semibold text-gray-800 dark:text-white border-b border-gray-200 dark:border-gray-700 lg:border-none pb-3 mb-3">
@@ -121,8 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="grid grid-cols-2 gap-4 lg:contents">
                     <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 dark:text-gray-400 lg:hidden">Notes</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.notes, 'Unit')}</div></div>
                     <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 dark:text-gray-400 lg:hidden">PYQs</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.pyq, 'PYQ')}</div></div>
-                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 dark:text-gray-400 lg:hidden">Lectures</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.lectures, 'Unit')}</div></div>
-                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 dark:text-gray-400 lg:hidden">Imp. Questions</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.imp_questions, 'Unit')}</div></div>
+                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 dark:text-gray-400 lg:hidden">Lectures</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.lectures, 'Lecture')}</div></div>
+                    <div class="lg:p-4 flex flex-col items-start gap-2"><h4 class="font-bold text-gray-500 dark:text-gray-400 lg:hidden">Imp. Questions</h4><div class="flex flex-wrap gap-2 items-center">${generateLinks(resourceLinks?.imp_questions, 'Set')}</div></div>
                 </div>`;
             rowsContainer.appendChild(row);
         });
@@ -150,19 +134,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const isFirstYear = selectedYear === 'First Year';
         
-        // ** THE FIX IS HERE: Hides/shows the dropdowns **
         branchSelectorDiv.style.display = isFirstYear ? 'none' : 'flex';
         semesterSelectorDiv.style.display = isFirstYear ? 'none' : 'flex';
 
         if (isFirstYear) {
-            // If it's the first year, no need to populate other dropdowns
             getResourceBtn.disabled = false;
         } else {
-            // For other years, enable branch and populate semester
             branchSelect.disabled = !selectedYear;
-            semesterSelect.disabled = true; // Disabled until a branch is selected
+            semesterSelect.disabled = true;
             if (selectedYear) {
-                const yearMap = { 'Second Year': ['Semester 3', 'Semester 4'], 'Third Year': ['Semester 5', 'Semester 6'], 'Fourth Year': ['Semester 7', 'Semester 8'] };
+                const yearMap = { 'Second Year': ['Semester 3', 'Semester 4'], 'Third Year': ['Semester 5', 'Semester 6'] };
                 semesterSelect.innerHTML = '<option value="">Select Semester</option>';
                 if(yearMap[selectedYear]) {
                     yearMap[selectedYear].forEach(sem => {
@@ -186,5 +167,14 @@ document.addEventListener('DOMContentLoaded', function() {
     semesterSelect.addEventListener('change', checkSelections);
     getResourceBtn.addEventListener('click', displayResources);
 
-    loadData();
+    // --- Initial Load ---
+    async function init() {
+        await loadData();
+        const fourthYearOption = yearSelect.querySelector('option[value="Fourth Year"]');
+        if (fourthYearOption) {
+            fourthYearOption.disabled = true;
+        }
+    }
+
+    init();
 });
