@@ -40,11 +40,11 @@
                     "unit_5": "https://example.com/demo-link"
                 },
                 "pyq": {
-                    "unit_1": "https://example.com/demo-link",
-                    "unit_2": "https://example.com/demo-link",
-                    "unit_3": "https://example.com/demo-link",
-                    "unit_4": "https://example.com/demo-link",
-                    "unit_5": "https://example.com/demo-link"
+                    "unit_1": "https://drive.google.com/file/d/1q7QbuwoDmuAb4Uu5dnZ5X7SvBR0mJKJc/view?usp=drive_link",
+                    "unit_2": "https://drive.google.com/file/d/1hzzgDKr5AAYc9tw8F3eD2Xd_Tl-qX1gh/view?usp=drive_link",
+                    "unit_3": "https://drive.google.com/file/d/15_4tshfS4tUjPdxj6JNeI-Vz5KWW2QWn/view?usp=drive_link",
+                    "unit_4": "https://drive.google.com/file/d/10DhlkMQqG9z29BMVqn1ecmMNQwIhoUTU/view?usp=drive_link",
+                    "unit_5": "https://drive.google.com/file/d/1w_6-fRzJWs2gI15XFhTkz8VySnE7iruX/view?usp=drive_link"
                 },
                 "lectures": {
                     "unit_1": "https://example.com/demo-link",
@@ -93,11 +93,11 @@
             },
             "Fundamentals of Electrical Engineering (BEE101)": {
                 "notes": {
-                    "unit_1": "https://example.com/demo-link",
-                    "unit_2": "https://example.com/demo-link",
-                    "unit_3": "https://example.com/demo-link",
-                    "unit_4": "https://example.com/demo-link",
-                    "unit_5": "https://example.com/demo-link"
+                    "unit_1": "https://drive.google.com/file/d/1sLJy1OvqxGso9P27FIHREG3RwAD6tirn/view?usp=drive_link",
+                    "unit_2": "https://drive.google.com/file/d/1y6UNsagg_kVerSJShuLM4Vmdm9ya2D27/view?usp=drive_link",
+                    "unit_3": "https://drive.google.com/file/d/11Uvb3KEirOmO-dPRZ1MwgkmNZo2BeAKw/view?usp=drive_link",
+                    "unit_4": "https://drive.google.com/file/d/1A01zIj-3klT1CQSOis721U11lam4a3b_/view?usp=drive_link",
+                    "unit_5": "https://drive.google.com/file/d/1zxuxEXY8Ram9F86y8X2CU7cWA_xbZgN0/view?usp=drive_link"
                 },
                 "pyq": {
                     "unit_1": "https://example.com/demo-link",
@@ -961,6 +961,7 @@
                         "unit_5": "https://example.com/demo-link"
                     }
                 },
+                
                 "Data Structure (BCS301)": {
                     "notes": {
                         "unit_1": "https://example.com/demo-link",

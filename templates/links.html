@@ -1,7 +1,81 @@
 {% extends "base.html" %}
 
-{% block title %}Links | B.Tech Hub{% endblock %}
+{% block title %}University Info | B.Tech Hub{% endblock %}
+
+{% block extra_head %}
+<style>
+    .tab-button.active {
+        color: #4f46e5; /* indigo-600 */
+        border-color: #4f46e5;
+    }
+    .dark .tab-button.active {
+        color: #a5b4fc; /* indigo-300 */
+        border-color: #a5b4fc;
+    }
+    .tab-content {
+        transition: opacity 0.3s ease-in-out;
+    }
+    .tab-content.hidden {
+        opacity: 0;
+        display: none;
+    }
+</style>
+{% endblock %}
+
 
 {% block content %}
-<p>hello world</p>
+<div class="w-full max-w-7xl mx-auto p-4 sm:p-8">
+    <div class="text-center mb-12">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-400 bg-clip-text text-transparent mb-2">
+            University Information
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-xl">Dr. A.P.J. Abdul Kalam Technical University (AKTU)</p>
+    </div>
+
+    <div class="mb-8 border-b border-gray-200 dark:border-gray-700">
+        <nav class="-mb-px flex flex-wrap justify-center gap-4 sm:gap-6" aria-label="Tabs">
+            <button data-tab="ordinances" class="tab-button active shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                Ordinances
+            </button>
+            <button data-tab="links" class="tab-button shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                Important Links
+            </button>
+            <button data-tab="updates" class="tab-button shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                News & Updates
+            </button>
+            <button data-tab="contact" class="tab-button shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                Contact Info
+            </button>
+        </nav>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 p-6 sm:p-10 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 min-h-[400px]">
+        
+        <div id="ordinances" class="tab-content">
+            <div id="ordinances-content"></div>
+            <div id="grading-system-content" class="mt-10"></div>
+            <div id="credit-system-content" class="mt-10"></div>
+        </div>
+
+        <div id="links" class="tab-content hidden"></div>
+
+        <div id="updates" class="tab-content hidden"></div>
+
+        <div id="contact" class="tab-content hidden">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Contact Information</h2>
+            <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                <p>For official inquiries, you can reach out to the university through the following channels:</p>
+                <ul class="list-none space-y-3 mt-4">
+                    <li class="flex items-center gap-3"><span class="text-xl">📍</span><span>Sec-11, Jankipuram Vistar, Lucknow, Uttar Pradesh, India - 226031</span></li>
+                    <li class="flex items-center gap-3"><span class="text-xl">🌐</span><a href="https://aktu.ac.in" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">aktu.ac.in</a></li>
+                    <li class="flex items-center gap-3"><span class="text-xl">📧</span><a href="mailto:registrar@aktu.ac.in" class="text-indigo-600 dark:text-indigo-400 hover:underline">registrar@aktu.ac.in</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="{{ url_for('static', filename='js/links.js') }}"></script>
 {% endblock %}
