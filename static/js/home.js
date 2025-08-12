@@ -29,7 +29,6 @@ const initialLoadTimeline = gsap.timeline();
     const logoText = document.querySelector('.logo_text');
     const page = document.querySelector('.page');
     const loader = document.querySelector('.loader');
-
     // Initial page load animation
     if(logo && logoText && page && loader) {
         loader.classList.remove('hidden');
