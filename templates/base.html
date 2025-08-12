@@ -29,10 +29,10 @@
     <div
         class="loader flex absolute top-[0%] left-[0%] w-[100vw] h-[100vh] flex-col justify-center items-center hidden">
         <div class="logo class w-[6vw]">
-            <img src="{{ url_for('static', filename='Images\logo.png') }}" alt="NO image" class="w-[100%] h-[100%]">
+            <img src="static\Images\logo.png" alt="NO image" class="w-[100%] h-[100%]">
         </div>
         <div class="logo_text  w-[8vw]">
-            <img src="{{ url_for('static', filename='Images\text_logo_01-removebg-preview.png') }}" alt="No image" class="w-[100%] h-[100%]">
+            <img src="static\Images\text_logo_01-removebg-preview.png" alt="No image" class="w-[100%] h-[100%]">
         </div>
     </div>
 
@@ -250,9 +250,10 @@
             </div>
         </footer>
     </div>
-
+    
     <script src="{{ url_for('static', filename='js/base.js') }}"></script>
     {% block extra_scripts %}{% endblock %}
 </body>
+ 
 
 </html>
