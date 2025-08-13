@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Pricing | B.Tech Hub{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold text-center text-blue-600 mb-2">Pricing</h1>
+    <p class="text-center text-gray-600 mb-8">Simple, transparent pricing for every student.</p>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Free Plan</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>✅ Access to SGPA & CGPA calculators</li>
+            <li>✅ View syllabus & university rules</li>
+            <li>✅ Basic performance tracking</li>
+            <li>💲 Price: <strong>Free</strong></li>
+        </ul>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Premium Plan</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>✅ Everything in Free Plan</li>
+            <li>✅ Advanced performance analytics</li>
+            <li>✅ Export reports as PDF/Excel</li>
+            <li>✅ Priority support</li>
+            <li>💲 Price: <strong>₹199/year</strong></li>
+        </ul>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Why Premium?</h2>
+        <p class="text-gray-700 leading-relaxed">
+            Premium users enjoy faster updates, advanced analytics, and personalized support. 
+            The small fee helps us maintain and improve the platform for everyone.
+        </p>
+    </div>
+</div>
+{% endblock %}
