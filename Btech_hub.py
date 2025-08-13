@@ -1,8 +1,11 @@
 # https://codionio.github.io/B.Tech.-Hub/index.html
 
-from flask import Flask , render_template
+# from flask import Flask , render_template
+from flask import Flask, render_template, request, redirect, flash
 
 app = Flask(__name__ , static_folder='static')
+
+app.secret_key = "your_secret_key"
 
 @app.route("/")
 def home():
@@ -52,6 +55,16 @@ def press():
 def blogs():
     return render_template("blogs.html")
 
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+        message = request.form.get("message")
+        # TODO: Store or email the message
+        flash("Your message has been sent successfully!", "success")
+        return redirect("/contact")
+    return render_template("contact.html")
 
 
 
