@@ -1,6 +1,7 @@
 # https://codionio.github.io/B.Tech.-Hub/index.html
 
 # from flask import Flask , render_template
+import os
 from flask import Flask, render_template, request, redirect, flash
 
 app = Flask(__name__ , static_folder='static')
@@ -89,6 +90,38 @@ def privacy_policy():
 @app.route("/cookie-settings")
 def cookie_settings():
     return render_template("cookie_settings.html")
+
+VISITOR_COUNT_FILE = 'visitor_count.txt'
+
+def get_visitor_count():
+    try:
+        with open(VISITOR_COUNT_FILE, 'r') as f:
+            content = f.read().strip() # Read and remove whitespace
+            if content:
+                return int(content) # Convert to int only if not empty
+            else:
+                return 0 # Return 0 if the file is empty
+    except FileNotFoundError:
+        return 0
+
+def increment_visitor_count():
+    count = get_visitor_count() + 1
+    with open(VISITOR_COUNT_FILE, 'w') as f:
+        f.write(str(count))
+    return count
+
+@app.route("/api/visitor_count")
+def visitor_count():
+    # This checks for an environment variable called 'FLASK_ENV'.
+    # On a live server, this is typically set to 'production'.
+    if os.environ.get('FLASK_ENV') == 'production':
+        # If the app is live, increment the count.
+        count = increment_visitor_count()
+    else:
+        # If running locally, just read the current count without incrementing.
+        count = get_visitor_count()
+    
+    return { "count": count }
 
 
 

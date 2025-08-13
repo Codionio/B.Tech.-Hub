@@ -86,6 +86,27 @@ const handleThemeToggle = function () {
     toggle(themeToggleBtnMobile);
 };
 
+// --- Fetches and displays the live visitor count ---
+const handleVisitorCount = async function() {
+    const countElement = document.getElementById('visitor-count');
+    if (!countElement) return;
+
+    try {
+        // This makes a request to a backend API endpoint
+        const response = await fetch('/api/visitor_count');
+        const data = await response.json();
+
+        if (data.count !== undefined) {
+            countElement.textContent = data.count.toLocaleString(); // Format with commas
+        } else {
+            countElement.textContent = 'N/A';
+        }
+    } catch (error) {
+        console.error('Failed to fetch visitor count:', error);
+        countElement.textContent = 'N/A';
+    }
+};
+
 
 // --- RUN ALL INITIALIZATION SCRIPTS ---
 document.addEventListener('DOMContentLoaded', function () {
@@ -95,4 +116,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // The new theme toggle function is added
     handleThemeToggle();
+    handleVisitorCount();
 });
