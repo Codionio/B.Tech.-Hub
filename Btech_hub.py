@@ -40,5 +40,10 @@ def pricing():
 def customer():
     return render_template("customer.html")
 
+@app.route("/investor-relations")
+def investor_relations():
+    return render_template("investor_relations.html")
+
+
 if __name__ == "__main__":
     app.run()
