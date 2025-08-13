@@ -32,6 +32,11 @@ def overview():
 def solution():
     return render_template("solution.html")
 
+@app.route("/pricing")
+def pricing():
+    return render_template("pricing.html")
+
+
 
 
 if __name__ == "__main__":
