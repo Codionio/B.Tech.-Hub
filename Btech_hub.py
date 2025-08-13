@@ -70,6 +70,10 @@ def contact():
 def documentation():
     return render_template("documentation.html")
 
+@app.route("/chat")
+def chat():
+    return render_template("chat.html")
+
 
 
 
