@@ -44,6 +44,13 @@ def customer():
 def investor_relations():
     return render_template("investor_relations.html")
 
+@app.route("/press")
+def press():
+    return render_template("press.html")
+
+
+
+
 
 if __name__ == "__main__":
     app.run()
