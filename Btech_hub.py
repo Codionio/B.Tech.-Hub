@@ -86,6 +86,10 @@ def terms_of_service():
 def privacy_policy():
     return render_template("privacy_policy.html")
 
+@app.route("/cookie-settings")
+def cookie_settings():
+    return render_template("cookie_settings.html")
+
 
 
 
