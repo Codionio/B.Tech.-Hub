@@ -66,6 +66,10 @@ def contact():
         return redirect("/contact")
     return render_template("contact.html")
 
+@app.route("/documentation")
+def documentation():
+    return render_template("documentation.html")
+
 
 
 
