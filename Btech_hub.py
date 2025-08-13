@@ -74,6 +74,10 @@ def documentation():
 def chat():
     return render_template("chat.html")
 
+@app.route("/faq")
+def faq():
+    return render_template("faq.html")
+
 
 
 
