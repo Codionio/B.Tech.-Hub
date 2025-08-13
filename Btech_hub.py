@@ -28,6 +28,11 @@ def link():
 def overview():
     return render_template("overview.html")
 
+@app.route("/solution")
+def solution():
+    return render_template("solution.html")
+
+
 
 if __name__ == "__main__":
     app.run()
