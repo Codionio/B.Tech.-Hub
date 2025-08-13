@@ -48,6 +48,11 @@ def investor_relations():
 def press():
     return render_template("press.html")
 
+@app.route("/blogs")
+def blogs():
+    return render_template("blogs.html")
+
+
 
 
 
