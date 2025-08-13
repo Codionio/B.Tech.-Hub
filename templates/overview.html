@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Overview | B.Tech Hub{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold text-center text-blue-600 mb-2">Product Overview</h1>
+    <p class="text-center text-gray-600 mb-8">A quick look at what B.Tech Hub offers for students.</p>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4">What is B.Tech Hub?</h2>
+        <p class="text-gray-700 leading-relaxed">
+            B.Tech Hub is an all-in-one academic companion for engineering students at AKTU. 
+            It provides syllabus access, university regulations, SGPA/CGPA calculators, and academic resources — all in a single platform. 
+            With a clean interface and easy navigation, you can track your academic progress effortlessly.
+        </p>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Why Choose Us?</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>📚 Access semester-wise syllabus for all branches.</li>
+            <li>🧮 Accurate SGPA & CGPA calculators following AKTU norms.</li>
+            <li>📊 Track academic performance with simple visual tools.</li>
+            <li>📤 Export reports as PDF/Excel for records.</li>
+            <li>🔍 Easy-to-use interface with fast navigation.</li>
+        </ul>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Our Mission</h2>
+        <p class="text-gray-700 leading-relaxed">
+            Our mission is to simplify the academic journey for engineering students by 
+            providing a centralized platform that eliminates the hassle of scattered information. 
+            We aim to save time, reduce stress, and help students focus on learning.
+        </p>
+    </div>
+</div>
+{% endblock %}

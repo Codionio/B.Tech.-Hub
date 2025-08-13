@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Documentation | B.Tech Hub{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold text-center text-blue-600 mb-2">Documentation</h1>
+    <p class="text-center text-gray-600 mb-8">
+        Explore the complete documentation for the B.Tech Hub platform, including features, usage guidelines, and technical details.
+    </p>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
+        <h2 class="text-2xl font-semibold mb-4">Getting Started</h2>
+        <p class="text-gray-700 leading-relaxed">
+            This guide will walk you through the basics of using B.Tech Hub. You’ll learn how to navigate through the dashboard,
+            access resources, calculate SGPA, and more.
+        </p>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
+        <h2 class="text-2xl font-semibold mb-4">Features Overview</h2>
+        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>University Info – Access AKTU regulations, ordinances, and grading systems.</li>
+            <li>Syllabus Hub – View semester-wise and branch-wise curriculum.</li>
+            <li>SGPA Calculator – Calculate your SGPA using AKTU's grading scale.</li>
+            <li>Resources – Access academic materials, tools, and guides.</li>
+        </ul>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Technical Information</h2>
+        <p class="text-gray-700 leading-relaxed">
+            The platform is built using Flask (Python) for the backend, Tailwind CSS for the frontend, and SQLite for data storage.
+            It is designed for responsiveness and usability across devices.
+        </p>
+    </div>
+</div>
+{% endblock %}

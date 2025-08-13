@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Blogs | B.Tech Hub{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold text-center text-blue-600 mb-2">B.Tech Hub Blogs</h1>
+    <p class="text-center text-gray-600 mb-8">Articles, tips, and guides to help students succeed.</p>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4">Latest Blog Posts</h2>
+        <ul class="space-y-4">
+            <li class="border-b pb-4">
+                <h3 class="text-lg font-semibold">📚 How to Calculate SGPA & CGPA Easily</h3>
+                <p class="text-gray-600 text-sm">A step-by-step guide for AKTU students.</p>
+            </li>
+            <li class="border-b pb-4">
+                <h3 class="text-lg font-semibold">🎯 Top 5 Tips to Improve Your Grades</h3>
+                <p class="text-gray-600 text-sm">Practical study hacks for engineering students.</p>
+            </li>
+            <li>
+                <h3 class="text-lg font-semibold">💼 How to Prepare for Campus Placements</h3>
+                <p class="text-gray-600 text-sm">Skills and strategies to land your dream job.</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Write for Us</h2>
+        <p class="text-gray-700 leading-relaxed">
+            Have tips, guides, or stories to share with the student community?
+            Submit your articles to be featured on B.Tech Hub.
+        </p>
+    </div>
+</div>
+{% endblock %}
