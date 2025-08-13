@@ -24,5 +24,10 @@ def resource():
 def link():
     return render_template("links.html")
 
+@app.route("/overview")
+def overview():
+    return render_template("overview.html")
+
+
 if __name__ == "__main__":
     app.run()
