@@ -1,1 +1,1 @@
-web: gunicorn B.Tech.-Hub:app
+web: gunicorn Btech_hub:app
