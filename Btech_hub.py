@@ -3,10 +3,19 @@
 # from flask import Flask , render_template
 import os
 from flask import Flask, render_template, request, redirect, flash
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__ , static_folder='static')
 
-app.secret_key = "your_secret_key"
+# ---Database Configuration---
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///visitors.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+
+# ---Database Model---
+class Visitor(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    count = db.Column(db.Integer, default=0)
 
 @app.route("/")
 def home():
@@ -91,40 +100,26 @@ def privacy_policy():
 def cookie_settings():
     return render_template("cookie_settings.html")
 
-VISITOR_COUNT_FILE = 'visitor_count.txt'
-
-def get_visitor_count():
-    try:
-        with open(VISITOR_COUNT_FILE, 'r') as f:
-            content = f.read().strip() # Read and remove whitespace
-            if content:
-                return int(content) # Convert to int only if not empty
-            else:
-                return 0 # Return 0 if the file is empty
-    except FileNotFoundError:
-        return 0
-
-def increment_visitor_count():
-    count = get_visitor_count() + 1
-    with open(VISITOR_COUNT_FILE, 'w') as f:
-        f.write(str(count))
-    return count
+# ---API Route for visitor Count---
 
 @app.route("/api/visitor_count")
 def visitor_count():
-    # This checks for an environment variable called 'FLASK_ENV'.
-    # On a live server, this is typically set to 'production'.
+    # Find the first visitor record, or create it if it doesn't exist
+    visitor_record = db.session.get(Visitor, 1)
+    if not visitor_record:
+        visitor_record = Visitor(id=1, count=0)
+        db.session.add(visitor_record)
+        db.session.commit()
+
+    # Increment the count only if in production
     if os.environ.get('FLASK_ENV') == 'production':
-        # If the app is live, increment the count.
-        count = increment_visitor_count()
-    else:
-        # If running locally, just read the current count without incrementing.
-        count = get_visitor_count()
+        visitor_record.count += 1
+        db.session.commit()
     
-    return { "count": count }
-
-
+    return {"count": visitor_record.count}
 
 
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all() # This creates the database file and table locally
     app.run(host='0.0.0.0', port=5000, debug=True)
