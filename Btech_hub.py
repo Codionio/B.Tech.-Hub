@@ -1,6 +1,3 @@
-# https://codionio.github.io/B.Tech.-Hub/index.html
-
-# from flask import Flask , render_template
 import os
 from flask import Flask, render_template, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
@@ -100,18 +97,28 @@ def privacy_policy():
 def cookie_settings():
     return render_template("cookie_settings.html")
 
+# --- THIS IS THE NEW, SECRET ROUTE FOR DATABASE SETUP ---
+@app.route("/init-database-first-time-only")
+def init_db():
+    with app.app_context():
+        db.create_all()
+        # Check if the counter record exists, if not, create it.
+        visitor_record = db.session.get(Visitor, 1)
+        if not visitor_record:
+            visitor_record = Visitor(id=1, count=0)
+            db.session.add(visitor_record)
+            db.session.commit()
+    return "Database has been initialized successfully!"
+
 # ---API Route for visitor Count---
 
 @app.route("/api/visitor_count")
 def visitor_count():
-    # Find the first visitor record, or create it if it doesn't exist
     visitor_record = db.session.get(Visitor, 1)
     if not visitor_record:
-        visitor_record = Visitor(id=1, count=0)
-        db.session.add(visitor_record)
-        db.session.commit()
+        # If the table exists but the record is missing, this is a fallback.
+        return {"count": "N/A - DB not initialized"}
 
-    # Increment the count only if in production
     if os.environ.get('FLASK_ENV') == 'production':
         visitor_record.count += 1
         db.session.commit()
@@ -121,5 +128,5 @@ def visitor_count():
 
 if __name__ == "__main__":
     with app.app_context():
-        db.create_all() # This creates the database file and table locally
+        db.create_all()
     app.run(host='0.0.0.0', port=5000, debug=True)
