@@ -1,7 +1,7 @@
 {
     "First Year": {
         "Semester 1": {
-            "Engineering Physics (BAS101) / Engineering Chemistry (BAS102)": {
+            "Engineering Physics (BAS101)": {
                 "notes": {
                     "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
                     "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
@@ -10,11 +10,41 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 },
                 "pyq": {
-                    "unit_1": "https://drive.google.com/file/d/1HdAXeI_PHqqEfcKACcX-2qp70ajBJTaQ/view?usp=sharing",
-                    "unit_2": "https://drive.google.com/file/d/1Eed_osWELYSsT8XL6OMQ4hq0HEACHhjT/view?usp=drive_link",
-                    "unit_3": "https://drive.google.com/file/d/1Z-DHj92iEI7o7M0YS577LqAbkJrYcMH0/view?usp=drive_link",
-                    "unit_4": "https://drive.google.com/file/d/1Rp-9o-hLIt6DdU0rAIF-QHU-m71mhJGG/view?usp=drive_link",
-                    "unit_5": "https://drive.google.com/file/d/1qvMWNv4wPA3U2HbIQIsyIK5P3FM7sTVJ/view?usp=drive_link"
+                    "PYQ_1": "https://drive.google.com/file/d/1HdAXeI_PHqqEfcKACcX-2qp70ajBJTaQ/view?usp=sharing",
+                    "PYQ_2": "https://drive.google.com/file/d/1Eed_osWELYSsT8XL6OMQ4hq0HEACHhjT/view?usp=sharing",
+                    "PYQ_3": "https://drive.google.com/file/d/1Z-DHj92iEI7o7M0YS577LqAbkJrYcMH0/view?usp=sharing",
+                    "PYQ_4": "https://drive.google.com/file/d/1Rp-9o-hLIt6DdU0rAIF-QHU-m71mhJGG/view?usp=sharing",
+                    "PYQ_5": "https://drive.google.com/file/d/1qvMWNv4wPA3U2HbIQIsyIK5P3FM7sTVJ/view?usp=sharing"
+                },
+                "lectures": {
+                    "unit_1": "https://www.youtube.com/live/hQpugnbxH88?si=B7BTraKifGUGIlWw",
+                    "unit_2": "https://youtu.be/g2eYEsuhKz8?si=AAzJAa25n4_lL5pl",
+                    "unit_3": "https://youtu.be/7QX764bNWx4?si=EkUxgwHRBiyVEH_a",
+                    "unit_4": "https://youtu.be/DkzyhhzSIzw?si=fXbQAO8ICDWX0Z3B",
+                    "unit_5": "https://youtu.be/3FTAgnE4Quw?si=jMvOnLYRpE1ufgbZ"
+                },
+                "imp_questions": {
+                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
+                }
+            },
+            "Engineering Chemistry (BAS102)": {
+                "notes": {
+                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
+                },
+                "pyq": {
+                    "unit_1": "https://drive.google.com/file/d/1w_6-fRzJWs2gI15XFhTkz8VySnE7iruX/view?usp=sharing",
+                    "unit_2": "https://drive.google.com/file/d/10DhlkMQqG9z29BMVqn1ecmMNQwIhoUTU/view?usp=sharing",
+                    "unit_3": "https://drive.google.com/file/d/15_4tshfS4tUjPdxj6JNeI-Vz5KWW2QWn/view?usp=sharing",
+                    "unit_4": "https://drive.google.com/file/d/1hzzgDKr5AAYc9tw8F3eD2Xd_Tl-qX1gh/view?usp=sharing",
+                    "unit_5": "https://drive.google.com/file/d/1q7QbuwoDmuAb4Uu5dnZ5X7SvBR0mJKJc/view?usp=sharing"
                 },
                 "lectures": {
                     "unit_1": "https://www.youtube.com/live/hQpugnbxH88?si=B7BTraKifGUGIlWw",
@@ -40,11 +70,11 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 },
                 "pyq": {
-                    "unit_1": "https://drive.google.com/file/d/1tsbbszNe0fGNBudz2jVpFBT8KxlAIxYH/view?usp=drive_link",
-                    "unit_2": "https://drive.google.com/file/d/1TYKD9gnNC8sfxTelJl8cpBfPp95AnARi/view?usp=drive_link",
-                    "unit_3": "https://drive.google.com/file/d/1ottH7Kxz-J7y5GSFz9XIQlazVExcFdpp/view?usp=drive_link",
-                    "unit_4": "https://drive.google.com/file/d/1tsbbszNe0fGNBudz2jVpFBT8KxlAIxYH/view?usp=drive_link",
-                    "unit_5": "https://drive.google.com/file/d/1TYKD9gnNC8sfxTelJl8cpBfPp95AnARi/view?usp=drive_link"
+                    "unit_1": "https://drive.google.com/file/d/1FmKGFCNgVwtFwPh1tRigmQV9Zxak1kUW/view?usp=sharing",
+                    "unit_2": "https://drive.google.com/file/d/1P_r5smcnL4j8nbAZQZDyrglBx33bIO3Y/view?usp=sharing",
+                    "unit_3": "https://drive.google.com/file/d/1fueemrrZyX_Tz9ST1zYooDoRuq6F9YOW/view?usp=sharing",
+                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 },
                 "lectures": {
                     "unit_1": "https://youtu.be/_G9deLSUhts?si=2PLMSY1xO3BlXtmB",
@@ -61,7 +91,7 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 }
             },
-            "Fundamentals of Electrical Engineering (BEE101) / Fundamentals of Electronics Engineering (BEC101)": {
+            "Fundamentals of Electrical Engineering (BEE101)": {
                 "notes": {
                     "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
                     "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
@@ -70,11 +100,11 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 },
                 "pyq": {
-                    "unit_1": "https://drive.google.com/file/d/1sLJy1OvqxGso9P27FIHREG3RwAD6tirn/view?usp=drive_link",
-                    "unit_2": "https://drive.google.com/file/d/1y6UNsagg_kVerSJShuLM4Vmdm9ya2D27/view?usp=drive_link",
-                    "unit_3": "https://drive.google.com/file/d/11Uvb3KEirOmO-dPRZ1MwgkmNZo2BeAKw/view?usp=drive_link",
-                    "unit_4": "https://drive.google.com/file/d/1A01zIj-3klT1CQSOis721U11lam4a3b_/view?usp=drive_link",
-                    "unit_5": "https://drive.google.com/file/d/1zxuxEXY8Ram9F86y8X2CU7cWA_xbZgN0/view?usp=drive_link"
+                    "unit_1": "https://drive.google.com/file/d/1sLJy1OvqxGso9P27FIHREG3RwAD6tirn/view?usp=sharing",
+                    "unit_2": "https://drive.google.com/file/d/1y6UNsagg_kVerSJShuLM4Vmdm9ya2D27/view?usp=sharing",
+                    "unit_3": "https://drive.google.com/file/d/11Uvb3KEirOmO-dPRZ1MwgkmNZo2BeAKw/view?usp=sharing",
+                    "unit_4": "https://drive.google.com/file/d/1A01zIj-3klT1CQSOis721U11lam4a3b_/view?usp=sharing",
+                    "unit_5": "https://drive.google.com/file/d/1zxuxEXY8Ram9F86y8X2CU7cWA_xbZgN0/view?usp=sharing"
                 },
                 "lectures": {
                     "unit_1": "https://youtu.be/ih92Q6XElFQ?si=wSiguh8jXr-iUiWJ",
@@ -91,7 +121,7 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 }
             },
-            "Programming for Problem Solving (BCS101) / Fundamentals of Mechanical Engineering (BME101)": {
+            "Fundamentals of Electronics Engineering (BEC101)": {
                 "notes": {
                     "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
                     "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
@@ -100,11 +130,41 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 },
                 "pyq": {
-                    "unit_1": "https://drive.google.com/file/d/1ZK5UvnqndPnSICmTrHLMXG5zgLS_qA4Q/view?usp=drive_link",
-                    "unit_2": "https://drive.google.com/file/d/1a0b5XpJR2bdRIT-b3uaQ-abedV4haTce/view?usp=drive_link",
-                    "unit_3": "https://drive.google.com/file/d/12_ygVl3e5nI2rLmtdnK88zNLowYZgJD9/view?usp=drive_link",
-                    "unit_4": "https://drive.google.com/file/d/1Gw3TWyQZJC7fRGVSAUfgGrTPVcxyOtnW/view?usp=drive_link",
-                    "unit_5": "https://drive.google.com/file/d/1rFmdlEpxQKZ9PQkyVYICG9VJG02ydFky/view?usp=drive_link"
+                    "unit_1": "https://drive.google.com/file/d/1NJQQHRRjl7ealyqteoqde7LfLJNDiKru/view?usp=sharing",
+                    "unit_2": "https://drive.google.com/file/d/1wdhSkXzdWSyf_-YL12-LHjvKGXunGJuU/view?usp=sharing",
+                    "unit_3": "https://drive.google.com/file/d/1V3r2iEO_LRXP8tGKo_qmADzW_rQCAeTQ/view?usp=sharing",
+                    "unit_4": "https://drive.google.com/file/d/1yVNdKhZucpa2Bg10yRMFu-nERx--n1sz/view?usp=sharing",
+                    "unit_5": "https://drive.google.com/file/d/1ENmmO9D7t9uTQhC7Szs6TUwx_6BId-zQ/view?usp=sharing"
+                },
+                "lectures": {
+                    "unit_1": "https://youtu.be/ih92Q6XElFQ?si=wSiguh8jXr-iUiWJ",
+                    "unit_2": "https://youtu.be/HaKTxkQsEzk?si=BZdPwxdkgivXyOO5",
+                    "unit_3": "https://youtu.be/9xqgbpOfhG4?si=OeTmwVcnoZaFHIsI",
+                    "unit_4": "https://youtu.be/ijppavftKEY?si=I8-kj1P6Dm3oQlw9",
+                    "unit_5": "https://www.youtube.com/live/Lyo1diK6WhI?si=oOqdkQkowZkr9fdu"
+                },
+                "imp_questions": {
+                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
+                }
+            },
+            "Programming for Problem Solving (BCS101)": {
+                "notes": {
+                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
+                },
+                "pyq": {
+                    "unit_1": "https://drive.google.com/file/d/1ZK5UvnqndPnSICmTrHLMXG5zgLS_qA4Q/view?usp=sharing",
+                    "unit_2": "https://drive.google.com/file/d/1a0b5XpJR2bdRIT-b3uaQ-abedV4haTce/view?usp=sharing",
+                    "unit_3": "https://drive.google.com/file/d/12_ygVl3e5nI2rLmtdnK88zNLowYZgJD9/view?usp=sharing",
+                    "unit_4": "https://drive.google.com/file/d/1Gw3TWyQZJC7fRGVSAUfgGrTPVcxyOtnW/view?usp=sharing",
+                    "unit_5": "https://drive.google.com/file/d/1rFmdlEpxQKZ9PQkyVYICG9VJG02ydFky/view?usp=sharing"
                 },
                 "lectures": {
                     "unit_1": "https://youtu.be/64V5RV9x6ds?si=OLxbFyyyCQCoJsh-",
@@ -121,7 +181,7 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 }
             },
-            "Environment and Ecology (BAS104) / Soft Skills (BAS105)": {
+            "Fundamentals of Mechanical Engineering (BME101)": {
                 "notes": {
                     "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
                     "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
@@ -130,11 +190,41 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 },
                 "pyq": {
-                    "unit_1": "https://drive.google.com/file/d/1erQ7TIV6xVHlAsLfMETbXUt4iZq8hSxf/view?usp=drive_link",
-                    "unit_2": "https://drive.google.com/file/d/1ugHI_DKWRDlDZoHw-VMfI8Twi_kCijBI/view?usp=drive_link",
-                    "unit_3": "https://drive.google.com/file/d/1iBIkc9UFsjmxV1ptQzS0RJf0-TC4D4dB/view?usp=drive_link",
-                    "unit_4": "https://drive.google.com/file/d/1BRAQDeZ9fSGXulRitjnUBnAGjfPMxJOk/view?usp=drive_link",
-                    "unit_5": "https://drive.google.com/file/d/1CDB0-kqZQSf_ZbdaWHoaCFldPD4jDZN7/view?usp=drive_link"
+                    "unit_1": "https://drive.google.com/file/d/1Llwx_eiF_IWO1sNjtCXy5IcxSRmhjDnB/view?usp=sharing",
+                    "unit_2": "https://drive.google.com/file/d/13eBI1XNBOmk7udrh8UsF4mlScyepunMR/view?usp=sharing",
+                    "unit_3": "https://drive.google.com/file/d/1i2Jv_Rxf_RPfz0Uy39qq_HSkcTrk1pyZ/view?usp=sharing",
+                    "unit_4": "https://drive.google.com/file/d/1QifkSFDxst1Zw5I3Tq7sl74guontv_U3/view?usp=sharing",
+                    "unit_5": "https://drive.google.com/file/d/1YXa4XWqqtV9Mo6jGdOivRoFWTk3ldO3D/view?usp=sharing"
+                },
+                "lectures": {
+                    "unit_1": "https://youtu.be/ih92Q6XElFQ?si=wSiguh8jXr-iUiWJ",
+                    "unit_2": "https://youtu.be/HaKTxkQsEzk?si=BZdPwxdkgivXyOO5",
+                    "unit_3": "https://youtu.be/9xqgbpOfhG4?si=OeTmwVcnoZaFHIsI",
+                    "unit_4": "https://youtu.be/ijppavftKEY?si=I8-kj1P6Dm3oQlw9",
+                    "unit_5": "https://www.youtube.com/live/Lyo1diK6WhI?si=oOqdkQkowZkr9fdu"
+                },
+                "imp_questions": {
+                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
+                }
+            },
+            "Environment and Ecology (BAS104)": {
+                "notes": {
+                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
+                },
+                "pyq": {
+                    "unit_1": "https://drive.google.com/file/d/1erQ7TIV6xVHlAsLfMETbXUt4iZq8hSxf/view?usp=sharing",
+                    "unit_2": "https://drive.google.com/file/d/1ugHI_DKWRDlDZoHw-VMfI8Twi_kCijBI/view?usp=sharing",
+                    "unit_3": "https://drive.google.com/file/d/1iBIkc9UFsjmxV1ptQzS0RJf0-TC4D4dB/view?usp=sharing",
+                    "unit_4": "https://drive.google.com/file/d/1BRAQDeZ9fSGXulRitjnUBnAGjfPMxJOk/view?usp=sharing",
+                    "unit_5": "https://drive.google.com/file/d/1CDB0-kqZQSf_ZbdaWHoaCFldPD4jDZN7/view?usp=sharing"
                 },
                 "lectures": {
                     "unit_1": "https://www.youtube.com/live/LHDbD8hDxQw?si=jfOiS24JR74C0ocU",
@@ -151,7 +241,7 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 }
             },
-            "Engineering Physics Lab (BAS151) / Engineering Chemistry Lab (BAS152)": {
+            "Soft Skills (BAS105)": {
                 "notes": {
                     "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
                     "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
@@ -160,140 +250,18 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 },
                 "pyq": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
+                    "unit_1": "https://drive.google.com/file/d/1dtmG3lJ86Q1HpR0ieyqg_FPqEWlqgVPz/view?usp=sharing",
+                    "unit_2": "https://drive.google.com/file/d/1glYgcxsGV3zlVPA5pvYecRacyMqmvHOj/view?usp=sharing",
+                    "unit_3": "https://drive.google.com/file/d/1rRzhTGFmM7W1cRjQnwZEdx403BtQqCwQ/view?usp=sharing",
+                    "unit_4": "https://drive.google.com/file/d/1hx6z7w5wU9liZR2iG-0PEcviqoWAZjwT/view?usp=sharing",
+                    "unit_5": "https://drive.google.com/file/d/1kqL7Cf5AE5AcVtztTeR5bMB0s4O8eslN/view?usp=sharing"
                 },
                 "lectures": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "Basic Electrical Engineering Lab (BEE151) / Basic Electronics Engineering Lab (BEC151)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "lectures": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "Programming for Problem Solving Lab (BCS151) / English Language Lab (BAS155)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "lectures": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "Engineering Graphics & Design Lab (BCE151) / Workshop Practice Lab (BWS151)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "lectures": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            }
-        },
-        "Semester 2": {
-            "Engineering Chemistry (BAS202) / Engineering Physics (BAS201)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://drive.google.com/file/d/1w_6-fRzJWs2gI15XFhTkz8VySnE7iruX/view?usp=drive_link",
-                    "unit_2": "https://drive.google.com/file/d/10DhlkMQqG9z29BMVqn1ecmMNQwIhoUTU/view?usp=drive_link",
-                    "unit_3": "https://drive.google.com/file/d/15_4tshfS4tUjPdxj6JNeI-Vz5KWW2QWn/view?usp=drive_link",
-                    "unit_4": "https://drive.google.com/file/d/1hzzgDKr5AAYc9tw8F3eD2Xd_Tl-qX1gh/view?usp=drive_link",
-                    "unit_5": "https://drive.google.com/file/d/1q7QbuwoDmuAb4Uu5dnZ5X7SvBR0mJKJc/view?usp=drive_link"
-                },
-                "lectures": {
-                    "unit_1": "https://youtu.be/E1MikgBHcZU?si=wQ5qslIpYJhRGfWN",
-                    "unit_2": "https://youtu.be/6P_rF3bPftk?si=oHqA4OJWmeSSofFD",
-                    "unit_3": "https://youtu.be/DLnQ1E6_2kw?si=EIopYRMe-4_0MCZf",
-                    "unit_4": "https://youtu.be/sybAgfanYzo?si=6502hg14u-hS99bT",
-                    "unit_5": "https://youtu.be/79irlozeOlU?si=knweEx5kPLaQbCfl"
+                    "unit_1": "https://youtu.be/ih92Q6XElFQ?si=wSiguh8jXr-iUiWJ",
+                    "unit_2": "https://youtu.be/HaKTxkQsEzk?si=BZdPwxdkgivXyOO5",
+                    "unit_3": "https://youtu.be/9xqgbpOfhG4?si=OeTmwVcnoZaFHIsI",
+                    "unit_4": "https://youtu.be/ijppavftKEY?si=I8-kj1P6Dm3oQlw9",
+                    "unit_5": "https://www.youtube.com/live/Lyo1diK6WhI?si=oOqdkQkowZkr9fdu"
                 },
                 "imp_questions": {
                     "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
@@ -312,11 +280,11 @@
                     "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 },
                 "pyq": {
-                    "unit_1": "https://drive.google.com/file/d/1KK7AHl0LEH0VFDScyOFwTjse2va_yM6J/view?usp=drive_link",
-                    "unit_2": "https://drive.google.com/file/d/1wHbtNhpdS_mxKABZjp_6zl9rqkYkmrox/view?usp=drive_link",
-                    "unit_3": "https://drive.google.com/file/d/1X02g-Pwh6FrtXS1eZ_w2py5SJ4gm9nDw/view?usp=drive_link",
-                    "unit_4": "https://drive.google.com/file/d/1KK7AHl0LEH0VFDScyOFwTjse2va_yM6J/view?usp=drive_link",
-                    "unit_5": "https://drive.google.com/file/d/1wHbtNhpdS_mxKABZjp_6zl9rqkYkmrox/view?usp=drive_link"
+                    "unit_1": "https://drive.google.com/file/d/1JTaBFP3YXVYWMPOQv5HWOMdxe9U0_8uC/view?usp=sharing",
+                    "unit_2": "https://drive.google.com/file/d/1MBnGhcka0_5gm5J_wVFpQ4zBsAYgQD4l/view?usp=sharing",
+                    "unit_3": "https://drive.google.com/file/d/1Qjrmrk57ePcNNftR0nQMv6U8MZCR568b/view?usp=sharing",
+                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
+                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 },
                 "lectures": {
                     "unit_1": "https://youtu.be/M2y9lwcy9tc?si=G0YJXef1xER_Uox4",
@@ -324,246 +292,6 @@
                     "unit_3": "https://youtube.com/playlist?list=PL5Dqs90qDljWR5HPq0AVDKFmh_Ugsyee1&si=1V5hltXvcwBVk5PG",
                     "unit_4": "https://www.youtube.com/live/leeYyymYcdA?si=Gj4RWzzMatEcsWOm",
                     "unit_5": "https://youtube.com/playlist?list=PL0c0N7xv8s06iL0pUc8VXGH_v-vbGOSv4&si=JBc2arrD9KejEY71"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "Fundamentals of Electronics Engineering (BEC201) / Fundamentals of Electrical Engineering (BEE201)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://drive.google.com/file/d/1NJQQHRRjl7ealyqteoqde7LfLJNDiKru/view?usp=drive_link",
-                    "unit_2": "https://drive.google.com/file/d/1wdhSkXzdWSyf_-YL12-LHjvKGXunGJuU/view?usp=drive_link",
-                    "unit_3": "https://drive.google.com/file/d/1V3r2iEO_LRXP8tGKo_qmADzW_rQCAeTQ/view?usp=drive_link",
-                    "unit_4": "https://drive.google.com/file/d/1yVNdKhZucpa2Bg10yRMFu-nERx--n1sz/view?usp=drive_link",
-                    "unit_5": "https://drive.google.com/file/d/1ENmmO9D7t9uTQhC7Szs6TUwx_6BId-zQ/view?usp=drive_link"
-                },
-                "lectures": {
-                    "unit_1": "https://www.youtube.com/live/mbQGkg4YXGw?si=KNbKBODTfbA5XfSR",
-                    "unit_2": "https://youtube.com/playlist?list=PL0c0N7xv8s06iL0pUc8VXGH_v-vbGOSv4&si=JBc2arrD9KejEY71",
-                    "unit_3": "https://youtube.com/playlist?list=PL0c0N7xv8s06iL0pUc8VXGH_v-vbGOSv4&si=JBc2arrD9KejEY71",
-                    "unit_4": "https://youtube.com/playlist?list=PL0c0N7xv8s06iL0pUc8VXGH_v-vbGOSv4&si=JBc2arrD9KejEY71",
-                    "unit_5": "https://youtube.com/playlist?list=PL0c0N7xv8s06iL0pUc8VXGH_v-vbGOSv4&si=JBc2arrD9KejEY71"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "Fundamentals of Mechanical Engineering (BME201) / Programming for Problem Solving (BCS201)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://drive.google.com/file/d/1Llwx_eiF_IWO1sNjtCXy5IcxSRmhjDnB/view?usp=drive_link",
-                    "unit_2": "https://drive.google.com/file/d/13eBI1XNBOmk7udrh8UsF4mlScyepunMR/view?usp=drive_link",
-                    "unit_3": "https://drive.google.com/file/d/1i2Jv_Rxf_RPfz0Uy39qq_HSkcTrk1pyZ/view?usp=drive_link",
-                    "unit_4": "https://drive.google.com/file/d/1QifkSFDxst1Zw5I3Tq7sl74guontv_U3/view?usp=drive_link",
-                    "unit_5": "https://drive.google.com/file/d/1YXa4XWqqtV9Mo6jGdOivRoFWTk3ldO3D/view?usp=drive_link"
-                },
-                "lectures": {
-                    "unit_1": "https://www.youtube.com/live/0xaq-X-vR5M?si=Hdt7jVDNzG6QCSKK",
-                    "unit_2": "https://www.youtube.com/live/YTn_yWAVtlk?si=vDRfNzcU1evomo4y",
-                    "unit_3": "https://www.youtube.com/live/BRmUpdXqgak?si=wXfX4IsfwYYcksBw",
-                    "unit_4": "https://www.youtube.com/live/LiLxenn3_c0?si=kKhQI1RDFFO3-zDC",
-                    "unit_5": "https://youtu.be/EuOLvQLu1v4?si=l0O4TBoYFNjKoyej"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "Soft Skills (BAS205) / Environment and Ecology (BAS204)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://drive.google.com/file/d/1dtmG3lJ86Q1HpR0ieyqg_FPqEWlqgVPz/view?usp=drive_link",
-                    "unit_2": "https://drive.google.com/file/d/1glYgcxsGV3zlVPA5pvYecRacyMqmvHOj/view?usp=drive_link",
-                    "unit_3": "https://drive.google.com/file/d/1rRzhTGFmM7W1cRjQnwZEdx403BtQqCwQ/view?usp=drive_link",
-                    "unit_4": "https://drive.google.com/file/d/1hx6z7w5wU9liZR2iG-0PEcviqoWAZjwT/view?usp=drive_link",
-                    "unit_5": "https://drive.google.com/file/d/1kqL7Cf5AE5AcVtztTeR5bMB0s4O8eslN/view?usp=drive_link"
-                },
-                "lectures": {
-                    "unit_1": "https://youtu.be/5jGvZ6OJ6kw?si=mWgCHoCXOFEe-n15",
-                    "unit_2": "https://youtu.be/C37aYzPOIP4?si=Ud-EFW5a_dkbWWwt",
-                    "unit_3": "https://youtu.be/MRDg3wLCdKk?si=cqSBzRKOeLucsxLOv",
-                    "unit_4": "https://youtu.be/TkoAIhbSW4M?si=BDgaiwehrM9ovcZ3",
-                    "unit_5": "https://youtu.be/uZomhevXJr0?si=1wKQYrnV4DBdWAft"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "Engineering Chemistry Lab (BAS252) / Engineering Physics Lab (BAS251)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "lectures": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "Basic Electronics Engineering Lab (BEC251) / Basic Electrical Engineering Lab (BEE251)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "lectures": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "English Language Lab (BAS255) / Programming for Problem Solving Lab (BCS251)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "lectures": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "Workshop Practice Lab (BWS251) / Engineering Graphics & Design Lab (BCE251)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "lectures": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "imp_questions": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                }
-            },
-            "Sports and Yoga (BVA251) / NSS (BVA252)": {
-                "notes": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "pyq": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
-                },
-                "lectures": {
-                    "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_2": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_3": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_4": "https://sciencecitychennai.in/maxresdefault.jpg",
-                    "unit_5": "https://sciencecitychennai.in/maxresdefault.jpg"
                 },
                 "imp_questions": {
                     "unit_1": "https://sciencecitychennai.in/maxresdefault.jpg",
