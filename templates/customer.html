@@ -1,35 +1,37 @@
 {% extends "base.html" %}
 
-{% block title %}Customer | B.Tech Hub{% endblock %}
+{% block title %}Customers | B.Tech Hub{% endblock %}
 
 {% block content %}
 <div class="max-w-6xl mx-auto px-4 py-10">
-    <h1 class="text-4xl font-bold text-center text-blue-600 mb-2">Our Customers</h1>
-    <p class="text-center text-gray-600 mb-8">Hear from students who use B.Tech Hub every day.</p>
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">From the Students</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">Hear from the B.Tech Hub community.</p>
+    </div>
 
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Trusted by AKTU Students</h2>
-        <p class="text-gray-700 leading-relaxed">
-            Thousands of students from Dr. A.P.J. Abdul Kalam Technical University trust 
-            B.Tech Hub to calculate their SGPA, track their CGPA, and access the latest syllabus.
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Trusted by the AKTU Community</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            B.Tech Hub has become an indispensable tool for thousands of students across all branches and years at Dr. A.P.J. Abdul Kalam Technical University. We are proud to support a vibrant community of learners who rely on our platform for its accuracy, reliability, and ease of use. Our commitment is to the students, and their success is our greatest metric.
         </p>
     </div>
 
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Student Testimonials</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-            <li>📢 "The SGPA calculator saved me hours every semester!" – Anjali, CSE</li>
-            <li>📢 "I love the clean interface and easy navigation." – Rohan, ME</li>
-            <li>📢 "Finally, all academic tools in one place." – Priya, ECE</li>
-        </ul>
-    </div>
-
-    <div class="bg-white shadow-lg rounded-lg p-6">
-        <h2 class="text-2xl font-semibold mb-4">Your Feedback Matters</h2>
-        <p class="text-gray-700 leading-relaxed">
-            We constantly improve B.Tech Hub based on feedback from students. 
-            If you have suggestions or feature requests, we’d love to hear them.
-        </p>
+    <div class="space-y-8">
+        <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white">Testimonials</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">"The SGPA calculator is a lifesaver. I used to spend hours manually calculating my grades and always worried I'd made a mistake. B.Tech Hub does it instantly and accurately. The performance dashboard is a brilliant feature!"</p>
+                <p class="font-semibold text-gray-800 dark:text-white">– Anjali S., 3rd Year CSE</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">"Finally, one place for everything! Finding the correct syllabus and previous year papers used to be so chaotic. This platform is incredibly well-organized and has saved me so much time before my exams."</p>
+                <p class="font-semibold text-gray-800 dark:text-white">– Rohan V., 2nd Year ME</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">"I love the clean interface and how fast the site is, especially on mobile. It's clear that this was built by students who actually understand what we need. Highly recommended."</p>
+                <p class="font-semibold text-gray-800 dark:text-white">– Priya K., 4th Year ECE</p>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

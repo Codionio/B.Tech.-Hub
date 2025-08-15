@@ -4,38 +4,36 @@
 
 {% block content %}
 <div class="max-w-4xl mx-auto px-4 py-10">
-    <h1 class="text-4xl font-bold text-center text-blue-600 mb-2">Contact Us</h1>
-    <p class="text-center text-gray-600 mb-8">We’d love to hear from you. Fill out the form below or reach out via email.</p>
-
-    <!-- Contact Info -->
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
-        <p class="text-gray-700 leading-relaxed mb-2"><strong>Email:</strong> ayushvarshney0987@gmail.com</p>
-        <p class="text-gray-700 leading-relaxed mb-2"><strong>Phone:</strong> +91 9675523226</p>
-        <p class="text-gray-700 leading-relaxed"><strong>Address:</strong> Aligarh, Uttar Pradesh, India</p>
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">Contact Us</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">We’d love to hear from you. We're here to help and answer any question you might have.</p>
     </div>
 
-    <!-- Contact Form -->
-    <div class="bg-white shadow-lg rounded-lg p-6">
-        <h2 class="text-2xl font-semibold mb-4">Send us a Message</h2>
-        <form action="/contact" method="POST" class="space-y-4">
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8 mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Get in Touch</h2>
+        <div class="space-y-4 text-gray-700 dark:text-gray-300">
+            <p><strong>Support Email:</strong> <a href="mailto:ayushvarshney0987@gmail.com" class="text-indigo-600 dark:text-indigo-400 hover:underline">ayushvarshney0987@gmail.com</a></p>
+            <p><strong>Business Inquiries:</strong> <a href="mailto:business@btechhub.com" class="text-indigo-600 dark:text-indigo-400 hover:underline">business@btechhub.com</a></p>
+            <p><strong>Address:</strong> Aligarh, Uttar Pradesh, India</p>
+        </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Send us a Message</h2>
+        <form action="/contact" method="POST" class="space-y-6">
             <div>
-                <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
-                <input type="text" id="name" name="name" required 
-                       class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Your Name</label>
+                <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
             </div>
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
-                <input type="email" id="email" name="email" required 
-                       class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Your Email</label>
+                <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
             </div>
             <div>
-                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                <textarea id="message" name="message" rows="4" required 
-                          class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"></textarea>
             </div>
-            <button type="submit" 
-                    class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+            <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-md">
                 Send Message
             </button>
         </form>

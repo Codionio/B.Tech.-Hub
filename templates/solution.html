@@ -4,31 +4,35 @@
 
 {% block content %}
 <div class="max-w-6xl mx-auto px-4 py-10">
-    <h1 class="text-4xl font-bold text-center text-blue-600 mb-2">Our Solution</h1>
-    <p class="text-center text-gray-600 mb-8">How B.Tech Hub solves students' academic challenges.</p>
-
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Centralized Academic Tools</h2>
-        <p class="text-gray-700 leading-relaxed">
-            B.Tech Hub brings together essential academic resources into one platform — 
-            eliminating the need to jump between multiple websites and documents.
-        </p>
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">Our Solution</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">Addressing the core challenges of student life.</p>
     </div>
 
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Accurate Calculations</h2>
-        <p class="text-gray-700 leading-relaxed">
-            Our SGPA & CGPA calculators strictly follow AKTU’s grading system. 
-            You simply input grades, and the system handles the rest — accurate, fast, and stress-free.
-        </p>
-    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-900/50 rounded-2xl p-8">
+            <h2 class="text-3xl font-bold text-red-700 dark:text-red-300 mb-4">The Problem: Academic Chaos</h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">The life of an engineering student is filled with scattered information:</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-400">
+                <li>Outdated syllabus PDFs from various sources.</li>
+                <li>Clunky university portals that are hard to navigate.</li>
+                <li>Unreliable SGPA calculators that don't follow official rules.</li>
+                <li>Wasted hours searching for notes and PYQs before exams.</li>
+                <li>Difficulty in tracking academic progress semester over semester.</li>
+            </ul>
+        </div>
 
-    <div class="bg-white shadow-lg rounded-lg p-6">
-        <h2 class="text-2xl font-semibold mb-4">Performance Tracking</h2>
-        <p class="text-gray-700 leading-relaxed">
-            Track your academic progress over multiple semesters with easy-to-read charts and exportable reports.
-            B.Tech Hub helps you stay on top of your performance and make informed decisions.
-        </p>
+        <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-900/50 rounded-2xl p-8">
+            <h2 class="text-3xl font-bold text-green-700 dark:text-green-300 mb-4">The B.Tech Hub Solution</h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">We provide a single, unified platform that solves these problems:</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-400">
+                <li><strong>One Source of Truth:</strong> A centralized, official syllabus for every branch and year.</li>
+                <li><strong>Powerful Tools:</strong> An advanced, accurate SGPA calculator with a performance dashboard.</li>
+                <li><strong>Organized Resources:</strong> A structured library of notes, PYQs, and video lectures.</li>
+                <li><strong>User-First Design:</strong> A clean, fast, and mobile-friendly interface.</li>
+                <li><strong>Clarity and Confidence:</strong> Empowering students to take control of their academic journey.</li>
+            </ul>
+        </div>
     </div>
 </div>
 {% endblock %}

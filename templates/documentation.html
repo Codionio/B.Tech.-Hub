@@ -3,35 +3,47 @@
 {% block title %}Documentation | B.Tech Hub{% endblock %}
 
 {% block content %}
-<div class="max-w-4xl mx-auto px-4 py-10">
-    <h1 class="text-4xl font-bold text-center text-blue-600 mb-2">Documentation</h1>
-    <p class="text-center text-gray-600 mb-8">
-        Explore the complete documentation for the B.Tech Hub platform, including features, usage guidelines, and technical details.
-    </p>
-
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
-        <h2 class="text-2xl font-semibold mb-4">Getting Started</h2>
-        <p class="text-gray-700 leading-relaxed">
-            This guide will walk you through the basics of using B.Tech Hub. You’ll learn how to navigate through the dashboard,
-            access resources, calculate SGPA, and more.
+<div class="max-w-6xl mx-auto px-4 py-10">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">Documentation</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">
+            A complete guide to the features and functionality of the B.Tech Hub platform.
         </p>
     </div>
 
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
-        <h2 class="text-2xl font-semibold mb-4">Features Overview</h2>
-        <ul class="list-disc pl-5 space-y-2 text-gray-700">
-            <li>University Info – Access AKTU regulations, ordinances, and grading systems.</li>
-            <li>Syllabus Hub – View semester-wise and branch-wise curriculum.</li>
-            <li>SGPA Calculator – Calculate your SGPA using AKTU's grading scale.</li>
-            <li>Resources – Access academic materials, tools, and guides.</li>
-        </ul>
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Getting Started</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Welcome to B.Tech Hub! This documentation will walk you through the basics of using our platform. Our primary goal is to provide a seamless and intuitive experience. To begin, simply navigate using the main menu. The homepage dashboard provides quick access to the four main pillars of our platform: Syllabus, SGPA Calculator, University Info, and Resources.
+        </p>
     </div>
 
-    <div class="bg-white shadow-lg rounded-lg p-6">
-        <h2 class="text-2xl font-semibold mb-4">Technical Information</h2>
-        <p class="text-gray-700 leading-relaxed">
-            The platform is built using Flask (Python) for the backend, Tailwind CSS for the frontend, and SQLite for data storage.
-            It is designed for responsiveness and usability across devices.
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Features Overview</h2>
+        <div class="space-y-6">
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Syllabus Hub</h3>
+                <p class="text-gray-700 dark:text-gray-300 mt-1">Select your engineering branch and academic year to instantly view the official, up-to-date AKTU syllabus in a clean PDF format. No more searching for the correct version.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Advanced SGPA Calculator</h3>
+                <p class="text-gray-700 dark:text-gray-300 mt-1">Our most popular tool. Select your year, branch, and semester to get a list of subjects. As you enter your marks, the corresponding grade is displayed in real-time. Click "Calculate" to see your SGPA on a professional performance dashboard, complete with charts and a detailed report.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Resource Center</h3>
+                <p class="text-gray-700 dark:text-gray-300 mt-1">This section provides a structured list of subjects based on your selection. Each subject is linked to a repository of notes, previous year question papers (PYQs), video lectures, and important questions to aid in your studies.</p>
+            </div>
+             <div>
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">University Info</h3>
+                <p class="text-gray-700 dark:text-gray-300 mt-1">A centralized hub for all official university information, including the latest ordinances, the official grading system, credit requirements, important university links, and recent news and updates.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8">
+        <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Technical Information</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            The B.Tech Hub platform is built using a modern technology stack to ensure performance, reliability, and a great user experience. The backend is powered by Python with the Flask framework, the frontend is styled with Tailwind CSS for a fully responsive design, and dynamic content is handled by vanilla JavaScript. The live visitor counter is powered by a persistent PostgreSQL database.
         </p>
     </div>
 </div>

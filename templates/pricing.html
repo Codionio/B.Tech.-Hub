@@ -4,36 +4,38 @@
 
 {% block content %}
 <div class="max-w-6xl mx-auto px-4 py-10">
-    <h1 class="text-4xl font-bold text-center text-blue-600 mb-2">Pricing</h1>
-    <p class="text-center text-gray-600 mb-8">Simple, transparent pricing for every student.</p>
-
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Free Plan</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-            <li>✅ Access to SGPA & CGPA calculators</li>
-            <li>✅ View syllabus & university rules</li>
-            <li>✅ Basic performance tracking</li>
-            <li>💲 Price: <strong>Free</strong></li>
-        </ul>
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">Our Pricing</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">Simple, transparent pricing for every student.</p>
     </div>
 
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Premium Plan</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-            <li>✅ Everything in Free Plan</li>
-            <li>✅ Advanced performance analytics</li>
-            <li>✅ Export reports as PDF/Excel</li>
-            <li>✅ Priority support</li>
-            <li>💲 Price: <strong>₹199/year</strong></li>
-        </ul>
-    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Student Plan</h2>
+            <p class="text-4xl font-bold my-4 text-gray-900 dark:text-white">Free</p>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">For all students who need essential academic tools.</p>
+            <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                <li class="flex items-center"><span class="text-green-500 mr-3">✔</span> Accurate SGPA Calculator</li>
+                <li class="flex items-center"><span class="text-green-500 mr-3">✔</span> Full Syllabus Access</li>
+                <li class="flex items-center"><span class="text-green-500 mr-3">✔</span> University Ordinances & Info</li>
+                <li class="flex items-center"><span class="text-green-500 mr-3">✔</span> Access to Community Notes</li>
+            </ul>
+            <button class="w-full mt-8 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white font-semibold py-3 rounded-lg">Your Current Plan</button>
+        </div>
 
-    <div class="bg-white shadow-lg rounded-lg p-6">
-        <h2 class="text-2xl font-semibold mb-4">Why Premium?</h2>
-        <p class="text-gray-700 leading-relaxed">
-            Premium users enjoy faster updates, advanced analytics, and personalized support. 
-            The small fee helps us maintain and improve the platform for everyone.
-        </p>
+        <div class="bg-indigo-600 dark:bg-indigo-700 text-white rounded-2xl shadow-2xl p-8 transform scale-105">
+            <h2 class="text-2xl font-bold">Pro Plan</h2>
+            <p class="text-4xl font-bold my-4">₹99 <span class="text-lg font-normal">/ year</span></p>
+            <p class="text-indigo-200 mb-6">Unlock powerful features to supercharge your studies.</p>
+            <ul class="space-y-3">
+                <li class="flex items-center"><span class="text-indigo-300 mr-3">✔</span> **Everything in Student Plan, plus:**</li>
+                <li class="flex items-center"><span class="text-indigo-300 mr-3">✔</span> Multi-Semester CGPA Tracker</li>
+                <li class="flex items-center"><span class="text-indigo-300 mr-3">✔</span> Advanced Performance Analytics</li>
+                <li class="flex items-center"><span class="text-indigo-300 mr-3">✔</span> Export Results to PDF</li>
+                <li class="flex items-center"><span class="text-indigo-300 mr-3">✔</span> Ad-Free Experience</li>
+            </ul>
+            <button class="w-full mt-8 bg-white text-indigo-600 font-semibold py-3 rounded-lg hover:bg-gray-100 transition-colors">Upgrade to Pro</button>
+        </div>
     </div>
 </div>
 {% endblock %}

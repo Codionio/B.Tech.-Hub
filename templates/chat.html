@@ -4,26 +4,35 @@
 
 {% block content %}
 <div class="max-w-4xl mx-auto px-4 py-10">
-    <h1 class="text-4xl font-bold text-center text-blue-600 mb-2">Live Chat Support</h1>
-    <p class="text-center text-gray-600 mb-8">
-        Need help? Connect with our support team instantly through live chat.
-    </p>
-
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
-        <h2 class="text-2xl font-semibold mb-4">How It Works</h2>
-        <p class="text-gray-700 leading-relaxed">
-            Our chat service allows you to get quick answers to your questions. Whether it's about SGPA calculation,
-            syllabus info, or technical issues, our team is here to help you in real-time.
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">Live Chat Support</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">
+            Connect with our support team instantly for quick assistance.
         </p>
     </div>
 
-    <div class="bg-white shadow-lg rounded-lg p-6">
-        <h2 class="text-2xl font-semibold mb-4">Availability</h2>
-        <ul class="list-disc pl-5 space-y-2 text-gray-700">
-            <li>Monday to Friday: 9:00 AM – 8:00 PM</li>
-            <li>Saturday: 10:00 AM – 6:00 PM</li>
-            <li>Sunday: Closed</li>
-        </ul>
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">How It Works</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Our live chat service is designed to provide you with immediate answers to your questions. Whether you're having trouble with the SGPA calculator, can't find a specific resource, or are facing a technical issue, our dedicated support team is here to help you in real-time. Simply open the chat widget and start a conversation.
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Feature Status: Coming Soon</h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                We are currently working on integrating a seamless and efficient live chat system into the platform. This feature will be available to all users as part of our next major update.
+            </p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Availability</h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-2">Our planned support hours will be:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Monday to Friday: 9:00 AM – 8:00 PM</li>
+                <li>Saturday: 10:00 AM – 6:00 PM</li>
+            </ul>
+        </div>
     </div>
 </div>
 {% endblock %}
