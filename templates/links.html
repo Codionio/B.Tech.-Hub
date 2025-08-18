@@ -37,6 +37,9 @@
             <button data-tab="ordinances" class="tab-button active shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
                 Ordinances
             </button>
+            <button data-tab="scholarship" class="tab-button shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
+                Scholarship
+            </button>
             <button data-tab="links" class="tab-button shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
                 Important Links
             </button>
@@ -49,6 +52,7 @@
         </nav>
     </div>
 
+
     <div class="bg-white dark:bg-gray-800 p-6 sm:p-10 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 min-h-[400px]">
         
         <div id="ordinances" class="tab-content">
@@ -57,21 +61,11 @@
             <div id="credit-system-content" class="mt-10"></div>
         </div>
 
+        <div id="scholarship" class="tab-content hidden"></div>
+
         <div id="links" class="tab-content hidden"></div>
-
         <div id="updates" class="tab-content hidden"></div>
-
-        <div id="contact" class="tab-content hidden">
-            <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Contact Information</h2>
-            <div class="space-y-4 text-gray-700 dark:text-gray-300">
-                <p>For official inquiries, you can reach out to the university through the following channels:</p>
-                <ul class="list-none space-y-3 mt-4">
-                    <li class="flex items-center gap-3"><span class="text-xl">📍</span><span>Sec-11, Jankipuram Vistar, Lucknow, Uttar Pradesh, India - 226031</span></li>
-                    <li class="flex items-center gap-3"><span class="text-xl">🌐</span><a href="https://aktu.ac.in" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">aktu.ac.in</a></li>
-                    <li class="flex items-center gap-3"><span class="text-xl">📧</span><a href="mailto:registrar@aktu.ac.in" class="text-indigo-600 dark:text-indigo-400 hover:underline">registrar@aktu.ac.in</a></li>
-                </ul>
-            </div>
-        </div>
+        <div id="contact" class="tab-content hidden"></div>
     </div>
 </div>
 {% endblock %}
