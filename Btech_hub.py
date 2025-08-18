@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 
 app = Flask(__name__ , static_folder='static')
 
@@ -125,14 +124,6 @@ def visitor_count():
         db.session.commit()
     
     return {"count": visitor_record.count}
-
-@app.context_processor
-def inject_last_updated_date():
-    # This function gets the current date every time the server starts or restarts.
-    # The strftime function formats it nicely (e.g., "August 15, 2025").
-    last_updated = datetime.now().strftime("%B %d, %Y")
-    return dict(last_updated=last_updated)
-
 
 if __name__ == "__main__":
     with app.app_context():
