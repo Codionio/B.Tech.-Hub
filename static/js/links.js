@@ -48,6 +48,97 @@ document.addEventListener('DOMContentLoaded', function() {
                 { "headline": "Even Semester Exam Form 2024-25", "details": "The portal for the even semester examination form is now live. Last date to apply is 15th Sept 2025." },
                 { "headline": "Scrutiny Result Declared", "details": "Results for the scrutiny of the previous odd semester examinations have been declared on the ERP portal." }
             ]
+        },
+         "scholarship": {
+            "title": "UP Scholarship Information (Post-Matric)",
+            "description": "The Social Welfare Department of Uttar Pradesh provides the Post-Matric Scholarship Scheme for students pursuing higher education. Here are the key details for AKTU students.",
+            "eligibility": {
+                "title": "Eligibility Criteria",
+                "points": [
+                    "The student must be a domicile (resident) of Uttar Pradesh.",
+                    "The student must be enrolled in a post-matriculation course (like B.Tech) at a recognized university.",
+                    "**Annual Family Income Limit:**",
+                    "  - For SC/ST Students: Must not exceed ₹2.5 Lakh per year.",
+                    "  - For General, OBC, and Minority Students: Must not exceed ₹2.0 Lakh per year."
+                ]
+            },
+            "documents_1": {
+                "title": "Required Documents Checklist",
+                "items": [
+                    "Aadhaar Card (must be linked with your bank account and mobile number).",
+                    "Domicile Certificate (Nivas Praman Patra).",
+                    "Caste Certificate (Jati Praman Patra), if applicable.",
+                    "Income Certificate (Aay Praman Patra), issued by a competent authority.",
+                    "Marksheet of your last qualifying examination (e.g., 12th Standard).",
+                    "Current year's fee receipt and admission letter from the institution.",
+                    "Bank passbook with your account number and IFSC code clearly visible.",
+                    "Latest passport-sized photograph."
+                ]
+            },
+            "documents": [
+                {
+                    "name": "Domicile Certificate (Nivas Praman Patra)",
+                    "description": "This certificate proves that you are a permanent resident of Uttar Pradesh.",
+                    "process": [
+                        "Visit the official UP e-District portal.",
+                        "Register as a new user or log in with your credentials.",
+                        "Select 'Domicile Certificate' from the list of services.",
+                        "Fill in the required details and upload scanned copies of your photo, identity proof, and address proof.",
+                        "Submit the application and pay the nominal fee online."
+                    ],
+                    "link": "https://edistrict.up.gov.in/",
+                    "linkLabel": "Apply on e-District Portal"
+                },
+                {
+                    "name": "Caste Certificate (Jati Praman Patra)",
+                    "description": "Required for students applying under SC, ST, or OBC categories.",
+                    "process": [
+                        "Visit the official UP e-District portal.",
+                        "Register or log in to your account.",
+                        "Select 'Caste Certificate' from the list of services.",
+                        "Fill the application form with your details and upload supporting documents like a self-declaration and proof from a village/ward head.",
+                        "Submit the application and pay the fee."
+                    ],
+                    "link": "https://edistrict.up.gov.in/",
+                    "linkLabel": "Apply on e-District Portal"
+                },
+                {
+                    "name": "Income Certificate (Aay Praman Patra)",
+                    "description": "This certificate declares your total annual family income, which must be below the threshold for your category.",
+                    "process": [
+                        "Visit the official UP e-District portal.",
+                        "Register or log in to your account.",
+                        "Select 'Income Certificate' from the services list.",
+                        "Complete the form with details of family members and their income sources, and upload documents like salary slips or a self-declaration.",
+                        "Submit the application and pay the fee."
+                    ],
+                    "link": "https://edistrict.up.gov.in/",
+                    "linkLabel": "Apply on e-District Portal"
+                },
+                {
+                    "name": "Aadhaar Card",
+                    "description": "Your Aadhaar card must be up-to-date and linked to your bank account and a working mobile number for OTP verification.",
+                    "process": [
+                        "To update your details or check the status, visit the official UIDAI website.",
+                        "Log in to the myAadhaar portal using your Aadhaar number and OTP.",
+                        "You can update your address online or book an appointment at an Aadhaar Seva Kendra for other changes."
+                    ],
+                    "link": "https://myaadhaar.uidai.gov.in/",
+                    "linkLabel": "Visit myAadhaar Portal"
+                }
+            ],
+            "applicationProcess": {
+                "title": "How to Apply for the Scholarship",
+                "steps": [
+                    "Visit the official UP Scholarship portal: <a href='https://scholarship.up.gov.in' target='_blank' class='text-indigo-600 dark:text-indigo-400 hover:underline'>scholarship.up.gov.in</a>.",
+                    "Go to the 'Student' section and complete the 'Fresh Registration' process.",
+                    "Log in with your new registration number and password.",
+                    "Fill out the application form with all personal, academic, and bank details carefully.",
+                    "Upload scanned copies of all the required documents.",
+                    "After a final review, submit the form and take a printout.",
+                    "Submit the printed hard copy along with all attached documents to your college/institute."
+                ]
+            }
         }
     };
 
@@ -128,6 +219,48 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = contentHTML;
     }
 
+    function renderScholarship() {
+        const data = universityData.scholarship;
+        const container = document.getElementById('scholarship');
+        let contentHTML = `<h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">${data.title}</h2>`;
+        contentHTML += `<p class="mb-8 text-gray-700 dark:text-gray-300 leading-relaxed">${data.description}</p>`;
+
+        // Eligibility Section
+        contentHTML += `<div class="mb-8"><h3 class="text-2xl font-semibold mb-3 text-gray-800 dark:text-white">${data.eligibility.title}</h3><ul class="list-disc list-inside space-y-2 pl-4 text-gray-700 dark:text-gray-300">`;
+        data.eligibility.points.forEach(point => {
+            contentHTML += `<li>${point}</li>`;
+        });
+        contentHTML += `</ul></div>`;
+
+        // Documents Section
+        contentHTML += `<div class="mb-8"><h3 class="text-2xl font-semibold mb-3 text-gray-800 dark:text-white">${data.documents_1.title}</h3><ul class="list-disc list-inside space-y-2 pl-4 text-gray-700 dark:text-gray-300">`;
+        data.documents_1.items.forEach(item => {
+            contentHTML += `<li>${item}</li>`;
+        });
+        contentHTML += `</ul></div>`;
+
+        // Render each required document section
+        data.documents.forEach(doc => {
+            contentHTML += `<div class="mb-8 border-b border-gray-200 dark:border-gray-700 pb-6">`;
+            contentHTML += `<h3 class="text-2xl font-semibold mb-3 text-gray-800 dark:text-white">${doc.name}</h3>`;
+            contentHTML += `<p class="mb-4 text-gray-600 dark:text-gray-400">${doc.description}</p>`;
+            contentHTML += `<h4 class="font-semibold text-gray-700 dark:text-gray-300 mb-2">How to Obtain:</h4>`;
+            contentHTML += `<ol class="list-decimal list-inside space-y-2 pl-4 text-gray-700 dark:text-gray-300">`;
+            doc.process.forEach(step => { contentHTML += `<li>${step}</li>`; });
+            contentHTML += `</ol>`;
+            contentHTML += `<a href="${doc.link}" target="_blank" class="inline-block mt-4 text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">${doc.linkLabel} →</a>`;
+            contentHTML += `</div>`;
+        });
+        
+        // Render the main application process
+        contentHTML += `<div><h3 class="text-2xl font-semibold mb-3 text-gray-800 dark:text-white">${data.applicationProcess.title}</h3><ol class="list-decimal list-inside space-y-2 pl-4 text-gray-700 dark:text-gray-300">`;
+        data.applicationProcess.steps.forEach(step => { contentHTML += `<li>${step}</li>`; });
+        contentHTML += `</ol></div>`;
+
+        container.innerHTML = contentHTML;
+    }
+
+
     // --- Tab Switching Logic ---
     const switchTab = (tabId) => {
         const activeIndicatorClass = 'border-indigo-500';
@@ -151,6 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderCreditSystem();
     renderLinks();
     renderUpdates();
+    renderScholarship();
 
     tabButtons.forEach(button => {
         button.addEventListener('click', () => switchTab(button.dataset.tab));
@@ -160,4 +294,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (initiallyActiveButton) {
         switchTab(initiallyActiveButton.dataset.tab);
     }
+
+    
 });
