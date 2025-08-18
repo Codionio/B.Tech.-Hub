@@ -10,6 +10,24 @@
         }
     },
     "Second Year": {
+        "CE": {
+            "Semester III": {
+                "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS302)": 4,
+                "Universal Human Value and Professional Ethics/ Technical Communication (BVE301 / BAS301)": 3,
+                "Engineering Mechanics (BCE301)": 4,
+                "Surveying and Geomatics (BCE302)": 4,
+                "Fluid Mechanics (BCE303)": 3,
+                "Cyber Security/Python programming (BCC301 / BCC302)": 2
+            },
+            "Semester IV": {
+                "BSC (Maths III/ Maths IV/ Maths V) / Science Based Open Elective (BAS402/ BOE4**)": 4,
+                "Technical Communication / Universal Human Value and Professional Ethics (BAS401 / BVE401)": 3,
+                "Materials, Testing & Construction Practices (BCE401)": 4,
+                "Introduction to Solid Mechanics (BCE402)": 4,
+                "Hydraulic Engineering and Mechanics (BCE403)": 3,
+                "Python Programming / Cyber Security (BCC402 / BCC401)": 2
+            }
+        },
         "CSE": {
             "Semester III": {
                 "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
@@ -17,11 +35,7 @@
                 "Data Structure (BCS301)": 4,
                 "Computer Organization and Architecture (BCS302)": 4,
                 "Discrete Structures & of Logic (BCS303)": 3,
-                "Data Structure Lab (BCS351)": 1,
-                "Computer Organization and Architecture Lab (BCS352)": 1,
-                "Web Designing Workshop (BCS353)": 1,
-                "Cyber Security/Python programming (BCC301/ BCC302)": 2,
-                "Internship Assessment /Mini Project (BCC351)": 2
+                "Cyber Security/Python programming (BCC301/ BCC302)": 2
             },
             "Semester IV": {
                 "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": 4,
@@ -29,34 +43,6 @@
                 "Operating System (BCS401)": 4,
                 "Theory of Automata and Formal Languages (BCS402)": 4,
                 "Object Oriented Programming with Java (BCS403)": 3,
-                "Operating System Lab (BCS451)": 1,
-                "Object Oriented Programming with Java Lab (BCS452)": 1,
-                "Cyber Security Workshop (BCS453)": 1,
-                "Python Programming/Cyber Security (BCC402/ BCC401)": 2
-            }
-        },
-        "CSEDS": {
-            "Semester III": {
-                "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
-                "Universal Human Value and Professional Ethics/ Technical Communication (BVE301/ BAS301)": 3,
-                "Data Structure (BCS301)": 4,
-                "Computer Organization and Architecture (BCS302)": 4,
-                "Discrete Structures & of Logic (BCS303)": 3,
-                "Data Structure Lab (BCS351)": 1,
-                "Computer Organization and Architecture Lab (BCS352)": 1,
-                "Web Designing Workshop (BCS353)": 1,
-                "Cyber Security/Python programming (BCC301/ BCC302)": 2,
-                "Internship Assessment /Mini Project (BCC351)": 2
-            },
-            "Semester IV": {
-                "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": 4,
-                "Technical Communication / Universal Human Value and Professional Ethics (BAS401/ BVE401)": 3,
-                "Operating System (BCS401)": 4,
-                "Theory of Automata and Formal Languages (BCS402)": 4,
-                "Object Oriented Programming with Java (BCS403)": 3,
-                "Operating System Lab (BCS451)": 1,
-                "Object Oriented Programming with Java Lab (BCS452)": 1,
-                "Cyber Security Workshop (BCS453)": 1,
                 "Python Programming/Cyber Security (BCC402/ BCC401)": 2
             }
         },
@@ -67,11 +53,7 @@
                 "Data Structure (BCS301)": 4,
                 "Computer Organization and Architecture (BCS302)": 4,
                 "Discrete Structures & of Logic (BCS303)": 3,
-                "Data Structure Lab (BCS351)": 1,
-                "Computer Organization and Architecture Lab (BCS352)": 1,
-                "Web Designing Workshop (BCS353)": 1,
-                "Cyber Security/Python programming (BCC301/ BCC302)": 2,
-                "Internship Assessment /Mini Project (BCC351)": 2
+                "Cyber Security/Python programming (BCC301/ BCC302)": 2
             },
             "Semester IV": {
                 "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": 4,
@@ -79,24 +61,17 @@
                 "Operating System (BCS401)": 4,
                 "Theory of Automata and Formal Languages (BCS402)": 4,
                 "Object Oriented Programming with Java (BCS403)": 3,
-                "Operating System Lab (BCS451)": 1,
-                "Object Oriented Programming with Java Lab (BCS452)": 1,
-                "Cyber Security Workshop (BCS453)": 1,
                 "Python Programming/Cyber Security (BCC402/ BCC401)": 2
             }
         },
-        "IT" : {
+        "CSEDS": {
             "Semester III": {
                 "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
                 "Universal Human Value and Professional Ethics/ Technical Communication (BVE301/ BAS301)": 3,
                 "Data Structure (BCS301)": 4,
                 "Computer Organization and Architecture (BCS302)": 4,
                 "Discrete Structures & of Logic (BCS303)": 3,
-                "Data Structure Lab (BCS351)": 1,
-                "Computer Organization and Architecture Lab (BCS352)": 1,
-                "Web Designing Workshop (BCS353)": 1,
-                "Cyber Security/Python programming (BCC301/ BCC302)": 2,
-                "Internship Assessment /Mini Project (BCC351)": 2
+                "Cyber Security/Python programming (BCC301/ BCC302)": 2
             },
             "Semester IV": {
                 "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": 4,
@@ -104,109 +79,6 @@
                 "Operating System (BCS401)": 4,
                 "Theory of Automata and Formal Languages (BCS402)": 4,
                 "Object Oriented Programming with Java (BCS403)": 3,
-                "Operating System Lab (BCS451)": 1,
-                "Object Oriented Programming with Java Lab (BCS452)": 1,
-                "Cyber Security Workshop (BCS453)": 1,
-                "Python Programming/Cyber Security (BCC402/ BCC401)": 2
-            }
-        },
-        "ECE": {
-            "Semester III": {
-                "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
-                "Universal Human Value and Professional Ethics/Technical Communication (BVE301/ BAS301)": 3,
-                "Electronic Devices (BEC301)": 4,
-                "Digital System Design (BEC302)": 4,
-                "Network Analysis and Synthesis (BEC303)": 3,
-                "Electronic Devices Lab (BEC351)": 1,
-                "Digital System Design Lab (BEC352)": 1,
-                "Network Analysis and Synthesis lab (BEC353)": 1,
-                "Cyber Security/Python programming (BCC301/ BCC302)": 2,
-                "Internship Assessment /Mini Project (BCC351)": 2
-            },
-            "Semester IV": {
-                "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403 / BOE4**)": 4,
-                "Technical Communication / Universal Human Value and Professional Ethics (BAS401 / BVE401)": 3,
-                "Communication Engineering (BEC401)": 4,
-                "Analog Circuits (BEC402)": 4,
-                "Signal System (BEC403)": 3,
-                "Communication Engineering Lab (BEC451)": 1,
-                "Analog Circuits Lab (BEC452)": 1,
-                "Signal System Lab (BEC453)": 1,
-                "Python Programming/Cyber Security (BCC402/ BCC401)": 2
-            }
-        },
-        "ME": {
-            "Semester III": {
-                "Science Based Open Elective/BSC (Maths-III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
-                "Universal Human Value and Professional Ethics/Technical Communication (BVE301/ BAS301)": 3,
-                "Thermodynamics (BME301)": 4,
-                "Fluid Mechanics & Fluid Machines (BME302)": 4,
-                "Materials Engineering (BME303)": 3,
-                "Fluid Mechanics Lab (BME351)": 1,
-                "Material Testing Lab (BME352)": 1,
-                "Computer Aided Machine Drawing-I Lab (BME353)": 1,
-                "Cyber Security/Python programming (BCC301/ BCC302)": 2,
-                "Internship Assessment /Mini Project (BCC351)": 2
-            },
-            "Semester IV": {
-                "BSC (Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": 4,
-                "Technical Communication/ Universal Human Value and Professional Ethics (BAS401/ BVE401)": 3,
-                "Applied Thermodynamics (BME401)": 4,
-                "Engineering Mechanics & Strength Material (BME402)": 4,
-                "Manufacturing Processes (BME403)": 3,
-                "Applied Thermodynamics Lab (BME451)": 1,
-                "Manufacturing Processes Lab (BME452)": 1,
-                "Computer Aided Machine Drawing-II Lab (BME453)": 1,
-                "Python Programming/Cyber Security (BCC402/ BCC401)": 2
-            }
-        },
-        "CE": {
-            "Semester III": {
-                "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS302)": 4,
-                "Technical Communication Universal Human Value and Professional Ethics/ (BVE301/ BAS301)": 3,
-                "Engineering Mechanics (BCE301)": 4,
-                "Surveying and Geomatics (BCE302)": 4,
-                "Fluid Mechanics (BCE303)": 3,
-                "Building Planning & Drawing Lab (BCE351)": 1,
-                "Surveying and Geomatics Lab (BCE352)": 1,
-                "Fluid Mechanics Lab (BCE353)": 1,
-                "Cyber Security/Python programming (BCC301 / BCC302)": 2,
-                "Internship Assessment Mini Project (BCC351)": 2
-            },
-            "Semester IV": {
-                "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS402/ BOE4**)": 4,
-                "Technical Communication / Universal Human Value and Professional Ethics (BAS401/ BVE401)": 3,
-                "Materials, Testing & Construction Practices (BCE401)": 4,
-                "Introduction to Solid Mechanics (BCE402)": 4,
-                "Hydraulic Engineering and Machines (BCE403)": 3,
-                "Material Testing Lab (BCE451)": 1,
-                "Solid Mechanics Lab (BCE452)": 1,
-                "Hydraulics & Hydraulic Machine Lab (BCE453)": 1,
-                "Python Programming/Cyber Security (BCC402/ BCC401)": 2
-            }
-        },
-        "EE": {
-            "Semester III": {
-                "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
-                "Universal Human Value and Professional Ethics/ Technical Communication (BVE301/ BAS301)": 3,
-                "Electromagnetic Field Theory (BEE301)": 4,
-                "Electrical Measurements & Instrumentation (BEE302)": 4,
-                "Basic Signals & Systems (BEE303)": 3,
-                "Electrical Circuit Simulation Lab (BEE351)": 1,
-                "Measurements and Instrumentation Lab (BEE352)": 1,
-                "Electrical Workshop (BEE353)": 1,
-                "Cyber Security/Python programming (BCC301/ BCC302)": 2,
-                "Internship Assessment /Mini Project (BCC351)": 2
-            },
-            "Semester IV": {
-                "BSC (Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": 4,
-                "Technical Communication / Universal Human Value and Professional Ethics (BAS401/ BVE401)": 3,
-                "Digital Electronics (BEE401)": 4,
-                "Electrical Machines-I (BEE402)": 4,
-                "Networks Analysis & Synthesis (BEE403)": 3,
-                "Network Analysis & Synthesis Lab (BEE451)": 1,
-                "Electrical Machines-I Lab (BEE452)": 1,
-                "Digital Electronics Lab (BEE453)": 1,
                 "Python Programming/Cyber Security (BCC402/ BCC401)": 2
             }
         },
@@ -217,11 +89,7 @@
                 "Electronic Devices (BEC301)": 4,
                 "Digital System Design (BEC302)": 4,
                 "Network Analysis and Synthesis (BEC303)": 3,
-                "Electronic Devices Lab (BEC351)": 1,
-                "Digital System Design Lab (BEC352)": 1,
-                "Network Analysis and Synthesis lab (BEC353)": 1,
-                "Cyber Security/Python programming (BCC301/ BCC302)": 2,
-                "Internship Assessment /Mini Project (BCC351)": 2
+                "Cyber Security/Python programming (BCC301/ BCC302)": 2
             },
             "Semester IV": {
                 "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403 / BOE4**)": 4,
@@ -229,9 +97,78 @@
                 "Communication Engineering (BEC401)": 4,
                 "Analog Circuits (BEC402)": 4,
                 "Signal System (BEC403)": 3,
-                "Communication Engineering Lab (BEC451)": 1,
-                "Analog Circuits Lab (BEC452)": 1,
-                "Signal System Lab (BEC453)": 1,
+                "Python Programming/Cyber Security (BCC402/ BCC401)": 2
+            }
+        },
+        "EE": {
+            "Semester III": {
+                "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
+                "Universal Human Value and Professional Ethics/ Technical Communication (BVE301/ BAS301)": 3,
+                "Electromagnetic Field Theory (BEE301)": 4,
+                "Electrical Measurements & Instrumentation (BEE302)": 4,
+                "Basic Signals & Systems (BEE303)": 3,
+                "Cyber Security/Python programming (BCC301/ BCC302)": 2
+            },
+            "Semester IV": {
+                "BSC (Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": 4,
+                "Technical Communication / Universal Human Value and Professional Ethics (BAS401/ BVE401)": 3,
+                "Digital Electronics (BEE401)": 4,
+                "Electrical Machines-I (BEE402)": 4,
+                "Networks Analysis & Synthesis (BEE403)": 3,
+                "Python Programming/Cyber Security (BCC402/ BCC401)": 2
+            }
+        },
+        "ECE": {
+            "Semester III": {
+                "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
+                "Universal Human Value and Professional Ethics/Technical Communication (BVE301/ BAS301)": 3,
+                "Electronic Devices (BEC301)": 4,
+                "Digital System Design (BEC302)": 4,
+                "Network Analysis and Synthesis (BEC303)": 3,
+                "Cyber Security/Python programming (BCC301/ BCC302)": 2
+            },
+            "Semester IV": {
+                "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403 / BOE4**)": 4,
+                "Technical Communication / Universal Human Value and Professional Ethics (BAS401 / BVE401)": 3,
+                "Communication Engineering (BEC401)": 4,
+                "Analog Circuits (BEC402)": 4,
+                "Signal System (BEC403)": 3,
+                "Python Programming/Cyber Security (BCC402/ BCC401)": 2
+            }
+        },
+        "IT" : {
+            "Semester III": {
+                "Science Based Open Elective/BSC (Maths- III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
+                "Universal Human Value and Professional Ethics/ Technical Communication (BVE301/ BAS301)": 3,
+                "Data Structure (BCS301)": 4,
+                "Computer Organization and Architecture (BCS302)": 4,
+                "Discrete Structures & of Logic (BCS303)": 3,
+                "Cyber Security/Python programming (BCC301/ BCC302)": 22
+            },
+            "Semester IV": {
+                "BSC(Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": 4,
+                "Technical Communication / Universal Human Value and Professional Ethics (BAS401/ BVE401)": 3,
+                "Operating System (BCS401)": 4,
+                "Theory of Automata and Formal Languages (BCS402)": 4,
+                "Object Oriented Programming with Java (BCS403)": 3,
+                "Python Programming/Cyber Security (BCC402/ BCC401)": 2
+            }
+        },
+        "ME": {
+            "Semester III": {
+                "Science Based Open Elective/BSC (Maths-III/Math IV/ Math V) (BOE3**/ BAS303)": 4,
+                "Universal Human Value and Professional Ethics/Technical Communication (BVE301/ BAS301)": 3,
+                "Thermodynamics (BME301)": 4,
+                "Fluid Mechanics & Fluid Machines (BME302)": 4,
+                "Materials Engineering (BME303)": 3,
+                "Cyber Security/Python programming (BCC301/ BCC302)": 2
+            },
+            "Semester IV": {
+                "BSC (Maths-III/Math IV/ Math V)/Science Based Open Elective (BAS403/ BOE4**)": 4,
+                "Technical Communication/ Universal Human Value and Professional Ethics (BAS401/ BVE401)": 3,
+                "Applied Thermodynamics (BME401)": 4,
+                "Engineering Mechanics & Strength Material (BME402)": 4,
+                "Manufacturing Processes (BME403)": 3,
                 "Python Programming/Cyber Security (BCC402/ BCC401)": 2
             }
         }
@@ -242,44 +179,26 @@
                 "Database Management System (BCS501)": 4,
                 "Web Technology (BCS502)": 4,
                 "Design and Analysis of Algorithm (BCS503)": 4,
-                "Departmental Elective-I (Deptt- Elective-I)": 3,
-                "Departmental Elective-II (Deptt.- Elective-II)": 3,
-                "Database Management System Lab (BCS551)": 1,
-                "Web Technology Lab (BCS552)": 1,
-                "Design and Analysis of Algorithm Lab (BCS553)": 1,
-                "Mini Project or Internship Assessment (BCS554)": 2
+                "Departmental Elective-I (Statistical Computing) (BCS051)": 3,
+                "Departmental Elective-I (Data Analytics) (BCS052)": 3,
+                "Departmental Elective-I (Computer Graphics) (BCS053)": 3,
+                "Departmental Elective-I (OOSD with C++) (BCS054)": 3,
+                "Departmental Elective-II (Machine Learning Techniques) (BCS055)": 3,
+                "Departmental Elective-II (App. of Soft Computing) (BCS056)": 3,
+                "Departmental Elective-II (Image Processing) (BCS057)": 3,
+                "Departmental Elective-II (Data Warehousing and Data Mining) (BCS058)": 3
             },
             "Semester VI": {
                 "Software Engineering (BCS601)": 4,
                 "Compiler Design (BCS602)": 4,
                 "Computer Networks (BCS603)": 4,
-                "Departmental Elective-III (Deptt- Elective-III)": 3,
+                "Departmental Elective-III (Big Data) (BCS061)": 3,
+                "Departmental Elective-III (Augmented and Virtual Reality) (BCS062)": 3,
+                "Departmental Elective-III (Blockchain Architecture Design) (BCS063)": 3,
+                "Departmental Elective-III (Data Compression) (BCS064)": 3,
                 "Open Elective-I (Open Elective-I)": 3,
                 "Software Engineering Lab (BCS651)": 1,
                 "Compiler Design Lab (BCS652)": 1,
-                "Computer Networks Lab (BCS653)": 1
-            }
-        },
-        "CSEDS": {
-            "Semester V": {
-                "Database Management System (BCS501)": 4,
-                "Introduction to Data Analytics and Visualization (BCDS501)": 4,
-                "Design and Analysis of Algorithm (BCS503)": 4,
-                "Departmental Elective-I (Dept. Elective-I)": 3,
-                "Departmental Elective-II (Dept. Elective-II)": 3,
-                "Database Management System Lab (BCS551)": 1,
-                "Data Analytics and Visualization Lab (BCDS551)": 1,
-                "Design and Analysis of Algorithm Lab (BCS553)": 1,
-                "Mini Project or Internship Assessment (BCS554)": 2
-            },
-            "Semester VI": {
-                "Software Engineering (BCS601)": 4,
-                "Big Data and Analytics (BCDS601)": 4,
-                "Computer Networks (BCS603)": 4,
-                "Departmental Elective-III (Dept. Elective-III)": 3,
-                "Open Elective-I (Open Elective-I)": 3,
-                "Software Engineering Lab (BCS652)": 1,
-                "Big Data and Analytics Lab (BCDS651)": 1,
                 "Computer Networks Lab (BCS653)": 1
             }
         },
@@ -288,22 +207,49 @@
                 "Database Management System (BCS501)": 4,
                 "Artificial Intelligence (BCAI501)": 4,
                 "Design and Analysis of Algorithm (BCS503)": 4,
-                "Departmental Elective-I (BCAI051/ BCS058/ BCS052/ BCS054)": 4,
-                "Departmental Elective-II (BCAM051/ BCAI052/ BCS056/ BCS057)": 4,
-                "Database Management System Lab (BCS551)": 1,
-                "Artificial Intelligence Lab (BCAI551)": 1,
-                "Design and Analysis of Algorithm Lab (BCS553)": 1,
-                "Mini Project or Internship Assessment (BCS554)": 2
+                "Departmental Elective-I (Mathematical Foundation AI, ML and Data Science) (BCAI051)": 4,
+                "Departmental Elective-I (Data Analytics) (BCS052)": 4,
+                "Departmental Elective-I (Data Warehousing and Data Mining) (BCS058)": 4,
+                "Departmental Elective-I (OOSD with C++) (BCS054)": 4,
+                "Departmental Elective-II (Cloud Computing) (BCAM051)": 4,
+                "Departmental Elective-II (App. of Soft Computing) (BCS056)": 4,
+                "Departmental Elective-II (Image Processing) (BCS057)": 4,
+                "Departmental Elective-II (Natural Language Processing) (BCAI052)": 4
             },
             "Semester VI": {
                 "Software Engineering (BCS601)": 4,
                 "Machine Learning Techniques (BCAI601)": 4,
                 "Computer Networks (BCS603)": 4,
-                "Departmental Elective-III (BCAI061/ BCDS061/ BCAM061/ BCAM062)": 3,
-                "Open Elective-I (Open Elective-I)": 3,
-                "Software Engineering Lab (BCS651)": 1,
-                "Machine Learning Lab (BCAI651)": 1,
-                "Computer Networks Lab (BCS653)": 1
+                "Departmental Elective-III (Cyber Forensic Analytics) (BCAI061)": 3,
+                "Departmental Elective-III (Image Analytics) (BCDS061)": 3,
+                "Departmental Elective-III (Social Media Analytics and Data Analysis) (BCAM061)": 3,
+                "Departmental Elective-III (Stream Processing and Analytics) (BCAM062)": 3,
+                "Open Elective-I (Open Elective-I)": 3
+            }
+        },
+        "CSEDS": {
+            "Semester V": {
+                "Database Management System (BCS501)": 4,
+                "Introduction to Data Anallytics and Visualization (BCDS501)": 4,
+                "Design and Analysis of Algorithm (BCS503)": 4,
+                "Departmental Elective-I (Mathematical Foundation AI, ML and Data Science) (BCAI051)": 4,
+                "Departmental Elective-I (Business Intelligence and Analytics) (VCDS051)": 4,
+                "Departmental Elective-I (Data Warehousing and Data Mining) (BCS058)": 4,
+                "Departmental Elective-I (OOSD with C++) (BCS054)": 4,
+                "Departmental Elective-II (Cloud Computing) (BCAM051)": 4,
+                "Departmental Elective-II (App. of Soft Computing) (BCS056)": 4,
+                "Departmental Elective-II (Image Processing) (BCS057)": 4,
+                "Departmental Elective-II (Natural Language Processing) (BCAI052)": 4
+            },
+            "Semester VI": {
+                "Software Engineering (BCS601)": 4,
+                "Big Data Analytics (BCDS601)": 4,
+                "Computer Networks (BCS603)": 4,
+                "Departmental Elective-III (Cyber Forensic Analytics) (BCAI061)": 3,
+                "Departmental Elective-III (Image Analytics) (BCDS061)": 3,
+                "Departmental Elective-III (Social Media Analytics and Data Analysis) (BCAM061)": 3,
+                "Departmental Elective-III (Machine Learning Techniques) (BCDS062)": 3,
+                "Open Elective-I (Open Elective-I)": 3
             }
         },
         "IT": {
