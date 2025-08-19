@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}CGPA Calculator & Forecaster | B.Tech Hub{% endblock %}
+
+{% block extra_head %}
+<style>
+    /* Style for the main view toggle */
+    .view-toggle-button.active {
+        background-color: #4f46e5;
+        /* indigo-600 */
+        color: white;
+    }
+
+    .dark .view-toggle-button.active {
+        background-color: #6366f1;
+        /* indigo-500 */
+    }
+
+    /* Style for the inner year tabs */
+    .year-tab.active {
+        background-color: #4f46e5;
+        color: white;
+    }
+
+    .dark .year-tab.active {
+        background-color: #6366f1;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 py-10">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">CGPA Calculator & Forecaster</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">Track your yearly and overall performance.</p>
+    </div>
+
+    <div class="mb-8 flex justify-center">
+        <div class="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-xl">
+            <button id="view-toggle-yearly"
+                class="view-toggle-button active px-6 py-2 font-semibold rounded-lg">Year-wise</button>
+            <button id="view-toggle-overall"
+                class="view-toggle-button px-6 py-2 font-semibold rounded-lg">Overall</button>
+        </div>
+    </div>
+
+    <div id="yearly-view">
+        <div id="year-tabs"
+            class="mb-8 flex flex-wrap justify-center gap-2 p-2 bg-gray-100 dark:bg-gray-800 rounded-xl">
+            <button data-year="1"
+                class="year-tab active w-full sm:w-auto flex-grow px-6 py-3 font-semibold rounded-lg">1st Year</button>
+            <button data-year="2" class="year-tab w-full sm:w-auto flex-grow px-6 py-3 font-semibold rounded-lg">2nd
+                Year</button>
+            <button data-year="3" class="year-tab w-full sm:w-auto flex-grow px-6 py-3 font-semibold rounded-lg">3rd
+                Year</button>
+            <button data-year="4" class="year-tab w-full sm:w-auto flex-grow px-6 py-3 font-semibold rounded-lg">4th
+                Year</button>
+        </div>
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h2 id="input-title" class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">1st Year SGPA
+                    </h2>
+                    <div id="yearly-sgpa-inputs" class="space-y-4"></div>
+                    <div id="forecaster" class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">🎯 Target Forecaster</h3>
+                        <div class="flex items-center gap-4">
+                            <label for="target-cgpa-yearly"
+                                class="font-semibold text-gray-700 dark:text-gray-300">Target CGPA for this
+                                year:</label>
+                            <input type="number" id="target-cgpa-yearly" step="0.01" min="0" max="10"
+                                placeholder="e.g., 8.5"
+                                class="w-24 px-3 py-1 border dark:bg-gray-700 dark:border-gray-600 rounded-lg">
+                        </div>
+                        <div id="forecast-result-yearly" class="mt-4 p-4 rounded-lg text-lg font-semibold"
+                            style="display: none;"></div>
+                    </div>
+                </div>
+                <div id="dashboard-yearly" class="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Yearly Performance</h2>
+                    <p class="text-center text-7xl font-bold text-indigo-600 dark:text-indigo-400 my-2"
+                        id="cgpa-display-yearly">0.00</p>
+                    <div class="w-full h-48 mt-6"><canvas id="yearlySgpaChart"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="overall-view" class="hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-1 bg-white dark:bg-gray-800 border rounded-2xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Enter All Your SGPAs</h2>
+                <div id="overall-sgpa-inputs" class="space-y-4"></div>
+            </div>
+
+            <div class="lg:col-span-2 bg-white dark:bg-gray-800 border rounded-2xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Overall Performance Dashboard</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="text-center">
+                        <p class="font-semibold text-gray-600 dark:text-gray-400">Your Overall CGPA</p>
+                        <p id="cgpa-display-overall"
+                            class="text-6xl font-bold text-indigo-600 dark:text-indigo-400 my-2">0.00</p>
+                    </div>
+                    <div class="w-full h-56">
+                        <canvas id="overallSgpaChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/cgpa.js') }}"></script>
+{% endblock %}

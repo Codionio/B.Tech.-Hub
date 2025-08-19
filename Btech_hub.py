@@ -22,6 +22,10 @@ def home():
 def services():
     return render_template("Sgpa.html")
 
+@app.route("/cgpa")
+def cgpa_calculator():
+    return render_template("cgpa.html")
+
 @app.route("/Syllabus")
 def syllabus():
     return render_template("Syllabus.html")
