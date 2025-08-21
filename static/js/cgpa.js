@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overallSgpaInputs.innerHTML = Array.from({ length: 8 }, (_, i) => `
             <div class="flex items-center justify-between">
                 <label for="overall-sem-${i + 1}" class="font-medium text-gray-700 dark:text-gray-300">Semester ${i + 1}</label>
-                <input type="number" id="overall-sem-${i + 1}" class="sgpa-input-overall w-24 px-3 py-1 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                <input type="number" id="overall-sem-${i + 1}" class="sgpa-input-overall w-24 px-3 py-1 border rounded-lg dark:bg-gray-700 dark:border-gray-600" placeholder="SGPA">
             </div>
         `).join('');
         calculateOverall();
