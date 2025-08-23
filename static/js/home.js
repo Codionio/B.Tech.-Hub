@@ -21,6 +21,19 @@ let delta = document.querySelector(".links");
 delta.addEventListener("click", () => {
     window.location.href = "/links";
 });
+let cgpa = document.querySelector(".cgpa_calculator");
+
+cgpa.addEventListener("click", () => {
+    window.location.href = "/cgpa";
+});
+
+let quiz = document.querySelector(".Quiz");
+
+delta.addEventListener("click", () => {
+    window.location.href = "/links";
+});
+
+
 }
 const Loading_Animation = function(){
 document.addEventListener('DOMContentLoaded', function() {
