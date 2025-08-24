@@ -1,8 +1,20 @@
 import os
 from flask import Flask, render_template, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail, Message 
 
 app = Flask(__name__ , static_folder='static')
+
+
+# --- Mail Config ---
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'your_email@gmail.com'   # apna email
+app.config['MAIL_PASSWORD'] = 'your_app_password'      # Gmail App Password
+app.config['MAIL_DEFAULT_SENDER'] = 'your_email@gmail.com'
+
+mail = Mail(app)
 
 # ---Database Configuration---
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///visitors.db')
@@ -66,16 +78,44 @@ def press():
 def blogs():
     return render_template("blogs.html")
 
+# @app.route("/contact", methods=["GET", "POST"])
+# def contact():
+#     if request.method == "POST":
+#         name = request.form.get("name")
+#         email = request.form.get("email")
+#         message = request.form.get("message")
+#         # TODO: Store or email the message
+#         flash("Your message has been sent successfully!", "success")
+#         return redirect("/contact")
+#     return render_template("contact.html")
+
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
         name = request.form.get("name")
         email = request.form.get("email")
         message = request.form.get("message")
-        # TODO: Store or email the message
-        flash("Your message has been sent successfully!", "success")
+    
+        try:
+            # Email send karein
+            msg = Message(
+                subject=f"New Contact Form Submission - {name}",
+                recipients=["your_email@gmail.com"],  # jaha receive karna hai
+                body=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
+                sender=app.config['MAIL_USERNAME'] 
+            )
+            mail.send(msg)
+            print(name,email,message,"name")
+
+            flash("Your message has been sent successfully!", "success")
+        except Exception as e:
+            print("Error sending email:", e)  # Debugging ke liye console me print hoga
+            flash("There was an error sending your message. Please try again later.", "danger")
+
         return redirect("/contact")
+
     return render_template("contact.html")
+
 
 @app.route("/documentation")
 def documentation():
@@ -100,6 +140,10 @@ def privacy_policy():
 @app.route("/cookie-settings")
 def cookie_settings():
     return render_template("cookie_settings.html")
+
+@app.route("/quiz")
+def quiz():
+    return render_template("quiz.html")
 
 # --- THIS IS THE NEW, SECRET ROUTE FOR DATABASE SETUP ---
 @app.route("/init-database-first-time-only")
