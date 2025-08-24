@@ -1,5 +1,5 @@
 const links = function(){
-    let alpha = document.querySelector(".Sgpa_calculator");
+let alpha = document.querySelector(".Sgpa_calculator");
 
 alpha.addEventListener("click", () => {
   window.location.href = "/sgpa";
@@ -105,7 +105,5 @@ const initialLoadTimeline = gsap.timeline();
     }
 });
 }
-
-
 links();
 Loading_Animation();
