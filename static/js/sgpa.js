@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- Data and Constants ---
-    const gradePoints = { 'O': 10, 'A+': 9, 'A': 8, 'B+': 7, 'B': 6, 'C': 5, 'D': 4, 'F': 0 };
+    const gradePoints = { 'A+': 10, 'A': 9, 'B+': 8, 'B': 7, 'C': 6, 'D': 5, 'E': 4, 'F': 0 };
     const semestersByYear = {
         'First Year': ['I', 'II'], 'Second Year': ['III', 'IV'],
         'Third Year': ['V', 'VI'], 'Fourth Year': ['VII', 'VIII']
@@ -231,9 +231,9 @@ function handleBranchChange() {
     }
 
     function getGrade(marks) {
-        if (marks >= 91) return 'O'; if (marks >= 81) return 'A+'; if (marks >= 71) return 'A';
-        if (marks >= 61) return 'B+'; if (marks >= 51) return 'B'; if (marks >= 41) return 'C';
-        if (marks >= 31) return 'D'; return 'F';
+        if (marks >= 90) return 'A+'; if (marks >= 80) return 'A'; if (marks >= 70) return 'B+';
+        if (marks >= 60) return 'B'; if (marks >= 50) return 'C'; if (marks >= 40) return 'D';
+        if (marks >= 30) return 'E'; return 'F';
     }
 
     function calculateSGPA() {
