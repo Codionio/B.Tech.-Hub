@@ -163,6 +163,141 @@
             <img src="static\Images\text_logo_01-removebg-preview.png" alt="No image" class="w-[100%] h-[100%]">
         </div>
     </div>
+    <div id="flash-container" class="w-full max-w-4xl mx-auto px-4 py-2"></div>
+    <div id="toast-container"></div>
+    <style>
+        #toast-container {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .toast {
+            max-width: 350px;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            opacity: 0;
+            animation: slideInRight 0.5s forwards;
+        }
+
+        .toast.toast-exit {
+            animation: slideOutRight 0.5s forwards;
+        }
+
+        .toast-success {
+            background-color: #f0fff4;
+            border-left: 4px solid #48bb78;
+            color: #2f855a;
+        }
+
+        .toast-danger {
+            background-color: #fff5f5;
+            border-left: 4px solid #f56565;
+            color: #c53030;
+        }
+
+        .toast-content {
+            margin-right: 1rem;
+        }
+
+        .toast-close-btn {
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .toast-close-btn:hover {
+            opacity: 1;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    </style>
+
+
+    <script>
+        // This function runs after the whole page has loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Contact our new API to see if there are any messages
+            fetch('/api/get_messages')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('toast-container');
+                    const messages = data.messages;
+
+                    if (messages && messages.length > 0) {
+                        messages.forEach(message => {
+                            const category = message[0]; // 'success' or 'danger'
+                            const text = message[1];     // The message text
+
+                            // Build the toast HTML element using JavaScript
+                            const toast = document.createElement('div');
+                            toast.className = `toast toast-${category}`;
+
+                            let title = category.charAt(0).toUpperCase() + category.slice(1) + '!';
+
+                            toast.innerHTML = `
+                            <div class="toast-content">
+                                <strong class="font-bold">${title}</strong>
+                                <span class="block sm:inline">${text}</span>
+                            </div>
+                            <button class="toast-close-btn">&times;</button>
+                        `;
+
+                            // Add the new toast to the page
+                            container.appendChild(toast);
+
+                            // --- Animation and Dismissal Logic ---
+                            const dismissToast = () => {
+                                toast.classList.add('toast-exit');
+                                toast.addEventListener('animationend', () => toast.remove(), { once: true });
+                            };
+
+                            const autoDismissTimer = setTimeout(dismissToast, 5000);
+
+                            toast.querySelector('.toast-close-btn').addEventListener('click', () => {
+                                clearTimeout(autoDismissTimer);
+                                dismissToast();
+                            });
+                        });
+                    }
+                })
+                .catch(error => console.error('Error fetching flash messages:', error));
+        });
+    </script>
 
     <div class="page">
         <header

@@ -2,17 +2,19 @@ import os
 from flask import Flask, render_template, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message 
+from flask import jsonify, session
 
 app = Flask(__name__ , static_folder='static')
 
 
 # --- Mail Config ---
+app.config['SECRET_KEY'] = '963cc51af6cf31cc7878b02add4c6ac9'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'your_email@gmail.com'   # apna email
-app.config['MAIL_PASSWORD'] = 'your_app_password'      # Gmail App Password
-app.config['MAIL_DEFAULT_SENDER'] = 'your_email@gmail.com'
+app.config['MAIL_USERNAME'] = 'codion.io.in@gmail.com'
+app.config['MAIL_PASSWORD'] = 'odgn tgyy gbur srsn' 
+app.config['MAIL_DEFAULT_SENDER'] = 'codion.io.in@gmail.com'
 
 mail = Mail(app)
 
@@ -100,7 +102,7 @@ def contact():
             # Email send karein
             msg = Message(
                 subject=f"New Contact Form Submission - {name}",
-                recipients=["your_email@gmail.com"],  # jaha receive karna hai
+                recipients=["codion.io.in@gmail.com"],  # jaha receive karna hai
                 body=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
                 sender=app.config['MAIL_USERNAME'] 
             )
@@ -145,6 +147,17 @@ def cookie_settings():
 def quiz():
     return render_template("quiz.html")
 
+@app.route("/get-flash-messages")
+def get_flash_messages():
+    # Get the messages from the session
+    messages = session.get('_flashes', [])
+    
+    # Clear the messages from the session so they don't appear again
+    session.pop('_flashes', None)
+    
+    # Return the messages as JSON
+    return jsonify(messages)
+
 # --- THIS IS THE NEW, SECRET ROUTE FOR DATABASE SETUP ---
 @app.route("/init-database-first-time-only")
 def init_db():
@@ -157,6 +170,20 @@ def init_db():
             db.session.add(visitor_record)
             db.session.commit()
     return "Database has been initialized successfully!"
+
+@app.route("/api/get_messages")
+def get_messages():
+    """
+    This provides any flashed messages as JSON data.
+    """
+    # Get the messages that were 'flashed' in the session
+    messages = session.get('_flashes', [])
+    
+    # IMPORTANT: Clear the messages from the session so they don't show up again
+    session.pop('_flashes', None)
+    
+    # Return the data in a format JavaScript can understand
+    return jsonify(messages=messages)
 
 # ---API Route for visitor Count---
 
