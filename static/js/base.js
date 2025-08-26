@@ -163,7 +163,7 @@ const chat_bot = function () {
         console.error("Chatbot essential elements not found. Aborting initialization.");
         return;
     }
-    
+
     // Hide templates initially
     chatbotTemplate.classList.add('hidden');
     userTemplate.classList.add('hidden');
@@ -252,7 +252,7 @@ const chat_bot = function () {
             resetChat();
             return;
         }
-        
+
         addUserMessage(input);
         showLoader();
         const botResponse = await getAuraResponse(input);
@@ -281,4 +281,19 @@ document.addEventListener('DOMContentLoaded', function () {
     handleVisitorCount();
     chat_bot_handler();
     chat_bot();
+
+    const chatbotSection = document.getElementById('chatbot-section');
+    if (chatbotSection) {
+        const isHomepage = window.location.pathname === '/';
+
+        if (isHomepage) {
+            // On the homepage, wait for the loading animation before fading in.
+            setTimeout(() => {
+                chatbotSection.classList.add('visible');
+            }, 2000);
+        } else {
+            // On all other pages, make it visible immediately.
+            chatbotSection.classList.add('visible');
+        }
+    }
 });
