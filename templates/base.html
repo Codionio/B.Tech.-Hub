@@ -148,6 +148,16 @@
         .chat-interface {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+          #chatbot-section {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+
+        #chatbot-section.visible {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
     {% block extra_head %}{% endblock %}
 </head>
@@ -163,6 +173,141 @@
             <img src="static\Images\text_logo_01-removebg-preview.png" alt="No image" class="w-[100%] h-[100%]">
         </div>
     </div>
+    <div id="flash-container" class="w-full max-w-4xl mx-auto px-4 py-2"></div>
+    <div id="toast-container"></div>
+    <style>
+        #toast-container {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .toast {
+            max-width: 350px;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            opacity: 0;
+            animation: slideInRight 0.5s forwards;
+        }
+
+        .toast.toast-exit {
+            animation: slideOutRight 0.5s forwards;
+        }
+
+        .toast-success {
+            background-color: #f0fff4;
+            border-left: 4px solid #48bb78;
+            color: #2f855a;
+        }
+
+        .toast-danger {
+            background-color: #fff5f5;
+            border-left: 4px solid #f56565;
+            color: #c53030;
+        }
+
+        .toast-content {
+            margin-right: 1rem;
+        }
+
+        .toast-close-btn {
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .toast-close-btn:hover {
+            opacity: 1;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    </style>
+
+
+    <script>
+        // This function runs after the whole page has loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Contact our new API to see if there are any messages
+            fetch('/api/get_messages')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('toast-container');
+                    const messages = data.messages;
+
+                    if (messages && messages.length > 0) {
+                        messages.forEach(message => {
+                            const category = message[0]; // 'success' or 'danger'
+                            const text = message[1];     // The message text
+
+                            // Build the toast HTML element using JavaScript
+                            const toast = document.createElement('div');
+                            toast.className = `toast toast-${category}`;
+
+                            let title = category.charAt(0).toUpperCase() + category.slice(1) + '!';
+
+                            toast.innerHTML = `
+                            <div class="toast-content">
+                                <strong class="font-bold">${title}</strong>
+                                <span class="block sm:inline">${text}</span>
+                            </div>
+                            <button class="toast-close-btn">&times;</button>
+                        `;
+
+                            // Add the new toast to the page
+                            container.appendChild(toast);
+
+                            // --- Animation and Dismissal Logic ---
+                            const dismissToast = () => {
+                                toast.classList.add('toast-exit');
+                                toast.addEventListener('animationend', () => toast.remove(), { once: true });
+                            };
+
+                            const autoDismissTimer = setTimeout(dismissToast, 5000);
+
+                            toast.querySelector('.toast-close-btn').addEventListener('click', () => {
+                                clearTimeout(autoDismissTimer);
+                                dismissToast();
+                            });
+                        });
+                    }
+                })
+                .catch(error => console.error('Error fetching flash messages:', error));
+        });
+    </script>
 
     <div class="page">
         <header
@@ -252,7 +397,144 @@
         </main>
 
 
-        <section class="fixed bottom-0 right-0 z-50">
+        
+
+
+
+        <footer class="bg-white dark:bg-gray-800 mt-12 border-t border-gray-200 dark:border-gray-700">
+            <div class="max-w-7xl mx-auto px-6 py-10">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+                    <div class="w-full md:w-1/3 lg:w-1/4">
+                        <a href="/" class="flex items-center space-x-2 mb-3">
+                            <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo"
+                                class="h-8 w-auto">
+                            <span class="font-bold text-lg text-gray-800 dark:text-white">Codion.io</span>
+                        </a>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Seamless Learning for Brighter Futures.</p>
+                    </div>
+
+                    <div class="w-full md:w-2/3 grid grid-cols-2 sm:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="font-semibold text-gray-800 dark:text-white mb-3">Product</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="{{ url_for('overview') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Overview</a>
+                                </li>
+                                <li><a href="{{ url_for('solution') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Solution</a>
+                                </li>
+                                <!-- <li><a href="{{ url_for('pricing') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white" aria-disabled="true">Pricing</a>
+                                </li> -->
+                                <li><a href="{{ url_for('customer') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Customer</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800 dark:text-white mb-3">Company</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="https://codionio.github.io/Devs-Codion/"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">About</a>
+                                </li>
+                                <li><a href="{{ url_for('investor_relations') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Investor
+                                        Relations</a></li>
+                                <li><a href="{{ url_for('press') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Press</a>
+                                </li>
+                                <li><a href="{{ url_for('blogs') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Blogs</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800 dark:text-white mb-3">Support</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="{{ url_for('contact') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Contact</a>
+                                </li>
+                                <li><a href="{{ url_for('documentation') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Documentation</a>
+                                </li>
+                                <li><a href="{{ url_for('chat') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Chat</a>
+                                </li>
+                                <li><a href="{{ url_for('faq') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">FAQ</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800 dark:text-white mb-3">Legal</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="{{ url_for('terms_of_service') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Terms
+                                        of Service</a></li>
+                                <li><a href="{{ url_for('privacy_policy') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Privacy
+                                        Policy</a></li>
+                                <li><a href="{{ url_for('cookie_settings') }}"
+                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Cookie
+                                        Settings</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div
+                    class="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8 flex flex-col sm:flex-row items-center justify-between">
+                    <p class="text-sm text-gray-500 dark:text-gray-400 order-2 sm:order-1 mt-4 sm:mt-0">&copy; 2025 -
+                        Team Codion Presents B.Tech Hub. All rights reserved</p>
+                    <div class="mt-2">
+                        <div
+                            class="inline-flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 rounded-full p-2 pr-4 shadow mb-4">
+                            <div class="relative flex h-3 w-3">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
+                            </div>
+                            <p class="text-sm font-medium text-gray-600 dark:text-gray-300">
+                                Visitors:
+                                <span id="visitor-count"
+                                    class="font-bold text-gray-800 dark:text-white">Loading...</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 text-gray-400 order-1 sm:order-2">
+                        <a href="https://www.instagram.com/codion.io.in/"
+                            class="hover:text-indigo-500 transition-colors" aria-label="Instagram"><svg class="w-5 h-5"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5z" />
+                                <path d="M12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
+                                <circle cx="17.5" cy="6.5" r="1.5" />
+                            </svg></a>
+                        <a href="https://x.com/Codion5" class="hover:text-indigo-500 transition-colors"
+                            aria-label="Twitter"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14.86 4.48 4.48 0 001.98-2.48 9.14 9.14 0 01-2.88 1.1 4.52 4.52 0 00-7.7 4.13A12.84 12.84 0 013 4.89a4.52 4.52 0 001.4 6.04 4.48 4.48 0 01-2.05-.57v.06a4.52 4.52 0 003.63 4.43 4.52 4.52 0 01-2.04.08 4.52 4.52 0 004.22 3.14A9.05 9.05 0 012 19.54a12.8 12.8 0 006.92 2.03c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.42-.02-.63A9.22 9.22 0 0023 3z" />
+                            </svg></a>
+                        <a href="https://www.linkedin.com/in/codion-io-91a87a379?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BhzIqso%2FkRRyrT6S900fyuA%3D%3D"
+                            class="hover:text-indigo-500 transition-colors" aria-label="LinkedIn"><svg class="w-5 h-5"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                </path>
+                            </svg></a>
+                        <a href="https://github.com/Codionio" class="hover:text-indigo-500 transition-colors"
+                            aria-label="GitHub"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-1.02-.014-1.845-2.782.605-3.369-1.21-3.369-1.21-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                                    clip-rule="evenodd"></path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <section class="fixed bottom-0 right-0 z-50" id="chatbot-section">
             <!-- Chat Interface -->
             <div id="main" class="fixed bottom-28 right-6 md:bottom-32 md:right-8 hidden">
                 <div
@@ -366,155 +648,6 @@
                 </div>
             </div>
         </section>
-
-
-
-        <footer class="bg-white dark:bg-gray-800 mt-12 border-t border-gray-200 dark:border-gray-700">
-            <div class="max-w-7xl mx-auto px-6 py-10">
-                <div class="flex flex-col md:flex-row justify-between items-start gap-10">
-                    <div class="w-full md:w-1/3 lg:w-1/4">
-                        <a href="/" class="flex items-center space-x-2 mb-3">
-                            <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo"
-                                class="h-8 w-auto">
-                            <span class="font-bold text-lg text-gray-800 dark:text-white">Codion.io</span>
-                        </a>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Seamless Learning for Brighter Futures.</p>
-                    </div>
-
-                    <div class="w-full md:w-2/3 grid grid-cols-2 sm:grid-cols-4 gap-8">
-                        <div>
-                            <h3 class="font-semibold text-gray-800 dark:text-white mb-3">Product</h3>
-                            <ul class="space-y-2 text-sm">
-                                <li><a href="{{ url_for('overview') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Overview</a>
-                                </li>
-                                <li><a href="{{ url_for('solution') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Solution</a>
-                                </li>
-                                <!-- <li><a href="{{ url_for('pricing') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white" aria-disabled="true">Pricing</a>
-                                </li> -->
-                                <li><a href="{{ url_for('customer') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Customer</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-800 dark:text-white mb-3">Company</h3>
-                            <ul class="space-y-2 text-sm">
-                                <li><a href="https://codionio.github.io/Devs-Codion/"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">About</a>
-                                </li>
-                                <li><a href="{{ url_for('investor_relations') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Investor
-                                        Relations</a></li>
-                                <li><a href="{{ url_for('press') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Press</a>
-                                </li>
-                                <li><a href="{{ url_for('blogs') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Blogs</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-800 dark:text-white mb-3">Support</h3>
-                            <ul class="space-y-2 text-sm">
-                                <li><a href="{{ url_for('contact') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Contact</a>
-                                </li>
-                                <li><a href="{{ url_for('documentation') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Documentation</a>
-                                </li>
-                                <li><a href="{{ url_for('chat') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Chat</a>
-                                </li>
-                                <li><a href="{{ url_for('faq') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">FAQ</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-800 dark:text-white mb-3">Legal</h3>
-                            <ul class="space-y-2 text-sm">
-                                <li><a href="{{ url_for('terms_of_service') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Terms
-                                        of Service</a></li>
-                                <li><a href="{{ url_for('privacy_policy') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Privacy
-                                        Policy</a></li>
-                                <li><a href="{{ url_for('cookie_settings') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Cookie
-                                        Settings</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-800 dark:text-white mb-3">Quizs</h3>
-                            <ul class="space-y-2 text-sm">
-                                <li><a href="{{ url_for('quiz') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Javascript
-                                        Quiz</a></li>
-                                <li><a href="{{ url_for('privacy_policy') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Privacy
-                                        Quiz</a></li>
-                                <li><a href="{{ url_for('cookie_settings') }}"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white">Cookie
-                                        Quiz</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8 flex flex-col sm:flex-row items-center justify-between">
-                    <p class="text-sm text-gray-500 dark:text-gray-400 order-2 sm:order-1 mt-4 sm:mt-0">&copy; 2025 -
-                        Team Codion Presents B.Tech Hub. All rights reserved</p>
-                    <div class="mt-2">
-                        <div
-                            class="inline-flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 rounded-full p-2 pr-4 shadow mb-4">
-                            <div class="relative flex h-3 w-3">
-                                <span
-                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
-                            </div>
-                            <p class="text-sm font-medium text-gray-600 dark:text-gray-300">
-                                Visitors:
-                                <span id="visitor-count"
-                                    class="font-bold text-gray-800 dark:text-white">Loading...</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4 text-gray-400 order-1 sm:order-2">
-                        <a href="https://www.instagram.com/codion.io.in/"
-                            class="hover:text-indigo-500 transition-colors" aria-label="Instagram"><svg class="w-5 h-5"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5z" />
-                                <path d="M12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
-                                <circle cx="17.5" cy="6.5" r="1.5" />
-                            </svg></a>
-                        <a href="https://x.com/Codion5" class="hover:text-indigo-500 transition-colors"
-                            aria-label="Twitter"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M23 3a10.9 10.9 0 01-3.14.86 4.48 4.48 0 001.98-2.48 9.14 9.14 0 01-2.88 1.1 4.52 4.52 0 00-7.7 4.13A12.84 12.84 0 013 4.89a4.52 4.52 0 001.4 6.04 4.48 4.48 0 01-2.05-.57v.06a4.52 4.52 0 003.63 4.43 4.52 4.52 0 01-2.04.08 4.52 4.52 0 004.22 3.14A9.05 9.05 0 012 19.54a12.8 12.8 0 006.92 2.03c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.42-.02-.63A9.22 9.22 0 0023 3z" />
-                            </svg></a>
-                        <a href="https://www.linkedin.com/in/codion-io-91a87a379?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BhzIqso%2FkRRyrT6S900fyuA%3D%3D"
-                            class="hover:text-indigo-500 transition-colors" aria-label="LinkedIn"><svg class="w-5 h-5"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
-                                </path>
-                            </svg></a>
-                        <a href="https://github.com/Codionio" class="hover:text-indigo-500 transition-colors"
-                            aria-label="GitHub"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd"
-                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-1.02-.014-1.845-2.782.605-3.369-1.21-3.369-1.21-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
-                                    clip-rule="evenodd"></path>
-                            </svg></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
 
     <script src="{{ url_for('static', filename='js/base.js') }}"></script>
     <script type="module">

@@ -1,18 +1,30 @@
 import os
+import requests
 from flask import Flask, render_template, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message 
+from flask import jsonify, session
+from dotenv import load_dotenv
+from flask_cors import CORS
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Print environment variables for debugging
+print("GEMINI_API_KEY:", os.environ.get('GEMINI_API_KEY'))
 
 app = Flask(__name__ , static_folder='static')
+CORS(app)  # Enable CORS for all routes
 
 
 # --- Mail Config ---
+app.config['SECRET_KEY'] = '963cc51af6cf31cc7878b02add4c6ac9'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'your_email@gmail.com'   # apna email
-app.config['MAIL_PASSWORD'] = 'your_app_password'      # Gmail App Password
-app.config['MAIL_DEFAULT_SENDER'] = 'your_email@gmail.com'
+app.config['MAIL_USERNAME'] = 'codion.io.in@gmail.com'
+app.config['MAIL_PASSWORD'] = 'odgn tgyy gbur srsn' 
+app.config['MAIL_DEFAULT_SENDER'] = 'codion.io.in@gmail.com'
 
 mail = Mail(app)
 
@@ -100,7 +112,7 @@ def contact():
             # Email send karein
             msg = Message(
                 subject=f"New Contact Form Submission - {name}",
-                recipients=["your_email@gmail.com"],  # jaha receive karna hai
+                recipients=["codion.io.in@gmail.com"],  # jaha receive karna hai
                 body=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
                 sender=app.config['MAIL_USERNAME'] 
             )
@@ -145,6 +157,17 @@ def cookie_settings():
 def quiz():
     return render_template("quiz.html")
 
+@app.route("/get-flash-messages")
+def get_flash_messages():
+    # Get the messages from the session
+    messages = session.get('_flashes', [])
+    
+    # Clear the messages from the session so they don't appear again
+    session.pop('_flashes', None)
+    
+    # Return the messages as JSON
+    return jsonify(messages)
+
 # --- THIS IS THE NEW, SECRET ROUTE FOR DATABASE SETUP ---
 @app.route("/init-database-first-time-only")
 def init_db():
@@ -157,6 +180,20 @@ def init_db():
             db.session.add(visitor_record)
             db.session.commit()
     return "Database has been initialized successfully!"
+
+@app.route("/api/get_messages")
+def get_messages():
+    """
+    This provides any flashed messages as JSON data.
+    """
+    # Get the messages that were 'flashed' in the session
+    messages = session.get('_flashes', [])
+    
+    # IMPORTANT: Clear the messages from the session so they don't show up again
+    session.pop('_flashes', None)
+    
+    # Return the data in a format JavaScript can understand
+    return jsonify(messages=messages)
 
 # ---API Route for visitor Count---
 
@@ -172,6 +209,100 @@ def visitor_count():
         db.session.commit()
     
     return {"count": visitor_record.count}
+
+# --- NEW: Secure Gemini API endpoint ---
+
+    # --- NEW: Secure Gemini API endpoint ---
+@app.route("/api/chat", methods=["POST"])
+def chat_endpoint():
+    try:
+        data = request.get_json()
+        user_input = data.get('input', '')
+        
+        if not user_input:
+            return jsonify({"error": "No input provided"}), 400
+        
+        gemini_api_key = os.environ.get('GEMINI_API_KEY', None)
+        if not gemini_api_key:
+            return jsonify({"error": "API key not configured"}), 500
+        
+        api_url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent'
+        
+        # --- THIS IS THE UPDATED PART ---
+        train_data = """
+Your name is Vac 🔥. You are a helpful and highly structured AI assistant for the B.tech hub application. Your creator is Sahil Sharma. The meaning of your name is the Vedic goddess of speech.
+
+## Core Instructions ##
+1.  **Prioritize B.Tech Hub Information**: If the user's question is about the B.Tech Hub website, its features (Syllabus, SGPA, CGPA), or its creators, you MUST prioritize the information provided below under "B.Tech Hub Website Information."
+2.  **Use General Knowledge for Other Topics**: For all other general questions (e.g., "what is the capital of France?", "explain quantum computing," math problems), answer them using your own extensive knowledge.
+3.  **MANDATORY: Use Markdown for Formatting**: Always structure your answers for clarity using Markdown. This is crucial.
+    * Use headings (`## Title`) for main topics.
+    * Use bold text (`**important**`) for emphasis and keywords.
+    * Use bullet points (`* item`) or numbered lists (`1. item`) for lists.
+    * Use code blocks (```python\nprint("hello")\n```) for any code snippets.
+    * Be helpful, professional, and clear in your responses.
+4.  **Ensure Readability & Spacing**: This is critical. Use generous whitespace to make your answers easy to read.
+    * **ALWAYS** add a blank line between paragraphs, headings, lists, and other distinct elements.
+    * Break down long, dense blocks of text into smaller, more digestible paragraphs.
+
+## B.Tech Hub Website Information ##
+
+### Home Page (Welcome Mat) ###
+Link: https://b-tech-hub.onrender.com/
+The homepage is the front door. It has a welcome message and buttons that lead to other sections like "Syllabus" and "SGPA Calculator."
+
+### Syllabus (Treasure Map) ###
+Link: https://b-tech-hub.onrender.com/Syllabus
+This section shows a list of all subjects and topics for each school term (semester). You find your grade or year to see the subjects you'll be studying.
+
+### SGPA Calculator (Report Card Helper) ###
+Link: https://b-tech-hub.onrender.com/sgpa
+This tool calculates your score for one term (SGPA). You enter the grade you got for each subject, and it instantly shows your final score for that term.
+
+### CGPA Calculator (All-Time High Score) ###
+Link: https://b-tech-hub.onrender.com/cgpa
+This calculates your all-time high score (CGPA) by adding up scores from all the terms you've finished so far.
+
+### University Info (Rulebook Room) ###
+Link: https://b-tech-hub.onrender.com/links
+This section contains important university rules and information, like the credit system. It specifically mentions AKTU regulations.
+
+### Resources (Secret Toolkit) ###
+Link: https://b-tech-hub.onrender.com/resources
+This is a digital library with helpful notes, guides, and tools to make learning easier.
+
+### About (Meet the Builders) ###
+Link: https://codionio.github.io/Devs-Codion/
+This link leads to a page about the development team that built the website, called "Codion."
+"""
+
+        request_body = {
+            "contents": [{"parts": [{"text": user_input}]}],
+            "systemInstruction": {
+                "parts": [{
+                    "text": train_data
+                }]
+            }
+        }
+
+        response = requests.post(
+            f"{api_url}?key={gemini_api_key}",
+            headers={'Content-Type': 'application/json'},
+            json=request_body
+        )
+        
+        if response.status_code != 200:
+            print("Gemini API Error:", response.text) # Added for better debugging
+            return jsonify({"error": "Failed to get response from Gemini API"}), 500
+        
+        response_data = response.json()
+        bot_response = response_data.get('candidates', [{}])[0].get('content', {}).get('parts', [{}])[0].get('text', 'Sorry, I could not generate a response.')
+        
+        return jsonify({"response": bot_response})
+        
+    except Exception as e:
+        print(f"Error in chat endpoint: {e}")
+        return jsonify({"error": "Internal server error"}), 500
 
 if __name__ == "__main__":
     with app.app_context():
