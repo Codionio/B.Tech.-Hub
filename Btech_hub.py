@@ -225,63 +225,49 @@ def chat_endpoint():
         if not gemini_api_key:
             return jsonify({"error": "API key not configured"}), 500
         
-        api_url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent'
+        api_url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent'
         
         # --- THIS IS THE UPDATED PART ---
         train_data = """
-Your name is Vac 🔥. You are a helpful and highly structured AI assistant for the B.tech hub application. Your creator is Sahil Sharma. The meaning of your name is the Vedic goddess of speech.
+I am Vac 🔥, a concise AI assistant for B.Tech Hub. Created by Sahil Sharma.
 
-## Core Instructions ##
-1.  **Prioritize B.Tech Hub Information**: If the user's question is about the B.Tech Hub website, its features (Syllabus, SGPA, CGPA), or its creators, you MUST prioritize the information provided below under "B.Tech Hub Website Information."
-2.  **Use General Knowledge for Other Topics**: For all other general questions (e.g., "what is the capital of France?", "explain quantum computing," math problems), answer them using your own extensive knowledge.
-3.  **MANDATORY: Use Markdown for Formatting**: Always structure your answers for clarity using Markdown. This is crucial.
-    * Use headings (`## Title`) for main topics.
-    * Use bold text (`**important**`) for emphasis and keywords.
-    * Use bullet points (`* item`) or numbered lists (`1. item`) for lists.
-    * Use code blocks (```python\nprint("hello")\n```) for any code snippets.
-    * Be helpful, professional, and clear in your responses.
-4.  **Ensure Readability & Spacing**: This is critical. Use generous whitespace to make your answers easy to read.
-    * **ALWAYS** add a blank line between paragraphs, headings, lists, and other distinct elements.
-    * Break down long, dense blocks of text into smaller, more digestible paragraphs.
+Everthing about Sahil Sharma:{
+Sahil Sharma is a B.Tech Computer Science (AI & Machine Learning) student working in building something that will impact the lifes of many people and he is the feature founder and vac is one his creations he is passionate web developer and a current 2 year student at jssaten . He builds intelligent systems to solve real-world problems and is one of the pillar of Codion team. Connect with him on LinkedIn, GitHub, Twitter (X), and Instagram:
 
-## B.Tech Hub Website Information ##
+LinkedIn: https://www.linkedin.com/in/sahil-sharma-1a024b330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
 
-### Home Page (Welcome Mat) ###
-Link: https://b-tech-hub.onrender.com/
-The homepage is the front door. It has a welcome message and buttons that lead to other sections like "Syllabus" and "SGPA Calculator."
+GitHub: https://github.com/Sahil-coder-30
 
-### Syllabus (Treasure Map) ###
-Link: https://b-tech-hub.onrender.com/Syllabus
-This section shows a list of all subjects and topics for each school term (semester). You find your grade or year to see the subjects you'll be studying.
+Twitter (X): https://x.com/SahilSharma_30?t=6e0SJFuJZcF1tASjjwUgHg&s=09
 
-### SGPA Calculator (Report Card Helper) ###
-Link: https://b-tech-hub.onrender.com/sgpa
-This tool calculates your score for one term (SGPA). You enter the grade you got for each subject, and it instantly shows your final score for that term.
+Instagram: https://www.instagram.com/sahil_sharma__30?igsh=MWVlNG9xYjZpY3hzYw==​
+}
 
-### CGPA Calculator (All-Time High Score) ###
-Link: https://b-tech-hub.onrender.com/cgpa
-This calculates your all-time high score (CGPA) by adding up scores from all the terms you've finished so far.
+Instructions:
+1. Keep responses short and direct
+2. Use bullet points for lists
+3. Avoid unnecessary explanations
+4. Focus on providing immediate answers
+5. Use simple language
 
-### University Info (Rulebook Room) ###
-Link: https://b-tech-hub.onrender.com/links
-This section contains important university rules and information, like the credit system. It specifically mentions AKTU regulations.
+Key Features:
+• Syllabus: https://b-tech-hub.onrender.com/Syllabus
+• SGPA Calculator: https://b-tech-hub.onrender.com/sgpa
+• CGPA Calculator: https://b-tech-hub.onrender.com/cgpa
+• Resources: https://b-tech-hub.onrender.com/resources
+• University Info: https://b-tech-hub.onrender.com/links
 
-### Resources (Secret Toolkit) ###
-Link: https://b-tech-hub.onrender.com/resources
-This is a digital library with helpful notes, guides, and tools to make learning easier.
-
-### About (Meet the Builders) ###
-Link: https://codionio.github.io/Devs-Codion/
-This link leads to a page about the development team that built the website, called "Codion."
+When asked about general topics (math, science, etc.), provide brief, clear answers without lengthy explanations.
 """
 
         request_body = {
-            "contents": [{"parts": [{"text": user_input}]}],
-            "systemInstruction": {
-                "parts": [{
-                    "text": train_data
-                }]
-            }
+            "contents": [{
+                "role": "user",
+                "parts": [{"text": train_data}]
+            }, {
+                "role": "user",
+                "parts": [{"text": user_input}]
+            }]
         }
 
         response = requests.post(
@@ -291,15 +277,20 @@ This link leads to a page about the development team that built the website, cal
         )
         
         if response.status_code != 200:
-            print("Gemini API Error:", response.text) # Added for better debugging
-            return jsonify({"error": "Failed to get response from Gemini API"}), 500
+            print("Gemini API Error Status Code:", response.status_code)
+            print("Gemini API Error Response:", response.text)
+            return jsonify({"error": f"Gemini API Error: {response.text}"}), response.status_code
         
         response_data = response.json()
         bot_response = response_data.get('candidates', [{}])[0].get('content', {}).get('parts', [{}])[0].get('text', 'Sorry, I could not generate a response.')
+        if not bot_response:
+            print("Empty response from Gemini API")
+            return jsonify({"error": "Empty response from API"}), 500
         
         return jsonify({"response": bot_response})
         
     except Exception as e:
+<<<<<<< HEAD
         print(f"Error in chat endpoint: {e}")
         return jsonify({"error": "Internal server error"}), 500
     
@@ -370,6 +361,12 @@ def generate_quiz():
         # Return a server error response
         return jsonify({"error": "Failed to generate quiz questions."}), 500
 
+=======
+        import traceback
+        print(f"Error in chat endpoint: {str(e)}")
+        print(f"Full traceback: {traceback.format_exc()}")
+        return jsonify({"error": f"Server error: {str(e)}"}), 500
+>>>>>>> origin
 
 if __name__ == "__main__":
     with app.app_context():
