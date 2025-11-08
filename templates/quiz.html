@@ -1,304 +1,294 @@
 {% extends "base.html" %}
-{% block title %}Javascipt Quiz | B.Tech Hub{% endblock %}
-{% block content %}
-<div class="max-w-5xl mx-auto px-4 py-10">
-    <div class="text-center mb-8">
-        <h1 class="text-4xl font-bold text-gray-800 dark:text-white">Quiz</h1>
-        <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">Test your knowledge with our interactive quizzes!</p>
-    </div>
+
+{% block title %}AI Quiz Challenge | B.Tech Hub{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg-light: #f3f4f6;
+        --card-bg: #ffffff;
+        --border-color: #e5e7eb;
+        --text-dark: #111827;
+        --text-muted: #6b7280;
+        --primary-blue: #3b82f6;
+        --primary-blue-light: #eff6ff;
+    }
     
-    <div class="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-lg">
-    <h1 class="text-2xl font-bold text-center mb-6">JavaScript Quiz</h1>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 1rem;
+    }
+    
+    /* --- Main Layout --- */
+    .quiz-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 900px;
+    }
+    @media (min-width: 768px) {
+        .quiz-layout {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    }
 
-    <!-- Progress Bar -->
-    <div class="w-full bg-gray-200 rounded-full h-3 mb-6">
-      <div id="progress-bar" class="bg-blue-500 h-3 rounded-full w-0"></div>
+    /* --- Main Quiz Card --- */
+    #quiz-card {
+        width: 100%;
+        flex: 1;
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* --- Option Button Styling --- */
+    .option-btn {
+        background-color: var(--card-bg);
+        border: 2px solid var(--border-color);
+        text-align: left;
+        color: var(--text-dark);
+        transition: all 0.2s ease;
+    }
+    .option-btn:hover {
+        border-color: #a5b4fc;
+    }
+    .option-btn.selected {
+        background-color: var(--primary-blue-light);
+        border-color: var(--primary-blue);
+    }
+
+    /* --- Progress Tracker --- */
+    #progress-tracker {
+        width: 100%;
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        padding: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+    }
+    @media (min-width: 768px) {
+        #progress-tracker {
+            width: 200px;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+    }
+    .progress-bubble {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        background-color: #f3f4f6;
+        color: var(--text-muted);
+        border: 2px solid var(--border-color);
+        transition: all 0.3s ease;
+    }
+    .progress-bubble.current {
+        background-color: var(--primary-blue-light);
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+    }
+    .progress-bubble.answered {
+        background-color: var(--primary-blue);
+        color: white;
+        border-color: var(--primary-blue);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="quiz-layout" class="hidden">
+    <div id="quiz-card">
+        <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+            <p id="question-counter" class="font-semibold"></p>
+            <p id="timer" class="font-semibold text-lg"></p>
+        </div>
+
+        <div class="p-6 flex-1">
+            <h2 id="question-text" class="text-2xl font-bold mb-6 min-h-[6rem]"></h2>
+            <div id="answer-buttons" class="space-y-3"></div>
+        </div>
+
+        <div class="p-6 bg-gray-50 border-t border-gray-200 flex justify-between items-center">
+            <button id="prev-btn" class="px-6 py-2 rounded-lg font-semibold bg-white border-2 border-gray-300 hover:bg-gray-100">Previous</button>
+            <button id="next-btn" class="px-6 py-2 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-700">Next</button>
+        </div>
     </div>
 
-    <!-- Quiz Container -->
-    <div id="quiz" class="space-y-4">
-      <h2 id="question" class="text-lg font-semibold"></h2>
-      <div id="answer-buttons" class="grid grid-cols-1 gap-3"></div>
-
-      <!-- Navigation Buttons -->
-      <div class="flex justify-between mt-4 space-x-2">
-        <button id="back-btn" class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500">
-          Back
-        </button>
-        <button id="skip-btn" class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600">
-          Skip
-        </button>
-        <button id="next-btn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 hidden">
-          Next
-        </button>
-        <button id="submit-btn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
-          Submit
-        </button>
-      </div>
-    </div>
-
-    <!-- Result -->
-    <div id="result" class="hidden text-center space-y-4">
-      <h2 class="text-xl font-bold">Quiz Finished!</h2>
-      <p id="score" class="text-lg"></p>
-      <button onclick="startQuiz()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
-        Restart
-      </button>
-    </div>
-    <div id="review" class="text-left space-y-6"></div>
-    </div>
+    <div id="progress-tracker"></div>
 </div>
 
+<div id="start-screen" class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg text-center">
+    <h1 class="text-3xl font-bold mb-4">AI Quiz Challenge</h1>
+    <p class="text-gray-600 mb-6">Test your knowledge with AI-generated questions.</p>
+    <button id="start-btn" class="w-full py-3 px-6 rounded-lg font-semibold text-lg bg-blue-600 text-white hover:bg-blue-700">Start Quiz</button>
+</div>
 
 <script>
-    const questions = [
-  {
-    question: "What will `console.log(Boolean(0))` print?",
-    answers: [
-      { text: "true", correct: false },
-      { text: "false", correct: true },
-      { text: "undefined", correct: false },
-      { text: "0", correct: false }
-    ]
-  },
-  {
-    question: "How do you write a single-line comment in JavaScript?",
-    answers: [
-      { text: "// comment", correct: true },
-      { text: "<!-- comment -->", correct: false },
-      { text: "# comment", correct: false },
-      { text: "/* comment */", correct: false }
-    ]
-  },
-  {
-    question: "Which method is used to parse a string to an integer?",
-    answers: [
-      { text: "parseFloat()", correct: false },
-      { text: "Number()", correct: false },
-      { text: "parseInt()", correct: true },
-      { text: "toInteger()", correct: false }
-    ]
-  },
-  {
-    question: "What is the default value of an uninitialized variable in JavaScript?",
-    answers: [
-      { text: "null", correct: false },
-      { text: "undefined", correct: true },
-      { text: "0", correct: false },
-      { text: "NaN", correct: false }
-    ]
-  },
-  {
-    question: "Which company developed JavaScript?",
-    answers: [
-      { text: "Microsoft", correct: false },
-      { text: "Sun Microsystems", correct: false },
-      { text: "Netscape", correct: true },
-      { text: "Oracle", correct: false }
-    ]
-  },
-  {
-    question: "Which method removes the last element from an array?",
-    answers: [
-      { text: "shift()", correct: false },
-      { text: "pop()", correct: true },
-      { text: "splice()", correct: false },
-      { text: "remove()", correct: false }
-    ]
-  },
-  {
-    question: "What will `console.log([] == false)` return?",
-    answers: [
-      { text: "true", correct: true },
-      { text: "false", correct: false },
-      { text: "undefined", correct: false },
-      { text: "NaN", correct: false }
-    ]
-  },
-  {
-    question: "What will `typeof NaN` return?",
-    answers: [
-      { text: "NaN", correct: false },
-      { text: "number", correct: true },
-      { text: "undefined", correct: false },
-      { text: "object", correct: false }
-    ]
-  },
-  {
-    question: "Which of the following is NOT a primitive data type in JavaScript?",
-    answers: [
-      { text: "string", correct: false },
-      { text: "boolean", correct: false },
-      { text: "object", correct: true },
-      { text: "number", correct: false }
-    ]
-  },
-  {
-    question: "What is the output of `console.log(1 + true)`?",
-    answers: [
-      { text: "1", correct: false },
-      { text: "2", correct: true },
-      { text: "true1", correct: false },
-      { text: "NaN", correct: false }
-    ]
-  }
-    ];
+    // --- DOM REFERENCES ---
+    const startScreen = document.getElementById('start-screen');
+    const startBtn = document.getElementById('start-btn');
+    const quizLayout = document.getElementById('quiz-layout');
+    const questionCounterElement = document.getElementById('question-counter');
+    const timerElement = document.getElementById('timer');
+    const questionTextElement = document.getElementById('question-text');
+    const answerButtonsElement = document.getElementById('answer-buttons');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const progressTracker = document.getElementById('progress-tracker');
 
-    const questionElement = document.getElementById("question");
-    const answerButtons = document.getElementById("answer-buttons");
-    const nextButton = document.getElementById("next-btn");
-    const backButton = document.getElementById("back-btn");
-    const skipButton = document.getElementById("skip-btn");
-    const submitButton = document.getElementById("submit-btn");
-    const resultContainer = document.getElementById("result");
-    const quizContainer = document.getElementById("quiz");
-    const scoreElement = document.getElementById("score");
-    const progressBar = document.getElementById("progress-bar");
-
+    // --- STATE ---
+    let questions = [];
     let currentQuestionIndex = 0;
-    let score = 0;
-    let userAnswers = Array(questions.length).fill(null); // store answers
+    let timerInterval;
 
-    function startQuiz() {
-      currentQuestionIndex = 0;
-      score = 0;
-      userAnswers = Array(questions.length).fill(null);
-      quizContainer.classList.remove("hidden");
-      resultContainer.classList.add("hidden");
-      showQuestion();
-    }
+    // --- INITIALIZE QUIZ ---
+    async function startQuiz() {
+        startScreen.classList.add('hidden');
+        quizLayout.classList.remove('hidden');
 
-    function showQuestion() {
-      resetState();
-      let currentQuestion = questions[currentQuestionIndex];
-      questionElement.innerText = currentQuestion.question;
-
-      currentQuestion.answers.forEach((answer, idx) => {
-        const button = document.createElement("button");
-        button.innerText = answer.text;
-        button.classList =
-          "bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 text-left";
-        button.addEventListener("click", () => selectAnswer(button, idx));
-        if (userAnswers[currentQuestionIndex] === idx) {
-          button.classList.add("bg-blue-400"); // highlight previous choice
+        try {
+            questions = await fetchQuestions();
+            questions.forEach(q => q.selectedAnswer = null); // Add property to store answers
+            currentQuestionIndex = 0;
+            buildProgressTracker();
+            displayQuestion();
+        } catch (error) {
+            quizLayout.innerHTML = `<p class="text-red-500">Failed to load quiz.</p>`;
         }
-        answerButtons.appendChild(button);
-      });
-
-      updateProgressBar();
     }
 
-    function resetState() {
-      nextButton.classList.add("hidden");
-      answerButtons.innerHTML = "";
+    // --- DISPLAY & UI ---
+    function buildProgressTracker() {
+        progressTracker.innerHTML = '';
+        questions.forEach((_, index) => {
+            const bubble = document.createElement('div');
+            bubble.className = 'progress-bubble';
+            bubble.id = `progress-${index}`;
+            bubble.innerText = index + 1;
+            progressTracker.appendChild(bubble);
+        });
+    }
+    
+    function updateProgressTracker() {
+        questions.forEach((q, index) => {
+            const bubble = document.getElementById(`progress-${index}`);
+            bubble.classList.remove('current', 'answered');
+            if (index === currentQuestionIndex) {
+                bubble.classList.add('current');
+            } else if (q.selectedAnswer !== null) {
+                bubble.classList.add('answered');
+            }
+        });
+    }
+    
+    function displayQuestion() {
+        const currentQuestion = questions[currentQuestionIndex];
+        questionCounterElement.innerText = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+        questionTextElement.innerText = currentQuestion.question;
+        answerButtonsElement.innerHTML = '';
+
+        currentQuestion.answers.forEach((answer, index) => {
+            const button = document.createElement('button');
+            button.innerText = answer.text;
+            button.className = 'option-btn w-full p-4 rounded-lg font-medium';
+            button.dataset.index = index;
+            if (currentQuestion.selectedAnswer === index) {
+                button.classList.add('selected');
+            }
+            button.addEventListener('click', handleAnswerSelection);
+            answerButtonsElement.appendChild(button);
+        });
+        
+        updateProgressTracker();
+        updateNavigationButtons();
+        startTimer();
+    }
+    
+    // --- HANDLE SELECTION & NAVIGATION ---
+    function handleAnswerSelection(event) {
+        const selectedIndex = parseInt(event.currentTarget.dataset.index);
+        questions[currentQuestionIndex].selectedAnswer = selectedIndex;
+        
+        // Visually update the selection
+        Array.from(answerButtonsElement.children).forEach((btn, index) => {
+            btn.classList.toggle('selected', index === selectedIndex);
+        });
     }
 
-    function selectAnswer(button, answerIndex) {
-      userAnswers[currentQuestionIndex] = answerIndex;
-      Array.from(answerButtons.children).forEach(btn => {
-        btn.classList.remove("bg-blue-400");
-      });
-      button.classList.add("bg-blue-400");
-      nextButton.classList.remove("hidden");
+    function handleNav(direction) {
+        if (direction === 'next' && currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+        } else if (direction === 'prev' && currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+        }
+        displayQuestion();
     }
 
-    function updateProgressBar() {
-      const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
-      progressBar.style.width = progress + "%";
+    function updateNavigationButtons() {
+        prevBtn.disabled = currentQuestionIndex === 0;
+        nextBtn.innerText = currentQuestionIndex === questions.length - 1 ? 'Submit' : 'Next';
     }
 
-    function handleNextButton() {
-      if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
-        showQuestion();
-      } else {
-        showResult();
-      }
+    function startTimer() {
+        clearInterval(timerInterval);
+        let timeLeft = 60; // 60 seconds per question
+        timerElement.innerText = `Time: ${timeLeft}`;
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            timerElement.innerText = `Time: ${timeLeft}`;
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                handleNav('next'); // Auto-advance to next question
+            }
+        }, 1000);
     }
 
-    function handleBackButton() {
-      if (currentQuestionIndex > 0) {
-        currentQuestionIndex--;
-        showQuestion();
-      }
+    // --- FETCH QUESTIONS ---
+    async function fetchQuestions() {
+        // Replace with your actual API fetch
+        // const response = await fetch('/api/generate-quiz');
+        // return await response.json();
+        return [
+            { question: "What is the main purpose of a 'constructor' in a class?", answers: [ { text: "To destroy the object", correct: false }, { text: "To initialize a newly created object", correct: true }, { text: "To perform a static operation", correct: false }, { text: "To copy the object", correct: false } ] },
+            { question: "Which of the following is a primitive type in JavaScript?", answers: [ { text: "Array", correct: false }, { text: "Object", correct: false }, { text: "Symbol", correct: true }, { text: "Function", correct: false } ] },
+            { question: "What does the 'typeof' operator in JavaScript return for `null`?", answers: [ { text: "'null'", correct: false }, { text: "'undefined'", correct: false }, { text: "'object'", correct: true }, { text: "'string'", correct: false } ] }
+        ];
     }
-
-    function handleSkipButton() {
-      if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
-        showQuestion();
-      } else {
-        showResult();
-      }
-    }
-
-    function showResult() {
-  score = 0;
-  userAnswers.forEach((ans, idx) => {
-    if (ans !== null && questions[idx].answers[ans].correct) {
-      score++;
-    }
-  });
-
-  quizContainer.classList.add("hidden");
-  resultContainer.classList.remove("hidden");
-  scoreElement.innerText = `You scored ${score} out of ${questions.length}`;
-
-  // --- Build Review Section ---
-  const reviewContainer = document.getElementById("review");
-  reviewContainer.innerHTML = ""; // clear previous
-
-  questions.forEach((q, qIndex) => {
-    const questionDiv = document.createElement("div");
-    questionDiv.classList.add("p-4", "rounded-lg", "border", "bg-gray-50");
-
-    // Question
-    const questionText = document.createElement("h3");
-    questionText.innerText = `${qIndex + 1}. ${q.question}`;
-    questionText.classList.add("font-semibold", "mb-2");
-    questionDiv.appendChild(questionText);
-
-    // Answers
-    q.answers.forEach((ans, aIndex) => {
-      const ansDiv = document.createElement("div");
-      ansDiv.innerText = ans.text;
-      ansDiv.classList.add("px-3", "py-1", "rounded", "mb-1");
-
-      // highlight user’s chosen answer
-      if (userAnswers[qIndex] === aIndex) {
-        if (ans.correct) {
-          ansDiv.classList.add("bg-green-300"); // correct chosen
+    
+    // --- EVENT LISTENERS ---
+    startBtn.addEventListener('click', startQuiz);
+    prevBtn.addEventListener('click', () => handleNav('prev'));
+    nextBtn.addEventListener('click', () => {
+        if (nextBtn.innerText === 'Submit') {
+            clearInterval(timerInterval);
+            // Add a function to show results
+            alert('Quiz Submitted!'); 
         } else {
-          ansDiv.classList.add("bg-red-300"); // wrong chosen
+            handleNav('next');
         }
-      }
-
-      // highlight correct answer (even if not chosen)
-      if (ans.correct) {
-        ansDiv.classList.add("border", "border-green-600");
-      }
-
-      questionDiv.appendChild(ansDiv);
     });
-
-    // Mark skipped
-    if (userAnswers[qIndex] === null) {
-      const skippedNote = document.createElement("p");
-      skippedNote.innerText = "❌ Not answered";
-      skippedNote.classList.add("text-red-500", "mt-2");
-      questionDiv.appendChild(skippedNote);
-    }
-
-    reviewContainer.appendChild(questionDiv);
-  });
-}
-    nextButton.addEventListener("click", handleNextButton);
-    backButton.addEventListener("click", handleBackButton);
-    skipButton.addEventListener("click", handleSkipButton);
-    submitButton.addEventListener("click", showResult);
-
-    startQuiz();
-  </script>
-
-
+</script>
 {% endblock %}
