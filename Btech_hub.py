@@ -290,7 +290,6 @@ When asked about general topics (math, science, etc.), provide brief, clear answ
         return jsonify({"response": bot_response})
         
     except Exception as e:
-<<<<<<< HEAD
         print(f"Error in chat endpoint: {e}")
         return jsonify({"error": "Internal server error"}), 500
     
@@ -361,12 +360,6 @@ def generate_quiz():
         # Return a server error response
         return jsonify({"error": "Failed to generate quiz questions."}), 500
 
-=======
-        import traceback
-        print(f"Error in chat endpoint: {str(e)}")
-        print(f"Full traceback: {traceback.format_exc()}")
-        return jsonify({"error": f"Server error: {str(e)}"}), 500
->>>>>>> origin
 
 if __name__ == "__main__":
     with app.app_context():
