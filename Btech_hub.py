@@ -290,10 +290,76 @@ When asked about general topics (math, science, etc.), provide brief, clear answ
         return jsonify({"response": bot_response})
         
     except Exception as e:
-        import traceback
-        print(f"Error in chat endpoint: {str(e)}")
-        print(f"Full traceback: {traceback.format_exc()}")
-        return jsonify({"error": f"Server error: {str(e)}"}), 500
+        print(f"Error in chat endpoint: {e}")
+        return jsonify({"error": "Internal server error"}), 500
+    
+
+# Configure the Gemini API client with the key from environment variables
+try:
+    genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
+except KeyError:
+    raise RuntimeError("GOOGLE_API_KEY environment variable not set.")
+
+
+@app.route('/quiz')
+def quiz_page():
+    # This route just serves the HTML page.
+    # The page will then call the /api/generate-quiz endpoint.
+    return render_template('quiz.html')
+
+
+@app.route('/api/generate-quiz')
+def generate_quiz():
+    """
+    API endpoint to generate questions from the AI and return as JSON.
+    """
+    try:
+        # Initialize the model
+        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+
+        # This is the crucial part: the prompt.
+        # We tell the AI exactly what we want, including the JSON structure.
+        prompt = """
+        Generate a challenging 10-question multiple-choice quiz about advanced JavaScript.
+        Topics should include closures, prototypes, async/await, the 'this' keyword, and ES6+ features.
+        
+        Please provide the output ONLY in a valid JSON array format. Each object in the array
+        should have the following structure:
+        {
+          "question": "Your question here",
+          "answers": [
+            { "text": "Answer option 1", "correct": false },
+            { "text": "Answer option 2", "correct": false },
+            { "text": "The correct answer", "correct": true },
+            { "text": "Answer option 4", "correct": false }
+          ]
+        }
+        Ensure that exactly one answer has "correct": true for each question.
+        Do not include any text, explanation, or markdown formatting before or after the JSON array.
+        """
+
+        # Make the API call
+        response = model.generate_content(prompt)
+        
+        # Clean up the response from the AI. Sometimes it wraps it in ```json ... ```
+        # This regex finds the content between the first '[' and the last ']'
+        match = re.search(r'\[.*\]', response.text, re.DOTALL)
+        if not match:
+            raise ValueError("AI did not return valid JSON in the expected format.")
+            
+        json_text = match.group(0)
+        
+        # Parse the cleaned text into a Python list
+        questions = json.loads(json_text)
+        
+        # Return the data as a JSON response
+        return jsonify(questions)
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        # Return a server error response
+        return jsonify({"error": "Failed to generate quiz questions."}), 500
+
 
 if __name__ == "__main__":
     with app.app_context():
