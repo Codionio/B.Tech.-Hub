@@ -17,7 +17,7 @@ load_dotenv()
 # ("GEMINI_API_KEY:", os.environ.get('GEMINI_API_KEY'))
 
 app = Flask(__name__ , static_folder='static')
-CORS(app)  # Enable CORS for all routes
+CORS(app) 
 
 
 # --- Mail Config ---
@@ -360,6 +360,10 @@ def generate_quiz():
         # Return a server error response
         return jsonify({"error": "Failed to generate quiz questions."}), 500
 
+
+# Ensure the package is installed in the active environment
+# If using a virtual environment, activate it before running the script
+# You can install the package using: pip install google-generativeai
 
 if __name__ == "__main__":
     with app.app_context():
